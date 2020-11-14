@@ -1,0 +1,23 @@
+.footer {
+  background: #1E4383;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      font-size: 14px;
+      line-height: 19px;
+      color: #fff;
+      line-height: 19px;
+      padding-bottom: 5px;
+      position: relative;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
