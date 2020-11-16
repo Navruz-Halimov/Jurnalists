@@ -55,22 +55,22 @@
                 <ul class="footer__social">
                   <li>
                     <a href="#">
-                      <img src="" alt="">
+                      <img src="../assets/images/social/instagramm.svg" alt="instagramm">
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="" alt="">
+                      <img src="../assets/images/social/twitter.svg" alt="twitter">
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="" alt="">
+                      <img src="../assets/images/social/vk.svg" alt="vk">
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="" alt="">
+                      <img src="../assets/images/social/facebook.svg" alt="facebook">
                     </a>
                   </li>
                 </ul>
@@ -99,7 +99,23 @@
           </b-row>
         </b-container>
       </b-row>
-      <b-row class="footer__bottom"></b-row>
+      <b-row class="footer__bottom">
+        <b-container>
+          <b-row>
+            <div class="col-3">
+              <div class="footer__copyright">
+                © 2020 Company, Inc.
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="footer__confiden">
+                <a href="#">Условия использования</a>
+                <a href="#">Конфиденциальность</a>
+              </div>
+            </div>
+          </b-row>
+        </b-container>
+      </b-row>
     </b-container>
   </footer>
 </template>

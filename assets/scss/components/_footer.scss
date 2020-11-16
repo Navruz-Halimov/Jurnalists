@@ -1,5 +1,5 @@
 .footer {
-  background: #1E4383;
+  background: #1e4383;
 
   &__nav {
     display: flex;
@@ -25,6 +25,10 @@
     margin-bottom: 40px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
+  &__middle {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
   &__email {
     color: #fff;
@@ -47,7 +51,24 @@
     }
   }
 
-  &__address{
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 170px;
+    a {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fff;
+      margin-top: 20px;
+    }
+  }
+
+  &__address {
     color: #fff;
     max-width: 300px;
     span {
@@ -84,14 +105,38 @@
     padding: 10px;
   }
 
-  &__middle {
-    // margin-bottom: 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  &__bottom {
+    padding: 25px 0;
+    .row {
+      justify-content: space-between;
+    }
   }
+
+  &__copyright {
+    color: #fff;
+    font-size: 14px;
+  }
+
+  &__confiden {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+
 
   .back-to-top {
     a {
-      background: #0094FF;
+      background: #0094ff;
       border-radius: 4px;
       width: 55px;
       height: 55px;
