@@ -14,10 +14,3 @@ ul, li {
 	list-style: none;
 }
 
-a[href]:not([class]) {
-  color: #007bff;
-  text-decoration: none;
-  &:hover {
-  	text-decoration: none;
-  }
-}

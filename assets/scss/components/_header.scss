@@ -101,4 +101,11 @@
       padding-bottom: 5px;
     }
   }
+
+  &__bottom {
+    .row {
+      align-items: center;
+      padding: 10px 0;
+    }
+  }
 }

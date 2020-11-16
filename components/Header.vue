@@ -32,7 +32,7 @@
           <b-row>
             <b-col cols="3" class="header__logo">
               <nuxt-link to="/">
-                <img src="" alt="">
+                <img src="../assets/images/logo.png" alt="logo">
               </nuxt-link>
             </b-col>
             <b-col cols="9">

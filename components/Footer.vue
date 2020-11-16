@@ -1,13 +1,15 @@
 <template>
   <footer class="footer">
     <b-container fluid>
-      <b-row>
+      <b-row class="footer__top">
         <b-container>
-          <b-row>
+          <b-row class="align-items-center">
             <b-col cols="3">
-              <nuxt-link to="/">
-                <img src="" alt="">
-              </nuxt-link>
+              <div class="footer__logo">
+                <nuxt-link to="/">
+                  <img src="../assets/images/logo.png" alt="logo">
+                </nuxt-link>
+              </div>
             </b-col>
             <b-col cols="9">
               <ul class="footer__nav">
@@ -43,7 +45,7 @@
           </b-row>
         </b-container>
       </b-row>
-      <b-row>
+      <b-row class="footer__middle">
         <b-container>
           <b-row>
             <b-col cols="3">
@@ -76,18 +78,28 @@
             </b-col>
             <b-col cols="4">
               <div class="footer__address">
-                <span>Adres:</span>
+                <span>Address:</span>
                 <div>700000, Uzbekistan, Tashkent sh. Sergili rayon, Lev Tolstoy ko’chasi, 64 uy</div>
               </div>
             </b-col>
             <b-col cols="3">
-              <span></span>
+              <div class="footer__number">
+                <span>Telefonlar:</span>
+                <a href="tel:+7 880 000-00-00">+7 880 000-00-00</a>
+                <a href="tel:+7 880 000-00-00">+7 880 000-00-00</a>
+              </div>
             </b-col>
-            <b-col cols="2"></b-col>
+            <b-col cols="2">
+              <div class="back-to-top">
+                <a href="#">
+                  <img src="../assets/images/to_top.svg" alt="to_top">
+                </a>
+              </div>
+            </b-col>
           </b-row>
         </b-container>
       </b-row>
-      <b-row></b-row>
+      <b-row class="footer__bottom"></b-row>
     </b-container>
   </footer>
 </template>
