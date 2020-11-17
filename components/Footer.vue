@@ -90,11 +90,7 @@
               </div>
             </b-col>
             <b-col lg="2" md="6">
-              <div class="back-to-top">
-                <a href="#">
-                  <img src="../assets/images/to_top.svg" alt="to_top">
-                </a>
-              </div>
+              <BacktoTop />
             </b-col>
           </b-row>
         </b-container>
@@ -119,3 +115,11 @@
     </b-container>
   </footer>
 </template>
+<script>
+import BacktoTop from "./BacktoTop"
+export default {
+  components: {
+    BacktoTop
+  }
+}
+</script>
