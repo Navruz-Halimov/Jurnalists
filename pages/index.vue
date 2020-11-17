@@ -237,7 +237,7 @@
         </b-row>
       </b-container>
     </div>
-    <!-- <div class="main-gallery">
+    <div class="main-gallery">
       <b-container>
         <b-row>
           <b-col cols="12">
@@ -282,7 +282,7 @@
           </b-col>
         </b-row>
       </b-container>
-    </div>  -->
+    </div>
     <div class="main-arxiv">
       <b-container>
         <b-row>

@@ -65,6 +65,9 @@
                   <nuxt-link active-class="active" to="/biz-haqimizda">Biz haqimizda</nuxt-link>
                 </li>
               </ul>
+              <div class="mobile-menu">
+                <MobileMenu />
+              </div>
             </b-col>
           </b-row>
         </b-container>
@@ -75,11 +78,14 @@
 
 <script>
 import { create } from 'domain'
+import MobileMenu from './MobileMenu'
 export default {
   data() {
     return {
-      show: true
     }
+  },
+  components: {
+    MobileMenu
   },
   methods: {
 

@@ -11,34 +11,34 @@
                 </nuxt-link>
               </div>
             </b-col>
-            <b-col lg="9">
+            <b-col lg="9" class="footer__navWrap">
               <ul class="footer__nav">
                 <li>
-                  <nuxt-link to="/">Asosiy</nuxt-link>
+                  <nuxt-link exact active-class="active" to="/">Asosiy</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/loyihalar">Loyihalar</nuxt-link>
+                  <nuxt-link active-class="active" to="/loyihalar">Loyihalar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/tanlovlar">Tanlovlar</nuxt-link>
+                  <nuxt-link active-class="active" to="/tanlovlar">Tanlovlar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/qo’llanmalar">Qo’llanmalar</nuxt-link>
+                  <nuxt-link active-class="active" to="/qo’llanmalar">Qo’llanmalar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/galeriya">Galeriya</nuxt-link>
+                  <nuxt-link active-class="active" to="/galeriya">Galeriya</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/treninglar">Treninglar</nuxt-link>
+                  <nuxt-link active-class="active" to="/treninglar">Treninglar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/arxiv">Arxiv</nuxt-link>
+                  <nuxt-link active-class="active" to="/arxiv">Arxiv</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/aloqa">Aloqa</nuxt-link>
+                  <nuxt-link active-class="active" to="/aloqa">Aloqa</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/biz-haqimizda">Biz haqimizda</nuxt-link>
+                  <nuxt-link active-class="active" to="/biz-haqimizda">Biz haqimizda</nuxt-link>
                 </li>
               </ul>
             </b-col>

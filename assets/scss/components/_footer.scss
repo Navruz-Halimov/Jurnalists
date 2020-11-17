@@ -6,6 +6,11 @@
     justify-content: space-between;
     align-items: center;
 
+    .active {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+    }
+
     a {
       font-size: 14px;
       line-height: 19px;
@@ -162,7 +167,7 @@
     }
 
     &__logo {
-      margin: auto;
+      margin: 10px 0 0 0;
       margin-bottom: 10px;
     }
 
@@ -173,12 +178,26 @@
   }
 }
 
+@media (max-width: 768px) {
+  .footer {
+    &__nav {
+      li {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__navWrap {
+      padding: 0;
+    }
+  }
+}
+
 @media (max-width: 640px) {
   .footer {
     &__nav {
       justify-content: flex-start;
       li {
-        margin: 0px 15px 5px;
+        margin: 0px 15px 15px;
       }
     }
   }
