@@ -380,6 +380,10 @@
   }
 }
 
+.main-map {
+  margin-bottom: 80px;
+}
+
 // responsive
 
 @media (max-width: 1280px) {
@@ -502,6 +506,10 @@
     .site__button {
       margin: 20px auto 0;
     }
+  }
+
+  .main-map {
+    margin-bottom: 40px;
   }
 }
 

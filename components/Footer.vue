@@ -4,14 +4,14 @@
       <b-row class="footer__top">
         <b-container>
           <b-row class="align-items-center">
-            <b-col cols="3">
+            <b-col lg="3">
               <div class="footer__logo">
                 <nuxt-link to="/">
                   <img src="../assets/images/logo.png" alt="logo">
                 </nuxt-link>
               </div>
             </b-col>
-            <b-col cols="9">
+            <b-col lg="9">
               <ul class="footer__nav">
                 <li>
                   <nuxt-link to="/">Asosiy</nuxt-link>
