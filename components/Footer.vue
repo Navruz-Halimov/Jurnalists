@@ -48,7 +48,7 @@
       <b-row class="footer__middle">
         <b-container>
           <b-row>
-            <b-col cols="3">
+            <b-col lg="3" md="6">
               <div class="footer__email">
                 <span>Elektron pochta:</span>
                 <a href="mailto:uzjournal">uzjournal@mail.uz</a>
@@ -76,20 +76,20 @@
                 </ul>
               </div>
             </b-col>
-            <b-col cols="4">
+            <b-col lg="4" md="6">
               <div class="footer__address">
                 <span>Address:</span>
                 <div>700000, Uzbekistan, Tashkent sh. Sergili rayon, Lev Tolstoy ko’chasi, 64 uy</div>
               </div>
             </b-col>
-            <b-col cols="3">
+            <b-col lg="3" md="6">
               <div class="footer__number">
                 <span>Telefonlar:</span>
                 <a href="tel:+7 880 000-00-00">+7 880 000-00-00</a>
                 <a href="tel:+7 880 000-00-00">+7 880 000-00-00</a>
               </div>
             </b-col>
-            <b-col cols="2">
+            <b-col lg="2" md="6">
               <div class="back-to-top">
                 <a href="#">
                   <img src="../assets/images/to_top.svg" alt="to_top">
@@ -102,17 +102,17 @@
       <b-row class="footer__bottom">
         <b-container>
           <b-row>
-            <div class="col-3">
+            <b-col lg="3">
               <div class="footer__copyright">
                 © 2020 Company, Inc.
               </div>
-            </div>
-            <div class="col-4">
+            </b-col>
+            <b-col lg="5">
               <div class="footer__confiden">
                 <a href="#">Условия использования</a>
                 <a href="#">Конфиденциальность</a>
               </div>
-            </div>
+            </b-col>
           </b-row>
         </b-container>
       </b-row>

@@ -72,3 +72,20 @@
     </b-container>
   </header>
 </template>
+
+<script>
+import { create } from 'domain'
+export default {
+  data() {
+    return {
+      show: true
+    }
+  },
+  methods: {
+
+  },
+  created() {
+    
+  }
+}
+</script>
