@@ -25,7 +25,7 @@
               </li>
             </ul>
           </div>
-        </b-container>        
+        </b-container>
       </b-row>
       <b-row class="header__bottom">
         <b-container>
@@ -41,7 +41,7 @@
                   <nuxt-link exact active-class="active" to="/">Asosiy</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/loyihalar">Loyihalar</nuxt-link>
+                  <nuxt-link active-class="active" to="/projects">Loyihalar</nuxt-link>
                 </li>
                 <li>
                   <nuxt-link active-class="active" to="/tanlovlar">Tanlovlar</nuxt-link>
@@ -50,10 +50,10 @@
                   <nuxt-link active-class="active" to="/qo’llanmalar">Qo’llanmalar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/galeriya">Galeriya</nuxt-link>
+                  <nuxt-link active-class="active" to="/gallery">Galeriya</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/treninglar">Treninglar</nuxt-link>
+                  <nuxt-link active-class="active" to="/trainings">Treninglar</nuxt-link>
                 </li>
                 <li>
                   <nuxt-link active-class="active" to="/arxiv">Arxiv</nuxt-link>
@@ -85,7 +85,7 @@ export default {
 
   },
   created() {
-    
+
   }
 }
 </script>
