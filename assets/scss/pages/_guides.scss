@@ -1,0 +1,63 @@
+.guides-page {
+  &__title {
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  &__img {
+    padding-bottom: 15px;
+    img {
+      width: 100%;
+      max-width: 140px;
+      border-radius: 8px;
+    }
+  }
+
+  &__list {
+    justify-content: space-around;
+  }
+
+  &__item {
+    border: 3px solid rgba(30, 67, 131, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px 0;
+    max-width: 260px;
+    margin-bottom: 25px;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    padding-bottom: 10px;
+  }
+
+  &__download {
+    font-weight: 600;
+    font-size: 16px;
+    color: #0094FF;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 992px) {
+  .guides-page {
+    &__item {
+      max-width: 220px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .guides-page {
+    &__list {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__item {
+      max-width: 280px;
+    }
+  }
+}

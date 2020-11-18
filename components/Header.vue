@@ -44,10 +44,10 @@
                   <nuxt-link active-class="active" to="/projects">Loyihalar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/tanlovlar">Tanlovlar</nuxt-link>
+                  <nuxt-link active-class="active" to="/compitition">Tanlovlar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/qo’llanmalar">Qo’llanmalar</nuxt-link>
+                  <nuxt-link active-class="active" to="/guides">Qo’llanmalar</nuxt-link>
                 </li>
                 <li>
                   <nuxt-link active-class="active" to="/gallery">Galeriya</nuxt-link>
@@ -62,7 +62,7 @@
                   <nuxt-link active-class="active" to="/contact">Aloqa</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/biz-haqimizda">Biz haqimizda</nuxt-link>
+                  <nuxt-link active-class="active" to="/about">Biz haqimizda</nuxt-link>
                 </li>
               </ul>
               <div class="mobile-menu">
