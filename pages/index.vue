@@ -1,7 +1,7 @@
 <template>
   <main class="main__page">
     <div class="main__slider">
-      <!-- <swiper class="main__swiper" :options="header__slider">
+      <swiper class="main__swiper" :options="header__slider">
         <swiper-slide>
           <img src="../assets/images/slider.png" alt="slider">
           <b-container>
@@ -28,7 +28,7 @@
         </swiper-slide>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-      </swiper> -->
+      </swiper>
       <b-carousel
         id="carousel-1"
         
