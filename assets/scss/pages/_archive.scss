@@ -1,0 +1,86 @@
+.archive-page {
+  margin-bottom: 80px;
+  &__title {
+    margin-bottom: 50px;
+    font-weight: 700;
+  }
+
+  &__img {
+    padding-bottom: 15px;
+    display: block;
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+    padding-bottom: 15px;
+    display: block;
+  }
+
+  &__body {
+    color: #808080;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+}
+
+.page-item {
+  &__content {
+    img {
+      width: 100%;
+    }
+  }
+  .trainings__list{
+    margin: 20px 0;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li{
+      padding: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: -10px;
+        border-radius: 50%;
+        background-color: #0094FF;
+      }
+    }
+  }  
+}
+
+@media (max-width: 1200px) {
+  .archive-page {
+    &__img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .archive-page {
+    &__img {
+      padding-bottom: 10px;
+    }
+    &__subtitle {
+      padding-bottom: 5px;
+    }
+  }
+  .page-item {
+    &__content {
+      img {
+        width: 200px;
+      }
+    }
+  }
+}

@@ -56,10 +56,10 @@
                   <nuxt-link active-class="active" to="/trainings">Treninglar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/arxiv">Arxiv</nuxt-link>
+                  <nuxt-link active-class="active" to="/archive">Arxiv</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/aloqa">Aloqa</nuxt-link>
+                  <nuxt-link active-class="active" to="/contact">Aloqa</nuxt-link>
                 </li>
                 <li>
                   <nuxt-link active-class="active" to="/biz-haqimizda">Biz haqimizda</nuxt-link>
