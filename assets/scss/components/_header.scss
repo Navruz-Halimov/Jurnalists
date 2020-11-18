@@ -93,6 +93,8 @@
 
       &:hover {
         text-decoration: none;
+        border-bottom: 2px solid #1E4383;  
+        padding-bottom: 5px;
       }
     }
 
@@ -156,7 +158,7 @@
 }
 
 .b-sidebar {
-  width: 260px;
+  width: 240px;
 }
 
 

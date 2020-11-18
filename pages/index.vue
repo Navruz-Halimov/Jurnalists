@@ -1,7 +1,7 @@
 <template>
   <main class="main__page">
     <div class="main__slider">
-      <swiper class="main__swiper" :options="header__slider">
+      <!-- <swiper class="main__swiper" :options="header__slider">
         <swiper-slide>
           <img src="../assets/images/slider.png" alt="slider">
           <b-container>
@@ -28,7 +28,37 @@
         </swiper-slide>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
+      </swiper> -->
+      <b-carousel
+        id="carousel-1"
+        
+        :interval="4000"
+        controls
+        background="#ababab"
+        img-width="1024"
+        img-height="480"
+        style="text-shadow: 1px 1px 2px #333;"
+        class="main__carousel"
+      >
+        <b-carousel-slide img-src="../assets/images/slider.png">
+          <div class="carousel__title">Lorem ipsum dolor</div>
+          <div class="carousel__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div class="site__button">купрок</div>
+        </b-carousel-slide>
+
+        <b-carousel-slide img-src="../assets/images/slider.png">
+          <div class="carousel__title">Lorem ipsum dolor</div>
+          <div class="carousel__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div class="site__button">купрок</div>
+        </b-carousel-slide>
+
+        <b-carousel-slide img-src="../assets/images/slider.png">
+          <div class="carousel__title">Lorem ipsum dolor</div>
+          <div class="carousel__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div class="site__button">купрок</div>
+        </b-carousel-slide>
+
+      </b-carousel>
     </div>  
     <div class="main-posts">
       <b-container>
@@ -151,7 +181,7 @@
           </b-row>
           <b-row class="main-project__list">
             <b-col lg="3" md="6" cols="12" class="main-project__item">
-              <nuxt-link to="" class="main-project__img">
+              <nuxt-link to="/projects" class="main-project__img">
                 <img src="../assets/images/trainer1.png" alt="">
                 <div class="main-project__info">
                   <div class="main-project__title">Mavzu (title)</div>
@@ -161,7 +191,7 @@
               </nuxt-link>
             </b-col>
             <b-col lg="3" md="6" cols="12" class="main-project__item">
-              <nuxt-link to="" class="main-project__img">
+              <nuxt-link to="/projects" class="main-project__img">
                 <img src="../assets/images/trainer2.png" alt="">
                 <div class="main-project__info">
                   <div class="main-project__title">Mavzu (title)</div>
@@ -171,7 +201,7 @@
               </nuxt-link>
             </b-col>
             <b-col lg="3" md="6" cols="12" class="main-project__item">
-              <nuxt-link to="" class="main-project__img">
+              <nuxt-link to="/projects" class="main-project__img">
                 <img src="../assets/images/trainer3.png" alt="">
                 <div class="main-project__info">
                   <div class="main-project__title">Mavzu (title)</div>
@@ -181,7 +211,7 @@
               </nuxt-link>
             </b-col>
             <b-col lg="3" md="6" cols="12" class="main-project__item">
-              <nuxt-link to="" class="main-project__img">
+              <nuxt-link to="/projects" class="main-project__img">
                 <img src="../assets/images/trainer1.png" alt="">
                 <div class="main-project__info">
                   <div class="main-project__title">Mavzu (title)</div>
@@ -193,7 +223,7 @@
           </b-row>
           <b-row>
             <b-col cols="12">
-              <nuxt-link to="" class="site__button">ko’proq</nuxt-link>
+              <nuxt-link to="/projects" class="site__button">ko’proq</nuxt-link>
             </b-col>
           </b-row>
         </b-container>
@@ -245,40 +275,46 @@
           </b-col>
         </b-row>
         <b-row class="main-gallery__wrap">
-          <b-col lg="6" class="main-gallery__movie">
-            <iframe width="565" height="390" src="https://www.youtube.com/embed/t4vJJpiz5UQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <b-col lg="5" class="main-gallery__movie">
+            <iframe width="500" height="390" src="https://www.youtube.com/embed/t4vJJpiz5UQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </b-col>
-          <b-col lg="6" class="main-gallery__slider">
-            <swiper class="main-gallery__swiper" :options="gallery__slider">
-              <swiper-slide>
+          <b-col lg="6" offset-lg="1" class="main-gallery__slider">
+            <VueSlickCarousel 
+              :arrows="true" 
+              :slidesToShow=2
+              :focusOnSelect="true"
+              :speed=500
+              centerPadding='15px'
+              :autoplay=true
+              :autoplaySpeed=3000
+              class="main-gallery__slick"
+            >
+              <div>
                 <div class="main-gallery__img">
                   <img src="../assets/images/gallery1.png" alt="">
                 </div>
-                <div class="main-gallery__title">Rasim (title)</div>
-              </swiper-slide>
-              <swiper-slide>
+                <div class="main-gallery__title">Title1</div>
+              </div>
+              <div>
                 <div class="main-gallery__img">
                   <img src="../assets/images/gallery2.png" alt="">
                 </div>
-                <div class="main-gallery__title">Rasim (title)</div>
-              </swiper-slide>
-              <swiper-slide>
+                <div class="main-gallery__title">Title2</div>
+              </div>
+              <div>
                 <div class="main-gallery__img">
                   <img src="../assets/images/gallery1.png" alt="">
                 </div>
-                <div class="main-gallery__title">Rasim (title)</div>
-              </swiper-slide>
-              <swiper-slide>
+                <div class="main-gallery__title">Title3</div>
+              </div>
+              <div>
                 <div class="main-gallery__img">
                   <img src="../assets/images/gallery2.png" alt="">
                 </div>
-                <div class="main-gallery__title">Rasim (title)</div>
-              </swiper-slide>
-              <div class="swiper-card__next" slot="button-prev">
+                <div class="main-gallery__title">Title4</div>
               </div>
-              <div class="swiper-card__prev" slot="button-next">
-              </div>
-            </swiper>
+            </VueSlickCarousel>
+            <nuxt-link to="" class="site__button">ko’proq</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -390,6 +426,10 @@
 </template>
 
 <script>
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   data() {
     return {
@@ -412,8 +452,9 @@ export default {
           nextEl: '.swiper-card__next',
           prevEl: '.swiper-card__prev'
         },
-      }
+      },
     }
-  }
+  },
+  components: { VueSlickCarousel },
 }
 </script>
