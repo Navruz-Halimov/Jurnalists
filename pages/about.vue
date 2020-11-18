@@ -105,33 +105,83 @@
                 <img src="../assets/images/trainer1.png" alt="">
                 <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
               </div>
-              <div class="trainers__name">Valiyev Murodjon Akulovich</div>
+              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
             </b-col>
             <b-col md="3" sm="6" class="trainers__item">
               <div class="trainers__img">
                 <img src="../assets/images/trainer2.png" alt="">
                 <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
               </div>
-              <div class="trainers__name">Valiyev Murodjon Akulovich</div>
+              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
             </b-col>
             <b-col md="3" sm="6" class="trainers__item">
               <div class="trainers__img">
                 <img src="../assets/images/trainer3.png" alt="">
                 <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
               </div>
-              <div class="trainers__name">Valiyev Murodjon Akulovich</div>
+              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
             </b-col>
             <b-col md="3" sm="6" class="trainers__item">
               <div class="trainers__img">
                 <img src="../assets/images/trainer1.png" alt="">
                 <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
               </div>
-              <div class="trainers__name">Valiyev Murodjon Akulovich</div>
+              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
+            </b-col>
+            <b-col md="3" sm="6" class="trainers__item">
+              <div class="trainers__img">
+                <img src="../assets/images/trainer1.png" alt="">
+                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              </div>
+              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
+            </b-col>
+            <b-col md="3" sm="6" class="trainers__item">
+              <div class="trainers__img">
+                <img src="../assets/images/trainer2.png" alt="">
+                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              </div>
+              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
+            </b-col>
+            <b-col md="3" sm="6" class="trainers__item">
+              <div class="trainers__img">
+                <img src="../assets/images/trainer3.png" alt="">
+                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              </div>
+              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
+            </b-col>
+            <b-col md="3" sm="6" class="trainers__item">
+              <div class="trainers__img">
+                <img src="../assets/images/trainer1.png" alt="">
+                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              </div>
+              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
+            </b-col>            
+          </b-row>
+        </b-col>
+      </b-row>
+      <b-row class="about-me">
+        <b-col cols="12">
+          <div class="about-me__title">Biz haqimizda</div>
+          <b-row>
+            <b-col md="4">
+              <div class="about-me__img">
+                <img src="../assets/images/about_me.png" alt="">
+              </div>
+            </b-col>
+            <b-col md="8">
+              <div class="about-me__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. 
+              </div>
             </b-col>
           </b-row>
         </b-col>
       </b-row>
-      <b-row></b-row>
     </b-container>
   </div>
 </template>
