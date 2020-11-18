@@ -17,28 +17,28 @@
                   <nuxt-link exact active-class="active" to="/">Asosiy</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/loyihalar">Loyihalar</nuxt-link>
+                  <nuxt-link active-class="active" to="/projects">Loyihalar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/tanlovlar">Tanlovlar</nuxt-link>
+                  <nuxt-link active-class="active" to="/compitition">Tanlovlar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/qo’llanmalar">Qo’llanmalar</nuxt-link>
+                  <nuxt-link active-class="active" to="/guides">Qo’llanmalar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/galeriya">Galeriya</nuxt-link>
+                  <nuxt-link active-class="active" to="/gallery">Galeriya</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/treninglar">Treninglar</nuxt-link>
+                  <nuxt-link active-class="active" to="/trainers">Treninglar</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/arxiv">Arxiv</nuxt-link>
+                  <nuxt-link active-class="active" to="/archive">Arxiv</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/aloqa">Aloqa</nuxt-link>
+                  <nuxt-link active-class="active" to="/contact">Aloqa</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/biz-haqimizda">Biz haqimizda</nuxt-link>
+                  <nuxt-link active-class="active" to="/about">Biz haqimizda</nuxt-link>
                 </li>
               </ul>
             </b-col>
