@@ -1,7 +1,7 @@
 <template>
   <main class="main__page">
     <div class="main__slider">
-      <swiper class="main__swiper" :options="header__slider">
+      <!-- <swiper class="main__swiper" :options="header__slider">
         <swiper-slide>
           <img src="../assets/images/slider.png" alt="slider">
           <b-container>
@@ -28,8 +28,8 @@
         </swiper-slide>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
-      <b-carousel
+      </swiper> -->
+      <!-- <b-carousel
         id="carousel-1"
         
         :interval="4000"
@@ -58,7 +58,52 @@
           <div class="site__button">купрок</div>
         </b-carousel-slide>
 
-      </b-carousel>
+      </b-carousel> -->
+      <hooper 
+        :settings="hooperSettings"
+        class="hooper__slider"
+      >
+        <slide class="slider__item">
+          <div class="slider__img">
+            <img src="../assets/images/slider.png" alt="slider">
+          </div>
+          <div class="slider__content">
+            <b-container>
+              <div class="slider__title">Lorem ipsum dolor</div>
+              <div class="slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              <div class="site__button">Купрок</div>
+            </b-container>
+          </div>
+        </slide>
+        <slide class="slider__item">
+          <div class="slider__img">
+            <img src="../assets/images/slider.png" alt="slider">
+          </div>
+          <div class="slider__content">
+            <b-container>
+              <div class="slider__title">Lorem ipsum dolor</div>
+              <div class="slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              <div class="site__button">Купрок</div>
+            </b-container>
+          </div>
+        </slide>
+        <slide class="slider__item">
+          <div class="slider__img">
+            <img src="../assets/images/slider.png" alt="slider">
+          </div>
+          <div class="slider__content">
+            <b-container>
+              <div class="slider__title">Lorem ipsum dolor</div>
+              <div class="slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              <div class="site__button">Купрок</div>
+            </b-container>
+          </div>
+        </slide>
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+      </hooper>
     </div>  
     <div class="main-posts">
       <b-container>
@@ -430,6 +475,10 @@ import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
+import { Hooper, Slide, Navigation as HooperNavigation } from 'hooper';
+import 'hooper/dist/hooper.css';
+
 export default {
   data() {
     return {
@@ -453,8 +502,17 @@ export default {
           prevEl: '.swiper-card__prev'
         },
       },
+      hooperSettings: {
+        infiniteScroll: true,
+        wheelControl: false
+      }
     }
   },
-  components: { VueSlickCarousel },
+  components: { 
+    VueSlickCarousel,
+    Hooper,
+    Slide, 
+    HooperNavigation,
+  },
 }
 </script>
