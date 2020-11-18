@@ -12,13 +12,13 @@
       </b-container>
     </b-container>
     <b-container>
-      <b-row>
+      <b-row class="mobile__view">
         <b-col class="p-0" lg="3">
           <left-content />
         </b-col>
         <b-col lg="9">
           <div class="projects__content">
-            <h2>Loyihalar</h2>
+            <h1 class="projects__title">Loyihalar</h1>
             <b-row>
               <b-col cols="12" sm="6" md="6" lg="4">
                 <nuxt-link active-class="active" to="/projectsitem">

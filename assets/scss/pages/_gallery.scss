@@ -1,9 +1,9 @@
 .gallery{
   .gallery__title{
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
   .gallery__videos{
     .video{
@@ -126,6 +126,20 @@
       &:hover {
         opacity: 1;
         background: rgba(30, 67, 131, 0.7);
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .gallery {
+    .gallery__videos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .video {
+        width: 45%;
+        height: auto;
       }
     }
   }

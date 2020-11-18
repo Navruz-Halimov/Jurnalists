@@ -6,6 +6,7 @@
 
   &__img {
     padding-bottom: 15px;
+    border-radius: 8px;
     img {
       width: 100%;
       max-width: 140px;
@@ -58,6 +59,12 @@
     }
     &__item {
       max-width: 280px;
+    }
+
+    &__title {
+      font-size: 25px;
+      margin-bottom: 25px;
+      text-align: center;
     }
   }
 }

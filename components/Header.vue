@@ -53,7 +53,7 @@
                   <nuxt-link active-class="active" to="/gallery">Galeriya</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/trainings">Treninglar</nuxt-link>
+                  <nuxt-link active-class="active" to="/trainers">Treninglar</nuxt-link>
                 </li>
                 <li>
                   <nuxt-link active-class="active" to="/archive">Arxiv</nuxt-link>

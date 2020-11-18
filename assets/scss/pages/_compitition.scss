@@ -12,8 +12,10 @@
   &__img {
     display: block;
     padding-bottom: 15px;
+    border-radius: 10px;
     img {
       width: 100%;
+      border-radius: 10px;
     }
   }
 
@@ -33,5 +35,22 @@
 @media (max-width: 992px) {
   .compitition-page {
     margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .compitition-page {
+    &__title {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__date {
+      font-size: 14px;
+    }
   }
 }
