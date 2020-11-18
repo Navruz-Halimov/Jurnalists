@@ -131,7 +131,11 @@
 @media (max-width: 992px) {
   .about-page {
     margin-bottom: 40px;
+    &__top {
+      margin-bottom: 40px;
+    }
     .leaders {
+      margin-bottom: 40px;
       &__img {
         img {
           width: 100%;
@@ -179,8 +183,16 @@
   .about-page {
     &__list {
       padding: 0 10px;
+      margin: 0;
+    }
+    &__title {
+      font-size: 25px;
     }
     .leaders {
+      &__title {
+        font-size: 25px;
+        padding-bottom: 25px;
+      }
       &__info {
         text-align: center;
       }
@@ -189,6 +201,10 @@
       }
     }
     .trainers {
+      &__title {
+        font-size: 25px;
+        padding-bottom: 25px;
+      }
       &__item {
         text-align: center;
       }
@@ -196,6 +212,13 @@
         img {
           max-width: 270px;
         }
+      }
+    }
+    .about-me {
+      &__title {
+        font-size: 25px;
+        padding-bottom: 25px;
+        text-align: center;
       }
     }
   }

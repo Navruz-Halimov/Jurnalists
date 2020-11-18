@@ -94,8 +94,8 @@
         </b-col>
         <b-col lg="9">
           <div class="gallery__content">
-            <b-row>
-              <b-col lg="4" md="4">
+            <b-row class="gallery__list">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/12.png" alt="">
                   <div class="gallery__text">
@@ -109,7 +109,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/3.png" alt="">
                   <div class="gallery__text">
@@ -123,7 +123,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/Rectangle21.png" alt="">
                   <div class="gallery__text">
@@ -137,7 +137,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/4.png" alt="">
                   <div class="gallery__text">
@@ -151,7 +151,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/5.png" alt="">
                   <div class="gallery__text">
@@ -165,7 +165,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/6.png" alt="">
                   <div class="gallery__text">
@@ -179,7 +179,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/7.png" alt="">
                   <div class="gallery__text">
@@ -193,7 +193,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/8.png" alt="">
                   <div class="gallery__text">
@@ -207,7 +207,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/9.png" alt="">
                   <div class="gallery__text">
@@ -221,7 +221,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/10.png" alt="">
                   <div class="gallery__text">
@@ -235,7 +235,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/11.png" alt="">
                   <div class="gallery__text">
@@ -249,7 +249,7 @@
                 </div>
                 <h4>Rasim (title)</h4>
               </b-col>
-              <b-col lg="4" md="4">
+              <b-col lg="4" md="4" cols="6" class="mb-4">
                 <div class="gallery__image">
                   <img src="../assets/images/5.png" alt="">
                   <div class="gallery__text">

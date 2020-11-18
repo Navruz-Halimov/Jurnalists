@@ -67,8 +67,19 @@
   }
 }
 
+@media (max-width: 992px) {
+  .archive-page {
+    margin-bottom: 40px;
+  }
+}
+
+
 @media (max-width: 576px) {
   .archive-page {
+    &__title {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
     &__img {
       padding-bottom: 10px;
     }

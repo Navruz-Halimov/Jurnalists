@@ -140,6 +140,26 @@
   }
 }
 
+@media (max-width: 576px){
+  .trainers-page {
+    .webinars {
+      &__title {
+        font-size: 25px;
+        margin-bottom: 25px;
+      }
+    }
+    .release {
+      &__title {
+        font-size: 25px;
+        margin-bottom: 25px;
+      }
+      &__list {
+        margin: 0;
+      }
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .trainers-page {
     .release {
