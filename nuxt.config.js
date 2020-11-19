@@ -39,7 +39,11 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    // '@nuxtjs/axios'
+    [
+      '@nuxtjs/axios',
+      { baseURL: "http://aqueous-lake-17748.herokuapp.com/api/" },
+    ],
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
