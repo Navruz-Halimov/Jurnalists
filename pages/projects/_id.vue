@@ -17,48 +17,20 @@
           <left-content />
         </b-col>
         <b-col lg="9">
-          <div class="projects__content">
-            <h2>Mavzu (title)</h2>
-            <div class="trainings__content">
-              <b-row>
-                <b-col lg="4">
-                  <img src="../../assets/images/Rectangle21.png" alt="">
-                </b-col>
-                <b-col lg="6">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. </p>
-                </b-col>
-                <b-col lg="12">
-                  <ul class="trainings__list">
-                    <div>
-                      <li>Lorem ipsum dolor sit amet, consectetur</li>
-                      <li>Lorem ipsum dolor sit amet, consectetur</li>
-                      <li>Lorem ipsum dolor sit amet, consectetur</li>
-                    </div>
-                    <div>
-                      <li>Lorem ipsum dolor sit amet, consectetur</li>
-                      <li>Lorem ipsum dolor sit amet, consectetur</li>
-                      <li>Lorem ipsum dolor sit amet, consectetur</li>
-                    </div>
-                  </ul>
-                </b-col>
-                <b-col lg="12">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. </p>
-                </b-col>
-              </b-row>
+          <b-row>
+            <div class="col-12">
+              <h1 class="archive-page__title">{{projectsItem.title}}</h1>
             </div>
-          </div>
+          </b-row>
+          <b-row>
+            <b-col cols="12" class="page-item__content">
+              <div class="page-item__img">
+                <img :src="projectsItem.image" alt="">
+              </div>
+              <div class="page-item__text" v-html="projectsItem.content">
+              </div>
+            </b-col>            
+          </b-row>
         </b-col>
         <b-col class="projects__content mt-5" lg="12">
           <b-row>
@@ -108,11 +80,28 @@
     </b-container>
   </div>
 </template>
-<script>
 
+<script>
 export default {
   data () {
-    return {}
+    return {
+      projectsItem: []
+    }
+  },
+  methods: {
+    async getProjectsItem() {
+      await this.$axios.get(`loyihalar/${this.$route.params.id}/`)
+        .then((res) => {
+          this.projectsItem = res.data;
+          console.log('getProjectsItem', res)
+        })
+        .catch((error) => {
+          console.log('getProjectsItem', res)
+        })
+    }
+  },
+  mounted() {
+    this.getProjectsItem()
   }
 }
 </script>

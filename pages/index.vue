@@ -203,43 +203,19 @@
             </b-col>
           </b-row>
           <b-row class="main-project__list">
-            <b-col lg="3" md="6" cols="12" class="main-project__item">
-              <nuxt-link to="/projects" class="main-project__img">
-                <img src="../assets/images/trainer1.png" alt="">
+            <b-col 
+              lg="3" 
+              md="6" 
+              cols="12" 
+              class="main-project__item"
+              v-for="project in getProject.slice(0,4)"
+              :key="project.id"
+            >
+              <nuxt-link :to="'projects/'+project.id" class="main-project__img">
+                <img :src="project.image" alt="">
                 <div class="main-project__info">
-                  <div class="main-project__title">Mavzu (title)</div>
-                  <div class="main-project__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                </div>
-              </nuxt-link>
-            </b-col>
-            <b-col lg="3" md="6" cols="12" class="main-project__item">
-              <nuxt-link to="/projects" class="main-project__img">
-                <img src="../assets/images/trainer2.png" alt="">
-                <div class="main-project__info">
-                  <div class="main-project__title">Mavzu (title)</div>
-                  <div class="main-project__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                </div>
-              </nuxt-link>
-            </b-col>
-            <b-col lg="3" md="6" cols="12" class="main-project__item">
-              <nuxt-link to="/projects" class="main-project__img">
-                <img src="../assets/images/trainer3.png" alt="">
-                <div class="main-project__info">
-                  <div class="main-project__title">Mavzu (title)</div>
-                  <div class="main-project__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                </div>
-              </nuxt-link>
-            </b-col>
-            <b-col lg="3" md="6" cols="12" class="main-project__item">
-              <nuxt-link to="/projects" class="main-project__img">
-                <img src="../assets/images/trainer1.png" alt="">
-                <div class="main-project__info">
-                  <div class="main-project__title">Mavzu (title)</div>
-                  <div class="main-project__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                  <div class="main-project__title">{{project.title}}</div>
+                  <div class="main-project__text" v-html="project.content"></div>
                 </div>
               </nuxt-link>
             </b-col>
@@ -267,9 +243,9 @@
             v-for="compitition in getCompitition"
             :key="compitition.id"
           >
-            <div class="main-compitition__img">
+            <nuxt-link :to="'compitition/'+compitition.id" class="main-compitition__img">
               <img :src="compitition.image" alt="">
-            </div>
+            </nuxt-link>
             <div class="main-compitition__info">
               <nuxt-link :to="'compitition/'+compitition.id" class="main-compitition__title">{{compitition.title}}</nuxt-link>
               <div class="main-compitition__date">{{compitition.date}}</div>
@@ -450,10 +426,10 @@ export default {
       await this.$axios.get('haqimizda/us/')
         .then((res) => {
           this.abouts = res.data;
-          console.log('getAbout', res);
+          // console.log('getAbout', res);
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
           this.errored = true
         })
     },
@@ -461,10 +437,10 @@ export default {
       await this.$axios.get('menu/')
         .then((res) => {
           this.slides = res.data;
-          console.log('getSlider', res);
+          // console.log('getSlider', res);
         })
         .catch((error) => {
-          console.log('getSlider', error);
+          // console.log('getSlider', error);
           this.errored = true;
         })
     }
@@ -473,12 +449,14 @@ export default {
     this.getAbout(),
     this.getSlider(),
     this.$store.dispatch('getArchive'),
-    this.$store.dispatch('getCompitition')
+    this.$store.dispatch('getCompitition'),
+    this.$store.dispatch('getProject')
   },
   computed: {
     ... mapGetters({
       getArchive: 'getArchive',
-      getCompitition: 'getCompitition'
+      getCompitition: 'getCompitition',
+      getProject: 'getProject'
     })
   },
   components: { 

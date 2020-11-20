@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     async getCompititionItem() {
-      await this.$axios.get(`tanlovlar/list/${this.$route.params.id}/`)
+      await this.$axios.get(`tanlovlar/${this.$route.params.id}/`)
         .then((res) => {
           this.compititionItem = res.data;
           console.log('compititionItem', res)

@@ -44,7 +44,7 @@ const store = () => new Vuex.Store({
         })
     },
     async getCompitition({commit}) {
-      await this.$axios.get('tanlovlar/list/')
+      await this.$axios.get('tanlovlar/')
         .then((res) => {
           commit('setCompitition', res.data);
           console.log('setCompitition', res)
@@ -56,11 +56,11 @@ const store = () => new Vuex.Store({
     async getProject({commit}) {
       await this.$axios.get('loyihalar/')
         .then((res) => {
-          commit('getProject', res.data);
-          console.log('getProject', res)
+          commit('setProject', res.data.results);
+          console.log('setProject', res)
         })
         .catch((error) => {
-          console.log('getProject', error)
+          console.log('setProject', error)
         })
     }
   }
