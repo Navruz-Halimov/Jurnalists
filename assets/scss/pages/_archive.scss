@@ -30,9 +30,18 @@
 .page-item {
   &__content {
     img {
-      width: 100%;
+      max-width: 220px;
     }
   }
+
+  &__img {
+    float: left;
+    margin-right: 30px;
+    img {
+      max-width: 220px;
+    }
+  }
+
   .trainings__list{
     margin: 20px 0;
     padding: 0 15px;
@@ -73,7 +82,6 @@
   }
 }
 
-
 @media (max-width: 576px) {
   .archive-page {
     &__title {
@@ -89,9 +97,20 @@
   }
   .page-item {
     &__content {
+      margin-bottom: 20px;
       img {
         width: 200px;
       }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .page-item {
+    &__img {
+      float: none;
+      margin-right: 0;
+      text-align: center;
     }
   }
 }

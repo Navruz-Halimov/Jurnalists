@@ -1,6 +1,7 @@
 <template>
   <main class="main__page">
-    <div class="main__slider">
+    <div class="main__slider">  
+      <!-- v-if="slides[0] == '' -->
       <!-- <swiper class="main__swiper" :options="header__slider">
         <swiper-slide>
           <img src="../assets/images/slider.png" alt="slider">
@@ -59,46 +60,23 @@
         </b-carousel-slide>
 
       </b-carousel> -->
+      <b-alert show variant="danger" v-if="errored">Server not working</b-alert>
       <hooper 
         :settings="hooperSettings"
         class="hooper__slider"
       >
-        <slide class="slider__item">
+        <slide class="slider__item" v-for="slide in slides" :key="slide.id">
           <div class="slider__img">
-            <img src="../assets/images/slider.png" alt="slider">
+            <img 
+              :src="slide.image" 
+              alt="img"
+            >
           </div>
           <div class="slider__content">
             <b-container>
-              <div class="slider__title">Lorem ipsum dolor</div>
-              <div class="slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              <div class="site__button">Купрок</div>
-            </b-container>
-          </div>
-        </slide>
-        <slide class="slider__item">
-          <div class="slider__img">
-            <img src="../assets/images/slider.png" alt="slider">
-          </div>
-          <div class="slider__content">
-            <b-container>
-              <div class="slider__title">Lorem ipsum dolor</div>
-              <div class="slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              <div class="site__button">Купрок</div>
-            </b-container>
-          </div>
-        </slide>
-        <slide class="slider__item">
-          <div class="slider__img">
-            <img src="../assets/images/slider.png" alt="slider">
-          </div>
-          <div class="slider__content">
-            <b-container>
-              <div class="slider__title">Lorem ipsum dolor</div>
-              <div class="slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              <div class="site__button">Купрок</div>
+              <div class="slider__title">{{slide.title}}</div>
+              <div class="slider__text">{{slide.text}}</div>
+              <!-- <div class="site__button">Купрок</div> -->
             </b-container>
           </div>
         </slide>
@@ -211,7 +189,7 @@
         </b-row>
         <b-row>
           <b-col cols="12">
-            <nuxt-link to="" class="site__button">ko’proq</nuxt-link>
+            <nuxt-link to="/about" class="site__button">ko’proq</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -282,32 +260,25 @@
           </b-col>
         </b-row>
         <b-row class="main-compitition__list">
-          <b-col lg="4" cols="12" class="main-compitition__item">
+          <b-col 
+            lg="4" 
+            cols="12" 
+            class="main-compitition__item"
+            v-for="compitition in getCompitition"
+            :key="compitition.id"
+          >
             <div class="main-compitition__img">
-              <img src="../assets/images/compitition1.png" alt="">
+              <img :src="compitition.image" alt="">
             </div>
             <div class="main-compitition__info">
-              <nuxt-link to="" class="main-compitition__title">Mavzu (title)</nuxt-link>
-              <div class="main-compitition__date">18.10.2020</div>
+              <nuxt-link :to="'compitition/'+compitition.id" class="main-compitition__title">{{compitition.title}}</nuxt-link>
+              <div class="main-compitition__date">{{compitition.date}}</div>
             </div>
           </b-col>
-          <b-col lg="4" cols="12" class="main-compitition__item">
-            <div class="main-compitition__img">
-              <img src="../assets/images/compitition2.png" alt="">
-            </div>
-            <div class="main-compitition__info">
-              <nuxt-link to="" class="main-compitition__title">Mavzu (title)</nuxt-link>
-              <div class="main-compitition__date">18.10.2020</div>
-            </div>
-          </b-col>
-          <b-col lg="4" cols="12" class="main-compitition__item">
-            <div class="main-compitition__img">
-              <img src="../assets/images/compitition3.png" alt="">
-            </div>
-            <div class="main-compitition__info">
-              <nuxt-link to="" class="main-compitition__title">Mavzu (title)</nuxt-link>
-              <div class="main-compitition__date">18.10.2020</div>
-            </div>
+        </b-row>
+        <b-row>
+          <b-col cols="12">
+            <nuxt-link to="/compitition" class="site__button">ko’proq</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -369,52 +340,23 @@
         <b-row>
           <b-col cols="12">
             <div class="main__title">Arxiv</div>
+            <b-alert show variant="danger" v-if="errored">Server not working</b-alert>
           </b-col>
         </b-row>
         <b-row class="main-arxiv__list">
-          <b-col lg="4" class="main-arxiv__item">
+          <b-col lg="4" class="main-arxiv__item" v-for="archive in getArchive" :key="archive.id">
             <div class="main-arxiv__img">
-              <img src="../assets/images/archive1.png" alt="">
+              <img :src="archive.image" alt="image">
             </div>
             <div class="main-arxiv__info">
-              <nuxt-link to="" class="main-arxiv__title">Mavzu (title)</nuxt-link>
-              <div class="main-arxiv__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. 
-              </div>
-            </div>
-          </b-col>
-          <b-col lg="4" class="main-arxiv__item">
-            <div class="main-arxiv__img">
-              <img src="../assets/images/archive2.png" alt="">
-            </div>
-            <div class="main-arxiv__info">
-              <nuxt-link to="" class="main-arxiv__title">Mavzu (title)</nuxt-link>
-              <div class="main-arxiv__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. 
-              </div>
-            </div>
-          </b-col>
-          <b-col lg="4" class="main-arxiv__item">
-            <div class="main-arxiv__img">
-              <img src="../assets/images/archive3.png" alt="">
-            </div>
-            <div class="main-arxiv__info">
-              <nuxt-link to="" class="main-arxiv__title">Mavzu (title)</nuxt-link>
-              <div class="main-arxiv__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. 
-              </div>
+              <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title">{{archive.title}}</nuxt-link>
+              <div class="main-arxiv__text">{{archive.text}}</div>
             </div>
           </b-col>
         </b-row>
         <b-row>
             <b-col cols="12">
-              <nuxt-link to="" class="site__button">ko’proq</nuxt-link>
+              <nuxt-link to="/archive" class="site__button">ko’proq</nuxt-link>
             </b-col>
         </b-row>
       </b-container>
@@ -426,25 +368,17 @@
             <div class="main__title">Biz haqimizda</div>
           </b-col>
         </b-row>
-        <b-row class="main-about__wrap">
+        <b-row class="main-about__wrap" v-for="about in abouts" :key="about.id">
           <b-col lg="5">
             <div class="main-about__img">
-              <img src="../assets/images/about_img.png" alt="">
+              <img :src="about.image" alt="">
             </div>
           </b-col>
           <b-col lg="7" class="main-about__info">
-            <div class="main-about__text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
+            <div class="main-about__text" v-html="about.content">
+              
             </div>
-            <div class="site__button">ko’proq</div>
+            <nuxt-link to="/about" class="site__button">ko’proq</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -473,12 +407,12 @@
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 import { Hooper, Slide, Navigation as HooperNavigation } from 'hooper';
 import 'hooper/dist/hooper.css';
 
+import {mapGetters} from 'vuex';
 export default {
   data() {
     return {
@@ -505,8 +439,47 @@ export default {
       hooperSettings: {
         infiniteScroll: true,
         wheelControl: false
-      }
+      },
+      abouts: [],
+      slides: [],
+      errored: false,
     }
+  },
+  methods: {
+    async getAbout() {
+      await this.$axios.get('haqimizda/us/')
+        .then((res) => {
+          this.abouts = res.data;
+          console.log('getAbout', res);
+        })
+        .catch((error) => {
+          console.log(error);
+          this.errored = true
+        })
+    },
+    async getSlider() {
+      await this.$axios.get('menu/')
+        .then((res) => {
+          this.slides = res.data;
+          console.log('getSlider', res);
+        })
+        .catch((error) => {
+          console.log('getSlider', error);
+          this.errored = true;
+        })
+    }
+  },
+  mounted() {
+    this.getAbout(),
+    this.getSlider(),
+    this.$store.dispatch('getArchive'),
+    this.$store.dispatch('getCompitition')
+  },
+  computed: {
+    ... mapGetters({
+      getArchive: 'getArchive',
+      getCompitition: 'getCompitition'
+    })
   },
   components: { 
     VueSlickCarousel,

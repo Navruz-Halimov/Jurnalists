@@ -22,7 +22,7 @@
             <div class="trainings__content">
               <b-row>
                 <b-col lg="4">
-                  <img src="../assets/images/Rectangle21.png" alt="">
+                  <img src="../../assets/images/Rectangle21.png" alt="">
                 </b-col>
                 <b-col lg="6">
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -65,7 +65,7 @@
             <b-col cols="12" sm="6" md="6" lg="3">
               <nuxt-link active-class="active" to="/projectsitem">
                 <div class="projects__card">
-                  <img src="../assets/images/55045629_21.png" alt="">
+                  <img src="../../assets/images/55045629_21.png" alt="">
                   <h4>Mavzu (title)</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                     labore et dolore magna aliqua.</p>
@@ -75,7 +75,7 @@
             <b-col cols="12" sm="6" md="6" lg="3">
               <nuxt-link active-class="active" to="/projectsitem">
                 <div class="projects__card">
-                  <img src="../assets/images/55045629_23.png" alt="">
+                  <img src="../../assets/images/55045629_23.png" alt="">
                   <h4>Mavzu (title)</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                     labore et dolore magna aliqua.</p>
@@ -85,7 +85,7 @@
             <b-col cols="12" sm="6" md="6" lg="3">
               <nuxt-link active-class="active" to="/projectsitem">
                 <div class="projects__card">
-                  <img src="../assets/images/55045629_22.png" alt="">
+                  <img src="../../assets/images/55045629_22.png" alt="">
                   <h4>Mavzu (title)</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                     labore et dolore magna aliqua.</p>
@@ -95,7 +95,7 @@
             <b-col cols="12" sm="6" md="6" lg="3">
               <nuxt-link active-class="active" to="/projectsitem">
                 <div class="projects__card">
-                  <img src="../assets/images/Rectangle21.png" alt="">
+                  <img src="../../assets/images/Rectangle21.png" alt="">
                   <h4>Mavzu (title)</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                     labore et dolore magna aliqua.</p>
@@ -109,11 +109,8 @@
   </div>
 </template>
 <script>
-import LeftContent from '../components/left-content'
+
 export default {
-  components: {
-    LeftContent
-  },
   data () {
     return {}
   }

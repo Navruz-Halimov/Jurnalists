@@ -42,7 +42,7 @@ export default {
     // '@nuxtjs/axios'
     [
       '@nuxtjs/axios',
-      { baseURL: "http://aqueous-lake-17748.herokuapp.com/api/" },
+      { baseURL: "http://fast-everglades-31601.herokuapp.com/api/" },
     ],
   ],
 
