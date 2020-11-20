@@ -27,7 +27,8 @@
               <div class="page-item__img">
                 <img :src="compititionItem.image" alt="">
               </div>
-              <div class="page-item__text" v-html="compititionItem.text">
+              <div class="page-item__text">
+                {{compititionItem.text}}
               </div>
             </b-col>            
           </b-row>
@@ -42,23 +43,23 @@
 export default {
   data() {
     return {
-      compititionItem: []
+      trainersItem: []
     }
   },
   methods: {
-    async getCompititionItem() {
-      await this.$axios.get(`tanlovlar/${this.$route.params.id}/`)
+    async getTrainersItem() {
+      await this.$axios.get(`trenerlar/trenerlar/${this.$route.params.id}/`)
         .then((res) => {
-          this.compititionItem = res.data;
-          console.log('compititionItem', res)
+          this.trainersItem = res.data;
+          console.log('trainersItem', res)
         })
         .catch((error) => {
-          console.log('compititionItem', error)
+          console.log('trainersItem', error)
         })
     }
   },
   mounted() {
-    this.getCompititionItem();
+    this.getTrainersItem();
   }
 }
 </script>

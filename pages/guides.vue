@@ -23,72 +23,47 @@
             </div>
           </b-row>
           <b-row class="guides-page__list">
-            <b-col md="4" cols="6" class="guides-page__item">
+            <b-col 
+              md="4" 
+              cols="6" 
+              class="guides-page__item"
+              v-for="guide in guides"
+              :key="guide.id"
+            >
               <div class="guides-page__img">
-                <img src="../assets/images/guides1.png" alt="">
+                <img :src="guide.picture" alt="">
               </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>
-            <b-col md="4" cols="6" class="guides-page__item">
-              <div class="guides-page__img">
-                <img src="../assets/images/guides2.png" alt="">
-              </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>
-            <b-col md="4" cols="6" class="guides-page__item">
-              <div class="guides-page__img">
-                <img src="../assets/images/guides3.png" alt="">
-              </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>
-            <b-col md="4" cols="6" class="guides-page__item">
-              <div class="guides-page__img">
-                <img src="../assets/images/guides1.png" alt="">
-              </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>
-            <b-col md="4" cols="6" class="guides-page__item">
-              <div class="guides-page__img">
-                <img src="../assets/images/guides2.png" alt="">
-              </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>
-            <b-col md="4" cols="6" class="guides-page__item">
-              <div class="guides-page__img">
-                <img src="../assets/images/guides3.png" alt="">
-              </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>
-            <b-col md="4" cols="6" class="guides-page__item">
-              <div class="guides-page__img">
-                <img src="../assets/images/guides1.png" alt="">
-              </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>
-            <b-col md="4" cols="6" class="guides-page__item">
-              <div class="guides-page__img">
-                <img src="../assets/images/guides2.png" alt="">
-              </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>
-            <b-col md="4" cols="6" class="guides-page__item">
-              <div class="guides-page__img">
-                <img src="../assets/images/guides3.png" alt="">
-              </div>
-              <div class="guides-page__subtitle">Document (title)</div>
-              <div class="guides-page__download">Download</div>
-            </b-col>            
+              <div class="guides-page__subtitle">{{guide.title}}</div>
+              <a :href="guide.pdf" target="_blank" download="true" class="guides-page__download">Download</a>
+            </b-col>           
           </b-row>          
         </b-col>
       </b-row>
     </b-container>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      guides: []
+    }
+  },
+  methods: {
+    async getGuides() {
+      await this.$axios.get('qollanmalar/')
+        .then((res) => {
+          this.guides = res.data;
+          console.log('getGuides', res)
+        })
+        .catch((error) => {
+          conslo.log('getGuides', error)
+        })
+    }
+  },
+  mounted() {
+    this.getGuides()
+  }
+}
+</script>

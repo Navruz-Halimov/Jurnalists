@@ -95,9 +95,16 @@
         <b-col lg="9">
           <div class="gallery__content">
             <b-row class="gallery__list">
-              <b-col lg="4" md="4" cols="6" class="mb-4">
+              <b-col 
+                lg="4" 
+                md="4" 
+                cols="6" 
+                class="mb-4"
+                v-for="gallery in gallery"
+                :key="gallery.id"
+              >
                 <div class="gallery__image">
-                  <img src="../assets/images/12.png" alt="">
+                  <img :src="gallery.image" alt="">
                   <div class="gallery__text">
                     <i>
                       <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,161 +114,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
                   </div>
                 </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/3.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/Rectangle21.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/4.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/5.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/6.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/7.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/8.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/9.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/10.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/11.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
-              </b-col>
-              <b-col lg="4" md="4" cols="6" class="mb-4">
-                <div class="gallery__image">
-                  <img src="../assets/images/5.png" alt="">
-                  <div class="gallery__text">
-                    <i>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.46387 3.59277H7.28027V4.53613H4.46387V7.44824H3.51367V4.53613H0.710938V3.59277H3.51367V0.666992H4.46387V3.59277Z" fill="white"/>
-                      </svg>
-                    </i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                  </div>
-                </div>
-                <h4>Rasim (title)</h4>
+                <h4>{{gallery.title}}</h4>
               </b-col>
             </b-row>
           </div>
@@ -270,3 +123,28 @@
     </b-container>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      gallery: []
+    }
+  },
+  methods: {
+    async getGallery() {
+      await this.$axios.get('galeriya/')
+        .then((res) => {
+          this.gallery = res.data;
+          console.log('getGallery', res)
+        })
+        .catch((error) => {
+          console.log('getGallery', error)
+        })
+    }
+  },
+  mounted() {
+    this.getGallery()
+  }
+}
+</script>

@@ -8,7 +8,9 @@ const store = () => new Vuex.Store({
     mediaURL: 'http://fast-everglades-31601.herokuapp.com',
     archives: [],
     compititions: [],
-    projects: []
+    projects: [],
+    trainers: [],
+    abouts: [],
   },
   getters: {
     getArchive(state) {
@@ -19,6 +21,12 @@ const store = () => new Vuex.Store({
     },
     getProject(state) {
       return state.projects;
+    },
+    getTrainer(state) {
+      return state.trainers
+    },
+    getAbout(state) {
+      return state.abouts
     }
   },
   mutations: {
@@ -30,6 +38,12 @@ const store = () => new Vuex.Store({
     },
     setProject(state, project) {
       state.projects = project
+    },
+    setTrainer(state, trainer) {
+      state.trainers = trainer
+    },
+    setAbout(state, about) {
+      state.abouts = about
     }
   },
   actions: {
@@ -61,6 +75,26 @@ const store = () => new Vuex.Store({
         })
         .catch((error) => {
           console.log('setProject', error)
+        })
+    },
+    async getTrainer({commit}) {
+      await this.$axios.get('trenerlar/trenerlar/')
+        .then((res) => {
+          commit('setTrainer', res.data);
+          console.log('setTrainer', res)
+        })
+        .catch((error) => {
+          console.log('setTrainer', error)
+        })
+    },
+    async getAbous({commit}) {
+      await this.$axios.get('haqimizda/us/')
+        .then((res) => {
+          commit('getAbous', res.data);
+          console.log('getAbous', res)
+        })
+        .catch((error) => {
+          console.log('getAbous', res)
         })
     }
   }

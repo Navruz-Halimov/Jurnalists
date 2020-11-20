@@ -83,117 +83,8 @@
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
       </hooper>
     </div>  
-    <div class="main-posts">
-      <b-container>
-        <b-row>
-          <b-col cols="12">
-            <div class="main__title">E’lonlar</div>
-          </b-col>
-        </b-row>
-        <b-row>
-          <b-col md="6">
-            <div class="main-posts__item">
-              <div class="main-posts__img">
-                <img src="../assets/images/post1.png" alt="post">
-              </div>
-              <div class="main-posts__info">
-                <div class="main-posts__date">08.11.2020</div>
-                <nuxt-link to="" class="main-posts__title">КОРРУПЦИЯ ПОЛИКЛИНИКАДАН БОШЛАНАДИМИ?</nuxt-link>
-              </div>
-            </div>
-          </b-col>
-          <b-col md="6">
-            <div class="main-posts__item">
-              <div class="main-posts__img">
-                <img src="../assets/images/post1.png" alt="post">
-              </div>
-              <div class="main-posts__info">
-                <div class="main-posts__date">08.11.2020</div>
-                <nuxt-link to="" class="main-posts__title">КОРРУПЦИЯ ПОЛИКЛИНИКАДАН БОШЛАНАДИМИ?</nuxt-link>
-              </div>
-            </div>
-          </b-col>
-          <b-col md="6">
-            <div class="main-posts__item">
-              <div class="main-posts__img">
-                <img src="../assets/images/post1.png" alt="post">
-              </div>
-              <div class="main-posts__info">
-                <div class="main-posts__date">08.11.2020</div>
-                <nuxt-link to="" class="main-posts__title">КОРРУПЦИЯ ПОЛИКЛИНИКАДАН БОШЛАНАДИМИ?</nuxt-link>
-              </div>
-            </div>
-          </b-col>
-          <b-col md="6">
-            <div class="main-posts__item">
-              <div class="main-posts__img">
-                <img src="../assets/images/post1.png" alt="post">
-              </div>
-              <div class="main-posts__info">
-                <div class="main-posts__date">08.11.2020</div>
-                <nuxt-link to="" class="main-posts__title">КОРРУПЦИЯ ПОЛИКЛИНИКАДАН БОШЛАНАДИМИ?</nuxt-link>
-              </div>
-            </div>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
-    <div class="main-trainer">
-      <b-container>
-        <b-row>
-          <b-col cols="12">
-            <div class="main__title">Trenerlar</div>
-          </b-col>
-        </b-row>
-        <b-row class="main-trainer__list">
-          <b-col lg="3" md="6" cols="12" class="main-trainer__item">
-            <nuxt-link to="" class="main-trainer__link">
-              <div class="main-trainer__img">
-                <img src="../assets/images/trainer1.png" alt="">
-                <div class="main-trainer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <div class="main-trainer__name">Valiyev Murodjon Akulovich</div>
-            </nuxt-link>
-          </b-col>
-          <b-col lg="3" md="6" cols="12" class="main-trainer__item">
-            <nuxt-link to="" class="main-trainer__link">
-              <div class="main-trainer__img">
-                <img src="../assets/images/trainer2.png" alt="">
-                <div class="main-trainer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <div class="main-trainer__name">Valiyev Murodjon Akulovich</div>
-            </nuxt-link>
-          </b-col>
-          <b-col lg="3" md="6" cols="12" class="main-trainer__item">
-            <nuxt-link to="" class="main-trainer__link">
-              <div class="main-trainer__img">
-                <img src="../assets/images/trainer3.png" alt="">
-                <div class="main-trainer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <div class="main-trainer__name">Valiyev Murodjon Akulovich</div>
-            </nuxt-link>
-          </b-col>
-          <b-col lg="3" md="6" cols="12" class="main-trainer__item">
-            <nuxt-link to="" class="main-trainer__link">
-              <div class="main-trainer__img">
-                <img src="../assets/images/trainer1.png" alt="">
-                <div class="main-trainer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <div class="main-trainer__name">Valiyev Murodjon Akulovich</div>
-            </nuxt-link>
-          </b-col>
-        </b-row>
-        <b-row>
-          <b-col cols="12">
-            <nuxt-link to="/about" class="site__button">ko’proq</nuxt-link>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
+    <Posts />
+    <Trainer />
     <div class="main-project">
       <b-container fluid>
         <b-container>
@@ -326,7 +217,7 @@
             </div>
             <div class="main-arxiv__info">
               <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title">{{archive.title}}</nuxt-link>
-              <div class="main-arxiv__text">{{archive.text}}</div>
+              <div class="main-arxiv__text" v-html="archive.text"></div>
             </div>
           </b-col>
         </b-row>
@@ -389,6 +280,9 @@ import { Hooper, Slide, Navigation as HooperNavigation } from 'hooper';
 import 'hooper/dist/hooper.css';
 
 import {mapGetters} from 'vuex';
+
+import Trainer from '../components/Trainers'
+import Posts from '../components/Posts'
 export default {
   data() {
     return {
@@ -420,6 +314,14 @@ export default {
       slides: [],
       errored: false,
     }
+  },
+  components: { 
+    VueSlickCarousel,
+    Hooper,
+    Slide, 
+    HooperNavigation,
+    Trainer,
+    Posts
   },
   methods: {
     async getAbout() {
@@ -458,12 +360,6 @@ export default {
       getCompitition: 'getCompitition',
       getProject: 'getProject'
     })
-  },
-  components: { 
-    VueSlickCarousel,
-    Hooper,
-    Slide, 
-    HooperNavigation,
-  },
+  }
 }
 </script>

@@ -12,7 +12,7 @@
       </b-container>
     </b-container>
     <b-container>
-      <b-row class="about-page__top">
+      <!-- <b-row class="about-page__top">
         <h1 class="about-page__title">Markaz  faoliyati haqida ma`lumotlar</h1>
         <b-row class="about-page__list">
           <b-col md="6">
@@ -60,18 +60,23 @@
             </div>
           </b-col>
         </b-row>
-      </b-row>
+      </b-row> -->
       <b-row class="leaders">
         <b-col cols="12">
           <div class="leaders__title">Raxbarlar</div>
           <b-row class="leaders__list">
-            <b-col sm="4" class="leaders__item">
-              <nuxt-link to="" class="leaders__img">
-                <img src="../assets/images/trainer1.png" alt="">
-              </nuxt-link>
+            <b-col 
+              sm="4" 
+              class="leaders__item"
+              v-for="leader in leaders"
+              :key="leader.id"
+            >
+              <div class="leaders__img">
+                <img :src="leader.image" alt="">
+              </div>
               <div class="leaders__info">
-                <nuxt-link to="" class="leaders__name">Valiyev Murodjon Akulovich</nuxt-link>
-                <div class="leaders__position">Director</div>  
+                <div class="leaders__name">{{leader.name}}</div>
+                <div class="leaders__position">{{leader.position}}</div>  
               </div>
             </b-col>
             <b-col sm="4" class="leaders__item">
@@ -94,7 +99,6 @@
             </b-col>
           </b-row>
         </b-col>
-
       </b-row>
       <b-row class="trainers">
         <b-col cols="12">
@@ -162,21 +166,14 @@
       <b-row class="about-me">
         <b-col cols="12">
           <div class="about-me__title">Biz haqimizda</div>
-          <b-row>
+          <b-row v-for="about in abouts" :key="about.id">
             <b-col md="4">
               <div class="about-me__img">
-                <img src="../assets/images/about_me.png" alt="">
+                <img :src="about.image" alt="">
               </div>
             </b-col>
             <b-col md="8">
-              <div class="about-me__text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. 
+              <div class="about-me__text" v-html="about.content">                
               </div>
             </b-col>
           </b-row>
@@ -185,3 +182,41 @@ tempor incididunt ut labore et dolore magna aliqua.
     </b-container>
   </div>
 </template>
+
+<script>
+import {mapGetters} from 'vuex'
+
+export default {
+  data() {
+    return {
+      abouts: [],
+      leaders: []
+    }
+  },
+  methods: {
+    async getAbout() {
+      await this.$axios.get('haqimizda/us/')
+        .then((res) => {
+          this.abouts = res.data;
+          // console.log('getAbout', res);
+        })
+        .catch((error) => {
+          // console.log(error);
+          this.errored = true
+        })
+    },
+    async getLeaders() {
+      await this.$axios.get('haqimizda/user/')
+        .then((res) => {
+          this.leaders = res.data
+        })
+        .catch((error) => {
+          console.log('getLeaders', error)
+        })
+    }    
+  },
+  mounted() {
+    this.getAbout()
+  }  
+}
+</script>
