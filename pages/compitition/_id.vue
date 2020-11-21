@@ -7,7 +7,7 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Arxiv</span>
             </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs" />
           </b-col>
         </b-row>
       </b-container>
@@ -43,7 +43,11 @@
 export default {
   data() {
     return {
-      compititionItem: []
+      compititionItem: [],
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Tanlovlar', url: '/compitition', disabled: false},
+      ]
     }
   },
   methods: {
@@ -58,8 +62,13 @@ export default {
         })
     }
   },
-  mounted() {
-    this.getCompititionItem();
+  created() {
+    this.getCompititionItem()
+    .then(() => {
+      this.crumbs.push(
+        { id: 3, title: this.compititionItem.title, url: '/compitition', disabled: true},
+      );
+    })
   }
 }
 </script>

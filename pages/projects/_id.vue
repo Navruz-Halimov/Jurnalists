@@ -4,10 +4,12 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <!-- <div class="link">
-              <a href="#">Asosiy</a> / <span>Trenerlar</span>
-            </div> -->
-            <Breadcrumb/>
+            <!-- <i-breadcrumb>
+              <nuxt-link to="/">Asosiy</nuxt-link> /
+              <nuxt-link to="/projects">Loyihalar</nuxt-link> /
+              <i-breadcrumb-item v-bind="item" v-for="item in items" :key="item.title">{{item.title}}</i-breadcrumb-item>
+            </i-breadcrumb> -->
+            <Breadcrumb :crumbs="crumbs"/>
           </b-col>
         </b-row>
       </b-container>
@@ -86,7 +88,11 @@
 export default {
   data () {
     return {
-      projectsItem: []
+      projectsItem: [],
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Loyihalar', url: '/projects', disabled: false},
+      ]
     }
   },
   methods: {
@@ -101,8 +107,13 @@ export default {
         })
     }
   },
-  mounted() {
+  created() {
     this.getProjectsItem()
+    .then(() => {
+      this.crumbs.push(
+        { id: 3, title: this.projectsItem.title, url: '/projects', disabled: true},
+      );
+    })
   }
 }
 </script>

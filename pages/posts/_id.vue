@@ -4,10 +4,7 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <!-- <div class="link">
-              <a href="#">Asosiy</a> / <span>Arxiv</span>
-            </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs" />
           </b-col>
         </b-row>
       </b-container>
@@ -43,7 +40,11 @@
 export default {
   data() {
     return {
-      postsItem: []
+      postsItem: [],
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        // { id: 2, title: 'E’lonlar', url: '/', disabled: false},
+      ]
     }
   },
   methods: {
@@ -58,8 +59,13 @@ export default {
         })
     }
   },
-  mounted() {
-    this.getPostsItem();
+  created() {
+    this.getPostsItem()
+    .then(() => {
+      this.crumbs.push(
+        { id: 2, title: this.postsItem.title, url: '/posts', disabled: true},
+      );
+    })
   }
 }
 </script>

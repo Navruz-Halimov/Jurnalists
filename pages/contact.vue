@@ -7,7 +7,7 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Aloqa</span>
             </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs" />
           </b-col>
         </b-row>
       </b-container>
@@ -70,3 +70,16 @@
     </b-container>    
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Kontaktlar', url: '/contact', disabled: true},
+      ]
+    }
+  }
+}
+</script>

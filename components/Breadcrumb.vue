@@ -1,18 +1,19 @@
 <template>
   <div>
     <b-breadcrumb>
-      <b-breadcrumb-item href="#home">
-        <b-icon icon="house-fill" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
-        Asosiy
+      <b-breadcrumb-item v-for="i in crumbs" :key="i.id" :to="i.url" :active="i.disabled">
+        {{ i.title }}
       </b-breadcrumb-item>
-      <b-breadcrumb-item href="#foo">Foo</b-breadcrumb-item>
-      <b-breadcrumb-item active>Baz</b-breadcrumb-item>
     </b-breadcrumb>
   </div>
 </template>
 <script>
 export default {
-  
+  props: {
+    crumbs: {
+      type: Array
+    }
+  }
 }
 </script>
 <style>

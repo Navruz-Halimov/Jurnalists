@@ -4,10 +4,7 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <!-- <div class="link">
-              <a href="#">Asosiy</a> / <span>Arxiv</span>
-            </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs"/>
           </b-col>
         </b-row>
       </b-container>
@@ -20,15 +17,15 @@
         <b-col lg="9">
           <b-row>
             <div class="col-12">
-              <h1 class="archive-page__title">{{compititionItem.title}}</h1>
+              <h1 class="archive-page__title">{{releaseItem.title_of_trening}}</h1>
             </div>
           </b-row>
           <b-row>
             <b-col cols="12" class="page-item__content">
               <div class="page-item__img">
-                <img :src="compititionItem.image" alt="">
+                <img :src="releaseItem.image" alt="">
               </div>
-              <div class="page-item__text" v-html="compititionItem.text">
+              <div class="page-item__text" v-html="releaseItem.content">
               </div>
             </b-col>            
           </b-row>
@@ -43,23 +40,23 @@
 export default {
   data() {
     return {
-      compititionItem: []
+      releaseItem: []
     }
   },
   methods: {
-    async getCompititionItem() {
-      await this.$axios.get(`tanlovlar/${this.$route.params.id}/`)
+    async getReleaseItem() {
+      await this.$axios.get(`/treninglar/matbuot/${this.$route.params.id}/`)
         .then((res) => {
-          this.compititionItem = res.data;
-          console.log('compititionItem', res)
+          this.releaseItem = res.data;
+          console.log('releaseItem', res)
         })
         .catch((error) => {
-          console.log('compititionItem', error)
+          console.log('releaseItem', error)
         })
     }
   },
   mounted() {
-    this.getCompititionItem();
+    this.getReleaseItem()
   }
 }
 </script>

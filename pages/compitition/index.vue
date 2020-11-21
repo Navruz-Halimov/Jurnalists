@@ -7,7 +7,7 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Tanlovlar</span>
             </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs" />
           </b-col>
         </b-row>
       </b-container>
@@ -31,21 +31,12 @@
               v-for="(compitition, index) in getCompitition"
               :key="index.id" 
             >
-              <nuxt-link :to="'compitition/'+compitition.id" class="compitition-page__img">
+              <nuxt-link :to="'compitition/' + compitition.id" class="compitition-page__img">
                 <img :src="compitition.image" alt="image">
               </nuxt-link>
               <div class="compitition-page__info">
-                <nuxt-link :to="'compitition/'+compitition.id" class="compitition-page__subtitle">{{compitition.title}}</nuxt-link>
+                <nuxt-link :to="'compitition/' + compitition.id" class="compitition-page__subtitle">{{compitition.title}}</nuxt-link>
                 <div class="compitition-page__date">{{compitition.date}}</div>
-              </div>
-            </b-col>
-            <b-col md="4" cols="6" class="compitition-page__item">
-              <nuxt-link to="" class="compitition-page__img">
-                <img src="../../assets/images/compitition1.png" alt="">
-              </nuxt-link>
-              <div class="compitition-page__info">
-                <nuxt-link to="" class="compitition-page__subtitle">Mavzu (title)</nuxt-link>
-                <div class="compitition-page__date">18.10.2020</div>
               </div>
             </b-col>
           </b-row>
@@ -58,6 +49,14 @@
 <script>
 import {mapGetters} from 'vuex'
 export default {
+  data() {
+    return {
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Tanlovlar', url: '/compitition', disabled: true},
+      ]
+    }
+  },  
   computed: {
     ... mapGetters({
       getCompitition: 'getCompitition'

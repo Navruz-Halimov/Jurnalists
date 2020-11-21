@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   state: {
-    mediaURL: 'http://fast-everglades-31601.herokuapp.com',
+    mediaURL: 'http://mysterious-spire-81595.herokuapp.com  ',
     archives: [],
     compititions: [],
     projects: [],
@@ -24,10 +24,10 @@ const store = () => new Vuex.Store({
       return state.projects;
     },
     getTrainer(state) {
-      return state.trainers
+      return state.trainers;
     },
     getPosts(state) {
-      return state.posts
+      return state.posts;
     },
     getRelease(state) {
       return state.releases
@@ -49,9 +49,10 @@ const store = () => new Vuex.Store({
     setPosts(state, post) {
       state.posts = post
     },
-    setRelease(state, release) {
+    setReleases(state, release) {
       state.releases = release
     }
+
   },
   actions: {
     async getArchive({commit}) {
@@ -104,16 +105,16 @@ const store = () => new Vuex.Store({
           console.log('setPosts', error)
         })
     },
-    async getRelease({commit}) {
-      await this.$axios.get('treninglar/treneringlar//')
+    async getReleases({commit}) {
+      await this.$axios.get('treninglar/matbuot/')
         .then((res) => {
-          commit('setRelease', res.data);
-          console.log('setRelease', res)
+          commit('setReleases', res.data)
+          console.log('setReleases', res)
         })
         .catch((error) => {
-          console.log('setRelease', error)
+          console.log('setReleases', error)
         })
-    }     
+    }   
   }
 });
 

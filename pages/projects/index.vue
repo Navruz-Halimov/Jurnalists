@@ -4,10 +4,11 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <!-- <div class="link">
-              <a href="#">Asosiy</a> / <span>Trenerlar</span>
-            </div> -->
-            <Breadcrumb/>
+            <!-- <i-breadcrumb>
+              <nuxt-link to="/">Asosiy</nuxt-link> /
+              <i-breadcrumb-item>Loyihalar</i-breadcrumb-item>
+            </i-breadcrumb> -->
+            <Breadcrumb :crumbs="crumbs" />
           </b-col>
         </b-row>
       </b-container>
@@ -52,7 +53,16 @@
 import {mapGetters} from 'vuex'
 export default {
   data () {
-    return {}
+    return {
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Loyihalar', url: '/projects', disabled: true},
+      ],
+      items: [
+        // { title: "Home", href: "/" }, 
+        // { title: "", active: true }
+      ]
+    }
   },
   mounted() {
     this.$store.dispatch('getProject')

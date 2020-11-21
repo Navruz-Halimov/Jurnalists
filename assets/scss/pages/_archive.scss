@@ -8,6 +8,9 @@
   &__img {
     padding-bottom: 15px;
     display: block;
+    img {
+      width: 100%;
+    }
   }
 
   &__subtitle {

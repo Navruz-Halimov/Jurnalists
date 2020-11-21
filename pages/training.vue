@@ -27,8 +27,8 @@
             </div>
             <div class="webinars__info">
               <div class="webinars__subtitle">{{webinar.title}}</div>
-              <nuxt-link to="" class="webinars__link" v-if="webinar.vebinar_type == 'online'">{{webinar.vebinar_type}}</nuxt-link>
-              <div class="webinars__address" v-if="webinar.vebinar_type == 'offline'">{{webinar.vebinar_type}}</div>
+              <nuxt-link to="" class="webinars__link" v-if="webinar.vebinar_type == 'online'">{{webinar.url}}</nuxt-link>
+              <div class="webinars__address" v-if="webinar.vebinar_type == 'offline'">{{webinar.address}}</div>
             </div>
           </b-col>
           <b-col md="6" class="webinars__item">

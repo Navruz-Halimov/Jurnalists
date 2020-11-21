@@ -7,7 +7,7 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Arxiv</span>
             </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs"/>
           </b-col>
         </b-row>
       </b-container>
@@ -42,7 +42,11 @@
 export default {
   data() {
     return {
-      archiveItem: []
+      archiveItem: [],
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Arxiv', url: '/archive', disabled: false},
+      ]
     }
   },
   methods: {
@@ -57,8 +61,13 @@ export default {
         })
     }
   },
-  mounted() {
-    this.getArchiveItem();
+  created() {
+    this.getArchiveItem()
+    .then(() => {
+      this.crumbs.push(
+        { id: 3, title: this.archiveItem.title, url: '/archice', disabled: true},
+      );
+    })
   }
 }
 </script>

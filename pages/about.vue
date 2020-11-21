@@ -7,7 +7,7 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Arxiv</span>
             </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs" />
           </b-col>
         </b-row>
       </b-container>
@@ -131,7 +131,11 @@ export default {
   data() {
     return {
       abouts: [],
-      leaders: []
+      leaders: [],
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Biz haqimizda', url: '/about', disabled: true},
+      ]
     }
   },
   methods: {
