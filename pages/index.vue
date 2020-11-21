@@ -172,11 +172,11 @@
               :autoplaySpeed=3000
               class="main-gallery__slick"
             >
-              <div>
+              <div v-for="gallery in maingallery" :key="gallery.id">
                 <div class="main-gallery__img">
-                  <img src="../assets/images/gallery1.png" alt="">
+                  <img :src="gallery.image" alt="">
                 </div>
-                <div class="main-gallery__title">Title1</div>
+                <div class="main-gallery__title">{{gallery.title}}</div>
               </div>
               <div>
                 <div class="main-gallery__img">
@@ -197,7 +197,7 @@
                 <div class="main-gallery__title">Title4</div>
               </div>
             </VueSlickCarousel>
-            <nuxt-link to="" class="site__button">ko’proq</nuxt-link>
+            <nuxt-link to="/gallery" class="site__button">ko’proq</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -312,7 +312,8 @@ export default {
       },
       abouts: [],
       slides: [],
-      errored: false,
+      maingallery: [],
+      errored: false      
     }
   },
   components: { 
@@ -345,11 +346,21 @@ export default {
           // console.log('getSlider', error);
           this.errored = true;
         })
+    },
+    async getMainGallery() {
+      await this.$axios.get('galeriya/pictures/')
+        .then((res) => {
+          this.maingallery = res.data
+        })
+        .catch((error) => {
+          console.log(error);
+        })
     }
   },
   mounted() {
     this.getAbout(),
     this.getSlider(),
+    this.getMainGallery(),
     this.$store.dispatch('getArchive'),
     this.$store.dispatch('getCompitition'),
     this.$store.dispatch('getProject')

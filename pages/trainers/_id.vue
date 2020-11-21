@@ -4,9 +4,10 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <div class="link">
+            <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Arxiv</span>
-            </div>
+            </div> -->
+            <Breadcrumb/>
           </b-col>
         </b-row>
       </b-container>
@@ -19,16 +20,15 @@
         <b-col lg="9">
           <b-row>
             <div class="col-12">
-              <h1 class="archive-page__title">{{compititionItem.title}}</h1>
+              <h1 class="archive-page__title">{{trainersItem.name}}</h1>
             </div>
           </b-row>
           <b-row>
             <b-col cols="12" class="page-item__content">
               <div class="page-item__img">
-                <img :src="compititionItem.image" alt="">
+                <img :src="trainersItem.image" alt="">
               </div>
-              <div class="page-item__text">
-                {{compititionItem.text}}
+              <div class="page-item__text" v-html="trainersItem.about_work">
               </div>
             </b-col>            
           </b-row>

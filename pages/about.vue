@@ -4,9 +4,10 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <div class="link">
+            <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Arxiv</span>
-            </div>
+            </div> -->
+            <Breadcrumb/>
           </b-col>
         </b-row>
       </b-container>
@@ -79,24 +80,6 @@
                 <div class="leaders__position">{{leader.position}}</div>  
               </div>
             </b-col>
-            <b-col sm="4" class="leaders__item">
-              <nuxt-link to="" class="leaders__img">
-                <img src="../assets/images/trainer2.png" alt="">
-              </nuxt-link>
-              <div class="leaders__info">
-                <nuxt-link to="" class="leaders__name">Valiyev Murodjon Akulovich</nuxt-link>
-                <div class="leaders__position">Director</div>  
-              </div>
-            </b-col>
-            <b-col sm="4" class="leaders__item">
-              <nuxt-link to="" class="leaders__img">
-                <img src="../assets/images/trainer3.png" alt="">
-              </nuxt-link>
-              <div class="leaders__info">
-                <nuxt-link to="" class="leaders__name">Valiyev Murodjon Akulovich</nuxt-link>
-                <div class="leaders__position">Director</div>  
-              </div> 
-            </b-col>
           </b-row>
         </b-col>
       </b-row>
@@ -104,62 +87,21 @@
         <b-col cols="12">
           <div class="trainers__title">Trenerlar</div>
           <b-row class="trainers__list">
-            <b-col md="3" sm="6" class="trainers__item">
-              <div class="trainers__img">
-                <img src="../assets/images/trainer1.png" alt="">
-                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
-            </b-col>
-            <b-col md="3" sm="6" class="trainers__item">
-              <div class="trainers__img">
-                <img src="../assets/images/trainer2.png" alt="">
-                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
-            </b-col>
-            <b-col md="3" sm="6" class="trainers__item">
-              <div class="trainers__img">
-                <img src="../assets/images/trainer3.png" alt="">
-                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
-            </b-col>
-            <b-col md="3" sm="6" class="trainers__item">
-              <div class="trainers__img">
-                <img src="../assets/images/trainer1.png" alt="">
-                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
-            </b-col>
-            <b-col md="3" sm="6" class="trainers__item">
-              <div class="trainers__img">
-                <img src="../assets/images/trainer1.png" alt="">
-                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
-            </b-col>
-            <b-col md="3" sm="6" class="trainers__item">
-              <div class="trainers__img">
-                <img src="../assets/images/trainer2.png" alt="">
-                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
-            </b-col>
-            <b-col md="3" sm="6" class="trainers__item">
-              <div class="trainers__img">
-                <img src="../assets/images/trainer3.png" alt="">
-                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
-            </b-col>
-            <b-col md="3" sm="6" class="trainers__item">
-              <div class="trainers__img">
-                <img src="../assets/images/trainer1.png" alt="">
-                <div class="trainers__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              </div>
-              <nuxt-link to="" class="trainers__name">Valiyev Murodjon Akulovich</nuxt-link>
-            </b-col>            
+            <b-col 
+              md="3" 
+              sm="6" 
+              class="trainers__item"
+              v-for="(trainer, index) in getTrainer"
+              :key="index.id"
+            >
+              <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__link">
+                <div class="main-trainer__img">
+                  <img :src="trainer.image" alt="">
+                  <div class="main-trainer__text" v-html="trainer.about_work"></div>
+                </div>
+                <div class="main-trainer__name">{{trainer.name}}</div>
+              </nuxt-link>
+            </b-col>       
           </b-row>
         </b-col>
       </b-row>
@@ -185,7 +127,6 @@
 
 <script>
 import {mapGetters} from 'vuex'
-
 export default {
   data() {
     return {
@@ -208,15 +149,24 @@ export default {
     async getLeaders() {
       await this.$axios.get('haqimizda/user/')
         .then((res) => {
-          this.leaders = res.data
+          this.leaders = res.data;
+          console.log('getLeaders', res)
         })
         .catch((error) => {
           console.log('getLeaders', error)
         })
     }    
   },
+  computed: {
+    ... mapGetters({
+      getTrainer: 'getTrainer'
+    })
+  },
   mounted() {
-    this.getAbout()
-  }  
+    this.getAbout(),
+    this.getLeaders(),
+    this.$store.dispatch('getTrainer')
+  }
+
 }
 </script>

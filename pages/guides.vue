@@ -4,9 +4,10 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <div class="link">
+            <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Qo`llanmalar</span>
-            </div>
+            </div> -->
+            <Breadcrumb/>
           </b-col>
         </b-row>
       </b-container>

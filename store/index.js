@@ -10,8 +10,8 @@ const store = () => new Vuex.Store({
     compititions: [],
     projects: [],
     trainers: [],
-    abouts: [],
-    posts: []
+    posts: [],
+    releases: []
   },
   getters: {
     getArchive(state) {
@@ -26,11 +26,11 @@ const store = () => new Vuex.Store({
     getTrainer(state) {
       return state.trainers
     },
-    getAbout(state) {
-      return state.abouts
-    },
     getPosts(state) {
       return state.posts
+    },
+    getRelease(state) {
+      return state.releases
     }
   },
   mutations: {
@@ -46,11 +46,11 @@ const store = () => new Vuex.Store({
     setTrainer(state, trainer) {
       state.trainers = trainer
     },
-    setAbout(state, about) {
-      state.abouts = about
-    },
     setPosts(state, post) {
       state.posts = post
+    },
+    setRelease(state, release) {
+      state.releases = release
     }
   },
   actions: {
@@ -94,16 +94,6 @@ const store = () => new Vuex.Store({
           console.log('setTrainer', error)
         })
     },
-    async getAbous({commit}) {
-      await this.$axios.get('haqimizda/us/')
-        .then((res) => {
-          commit('setAbout', res.data);
-          console.log('setAbout', res)
-        })
-        .catch((error) => {
-          console.log('setAbout', res)
-        })
-    },
     async getPosts({commit}) {
       await this.$axios.get('elonlar/')
         .then((res) => {
@@ -113,7 +103,17 @@ const store = () => new Vuex.Store({
         .catch((error) => {
           console.log('setPosts', error)
         })
-    }    
+    },
+    async getRelease({commit}) {
+      await this.$axios.get('treninglar/treneringlar//')
+        .then((res) => {
+          commit('setRelease', res.data);
+          console.log('setRelease', res)
+        })
+        .catch((error) => {
+          console.log('setRelease', error)
+        })
+    }     
   }
 });
 
