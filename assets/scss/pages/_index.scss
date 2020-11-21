@@ -244,6 +244,13 @@
     margin-left: 15px;
   }
 
+  &__img {
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
   &__date {
     font-weight: bold;
     font-size: 18px;

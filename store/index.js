@@ -11,6 +11,7 @@ const store = () => new Vuex.Store({
     projects: [],
     trainers: [],
     abouts: [],
+    posts: []
   },
   getters: {
     getArchive(state) {
@@ -27,6 +28,9 @@ const store = () => new Vuex.Store({
     },
     getAbout(state) {
       return state.abouts
+    },
+    getPosts(state) {
+      return state.posts
     }
   },
   mutations: {
@@ -44,6 +48,9 @@ const store = () => new Vuex.Store({
     },
     setAbout(state, about) {
       state.abouts = about
+    },
+    setPosts(state, post) {
+      state.posts = post
     }
   },
   actions: {
@@ -90,13 +97,23 @@ const store = () => new Vuex.Store({
     async getAbous({commit}) {
       await this.$axios.get('haqimizda/us/')
         .then((res) => {
-          commit('getAbous', res.data);
-          console.log('getAbous', res)
+          commit('setAbout', res.data);
+          console.log('setAbout', res)
         })
         .catch((error) => {
-          console.log('getAbous', res)
+          console.log('setAbout', res)
         })
-    }
+    },
+    async getPosts({commit}) {
+      await this.$axios.get('elonlar/')
+        .then((res) => {
+          commit('setPosts', res.data);
+          console.log('setPosts', res)
+        })
+        .catch((error) => {
+          console.log('setPosts', error)
+        })
+    }    
   }
 });
 
