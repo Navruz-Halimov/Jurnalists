@@ -146,6 +146,10 @@
       .video {
         width: 45%;
         height: auto;
+        
+        video {
+          height: 280px;
+        }
       }
     }
     .gallery__content {

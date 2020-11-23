@@ -178,15 +178,15 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">Arxiv</div>
+            <div class="main__title">{{$t('index.archive')}}</div>
             <b-alert show variant="danger" v-if="errored">Server not working</b-alert>
           </b-col>
         </b-row>
         <b-row class="main-arxiv__list">
           <b-col lg="4" class="main-arxiv__item" v-for="archive in getArchive" :key="archive.id">
-            <div class="main-arxiv__img">
+            <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__img">
               <img :src="archive.image" alt="image">
-            </div>
+            </nuxt-link>
             <div class="main-arxiv__info">
               <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title">{{archive.title}}</nuxt-link>
               <div class="main-arxiv__text" v-html="archive.text"></div>
@@ -195,7 +195,7 @@
         </b-row>
         <b-row>
             <b-col cols="12">
-              <nuxt-link to="/archive" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
+              <nuxt-link :to="localePath('/archive')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
             </b-col>
         </b-row>
       </b-container>

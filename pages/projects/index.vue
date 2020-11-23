@@ -31,7 +31,7 @@
                 :key="project.id"
               >
                 <nuxt-link :to="'projects/'+project.id" class="main-project__img">
-                  <img :src="project.image" alt="">
+                  <img :src="project.image" alt="image">
                   <div class="main-project__info">
                     <div class="main-project__title">{{project.title}}</div>
                     <div class="main-project__text" v-html="project.content"></div>

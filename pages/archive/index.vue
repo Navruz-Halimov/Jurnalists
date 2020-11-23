@@ -20,7 +20,7 @@
         <b-col lg="9">
           <b-row>
             <div class="col-12">
-              <h1 class="archive-page__title">Arxiv</h1>
+              <h1 class="archive-page__title">{{$t('index.archive')}}</h1>
             </div>
           </b-row>
           <b-row class="archive-page__list">
