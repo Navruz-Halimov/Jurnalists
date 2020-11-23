@@ -254,7 +254,7 @@ import 'hooper/dist/hooper.css';
 import {mapGetters} from 'vuex';
 
 import Trainer from '../components/Trainers'
-import Posts from '../components/Posts'
+import Posts from '../components/Posts'   
 export default {
   data() {
     return {
