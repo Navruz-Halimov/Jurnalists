@@ -310,10 +310,12 @@
 
   &__img {
     position: relative;
+    overflow: hidden;
     img {
       width: 270px;
       height: 300px;
       object-fit: cover;
+      transition: all 0.4s ease;
     }
     &:after {
       content: "";
@@ -340,6 +342,7 @@
     z-index: 2;
     opacity: 0;
     transition: all 0.4s ease;
+    @include textWrapper(4);
   }
 
   &__link {
@@ -353,6 +356,11 @@
         // content: "";
         opacity: 1;
       }
+      .main-trainer__img {
+        img {
+          transform: scale(1.1);
+        }
+      }
     }
   }
 
@@ -361,6 +369,10 @@
     font-size: 20px;
     color: #000000;
     padding-top: 25px;
+    display: block;
+    &:hover {
+      color: #0094ff;
+    }
   }
 
   .site__button {
@@ -437,13 +449,15 @@
     color: #fff;
     z-index: 2;
     padding: 0 15px;
-    transform: translateY(75%);
+    transform: translateY(62%);
     transition: all 0.4s ease;
+    max-width: 240px;
   }
 
   &__title {
     font-weight: bold;
     font-size: 20px;
+    @include textWrapper(2);
   }
 
   &__text {
@@ -452,6 +466,7 @@
     opacity: 0;
     transition: all 0.4s ease;
     // transform: translateY(50%);
+    @include textWrapper(4);
   }
 
   .site__button {

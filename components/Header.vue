@@ -4,24 +4,25 @@
       <b-row class="header__top">
         <b-container>
           <div class="col-6 p-0">
-            <b-form class="header__form">
+            <b-form class="header__form" @submit.prevent="getInput">
               <b-form-group>
                 <b-form-input
                   type="text"
-                  placeholder="Qidiruv..."
+                  :placeholder="$t('header.search')"
+                  v-model="search"
                 >
                 </b-form-input>
-                <b-button type="submit"></b-button>
+                <b-button @click="getInput()" type="submit"></b-button>
               </b-form-group>
             </b-form>
           </div>
           <div class="col-6 p-0">
             <ul class="header__lang">
               <li>
-                <nuxt-link exact active-class="active" to="/">UZ</nuxt-link>
+                <nuxt-link exact active-class="active" @click="selectLang('UZ')" :to="switchLocalePath('uz')">UZ</nuxt-link>
               </li>
               <li>
-                <nuxt-link active-class="active" to="/">RU</nuxt-link>
+                <nuxt-link active-class="active" @click="selectLang('РУ')" :to="switchLocalePath('ru')">RU</nuxt-link>
               </li>
             </ul>
           </div>
@@ -38,31 +39,31 @@
             <b-col cols="9">
               <ul class="header__nav">
                 <li>
-                  <nuxt-link exact active-class="active" to="/">Asosiy</nuxt-link>
+                  <nuxt-link exact active-class="active" :to="localePath('/')">{{$t('header.main')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/projects">Loyihalar</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/projects')">{{$t('header.projects')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/compitition">Tanlovlar</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/compitition')">{{$t('header.compitition')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/guides">Qo’llanmalar</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/guides')">{{$t('header.guides')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/gallery">Galeriya</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/gallery')">{{$t('header.gallery')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/training">Treninglar</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/training')">{{$t('header.training')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/archive">Arxiv</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/archive')">{{$t('header.archive')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/contact">Aloqa</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/contact')">{{$t('header.contact')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/about">Biz haqimizda</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/about')">{{$t('header.about')}}</nuxt-link>
                 </li>
               </ul>
               <div class="mobile-menu">
@@ -82,16 +83,30 @@ import MobileMenu from './MobileMenu'
 export default {
   data() {
     return {
+      search: '',
+      isActive: 'UZ',
     }
   },
   components: {
     MobileMenu
   },
   methods: {
-
+    async getInput() {
+      await this.$axios.get('search/?search=', this.search)
+        .then((res) => {
+          console.log('getInput', res)
+        })
+    },
+    selectLang(text) {
+      if (text === 'UZ') {
+        this.isActive = text;
+      } else {
+        this.isActive = 'РУ';
+      }
+    }
   },
-  created() {
-
+  mounted() {
+    // this.getInput()
   }
 }
 </script>

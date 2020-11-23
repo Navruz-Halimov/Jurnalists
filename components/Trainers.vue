@@ -3,7 +3,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">Trenerlar</div>
+            <div class="main__title">{{$t('index.trainer')}}</div>
           </b-col>
         </b-row>
         <b-row class="main-trainer__list">
@@ -20,13 +20,14 @@
                 <img :src="trainer.image" alt="">
                 <div class="main-trainer__text" v-html="trainer.about_work"></div>
               </div>
-              <div class="main-trainer__name">{{trainer.name}}</div>
             </nuxt-link>
+            <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__name">{{trainer.name}}</nuxt-link>
+            
           </b-col>
         </b-row>
         <b-row>
           <b-col cols="12">
-            <nuxt-link to="/about" class="site__button">ko’proq</nuxt-link>
+            <nuxt-link :to="localePath('/about')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
       </b-container>

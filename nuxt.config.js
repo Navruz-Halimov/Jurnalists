@@ -44,9 +44,34 @@ export default {
     // '@nuxtjs/axios'
     [
       '@nuxtjs/axios',
-      { baseURL: "http://mysterious-spire-81595.herokuapp.com/api/" },
+      { baseURL: "http://188.225.72.69/api/" },
+      
       
     ],
+    [
+      "nuxt-i18n",
+      {
+        lazy: true,
+        locales: [
+          { code: "uz", iso: "uz-UZ", name: "Uzbek", file: "uz.js" },
+          { code: "ru", iso: "ru-RU", name: "Russian", file: "ru.js" },
+        ],
+        defaultLocale: "uz",
+        rootRedirect: "uz",
+        strategy: "prefix",
+        // seo: false,
+        // lazy: true,
+        langDir: "lang/",
+        // By default, custom routes are extracted from page files using acorn parsing,
+        // set this to false to disable this
+        parsePages: false,
+        detectBrowserLanguage: {
+          // cookieKey: 'i18n_cookie',
+          useCookie: true,
+          fallbackLocale: "uz"
+        }
+      }
+    ],    
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

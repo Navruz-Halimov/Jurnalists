@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   state: {
-    mediaURL: 'http://mysterious-spire-81595.herokuapp.com  ',
+    mediaURL: 'http://188.225.72.69',
     archives: [],
     compititions: [],
     projects: [],

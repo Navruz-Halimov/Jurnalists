@@ -35,7 +35,7 @@
             </b-col>            
           </b-row>
         </b-col>
-        <b-col class="projects__content mt-5" lg="12">
+        <!-- <b-col class="projects__content mt-5" lg="12">
           <b-row>
             <b-col cols="12" sm="6" md="6" lg="3">
               <nuxt-link active-class="active" to="/projectsitem">
@@ -78,7 +78,7 @@
               </nuxt-link>
             </b-col>
           </b-row>
-        </b-col>
+        </b-col> -->
       </b-row>
     </b-container>
   </div>

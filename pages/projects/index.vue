@@ -20,24 +20,21 @@
         </b-col>
         <b-col lg="9">
           <div class="projects__content">
-            <h1 class="projects__title">Loyihalar</h1>
+            <h1 class="projects__title">{{$t('projectsPage.title')}}</h1>
             <b-row>
               <b-col 
-                cols="12" 
-                sm="6" 
+                lg="4" 
                 md="6" 
-                lg="4"
-                v-for="(project, index) in getProject"
-                :key="index.id"
+                cols="12" 
+                class="main-project__item"
+                v-for="project in getProject.slice(0,4)"
+                :key="project.id"
               >
-                <nuxt-link active-class="active" :to="'projects/'+project.id">
-                  <div class="projects__card">
-                    <img :src="project.image" alt="">
-                    <h4>{{project.title}}</h4>
-                    <p>
-                      <b>{{project.title}}</b> <br />
-                        {{project.content}}
-                      </p>
+                <nuxt-link :to="'projects/'+project.id" class="main-project__img">
+                  <img :src="project.image" alt="">
+                  <div class="main-project__info">
+                    <div class="main-project__title">{{project.title}}</div>
+                    <div class="main-project__text" v-html="project.content"></div>
                   </div>
                 </nuxt-link>
               </b-col>

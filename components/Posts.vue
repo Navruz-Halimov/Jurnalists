@@ -3,7 +3,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">E’lonlar</div>
+            <div class="main__title">{{$t('index.advert')}}</div>
           </b-col>
         </b-row>
         <b-row>

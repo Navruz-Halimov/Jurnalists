@@ -65,6 +65,10 @@
         }
       }
     }
+    .main-project__img img {
+      height: 300px;
+      object-fit: cover;
+    }
   }
 
   &__title {

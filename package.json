@@ -19,6 +19,7 @@
     "cxlt-vue2-toastr": "^1.1.1",
     "hooper": "^0.3.4",
     "nuxt": "^2.14.6",
+    "nuxt-i18n": "^6.15.4",
     "nuxt-sass-resources-loader": "^2.0.5",
     "swiper": "^6.3.5",
     "v-mask": "^2.2.3",

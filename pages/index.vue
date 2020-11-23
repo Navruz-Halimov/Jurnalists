@@ -75,7 +75,7 @@
           <div class="slider__content">
             <b-container>
               <div class="slider__title">{{slide.title}}</div>
-              <div class="slider__text">{{slide.text}}</div>
+              <div class="slider__text" v-html="slide.text"></div>
               <!-- <div class="site__button">Купрок</div> -->
             </b-container>
           </div>
@@ -90,7 +90,7 @@
         <b-container>
           <b-row>
             <b-col cols="12">
-              <div class="main__title">Loyihalar</div>
+              <div class="main__title">{{$t('index.projects')}}</div>
             </b-col>
           </b-row>
           <b-row class="main-project__list">
@@ -113,7 +113,7 @@
           </b-row>
           <b-row>
             <b-col cols="12">
-              <nuxt-link to="/projects" class="site__button">ko’proq</nuxt-link>
+              <nuxt-link :to="localePath('/projects')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
             </b-col>
           </b-row>
         </b-container>
@@ -123,7 +123,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">Tanlovlar</div>
+            <div class="main__title">{{$t('index.compitition')}}</div>
           </b-col>
         </b-row>
         <b-row class="main-compitition__list">
@@ -145,7 +145,7 @@
         </b-row>
         <b-row>
           <b-col cols="12">
-            <nuxt-link to="/compitition" class="site__button">ko’proq</nuxt-link>
+            <nuxt-link :to="localePath('/compitition')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -197,7 +197,7 @@
                 <div class="main-gallery__title">Title4</div>
               </div>
             </VueSlickCarousel>
-            <nuxt-link to="/gallery" class="site__button">ko’proq</nuxt-link>
+            <nuxt-link to="/gallery" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -223,7 +223,7 @@
         </b-row>
         <b-row>
             <b-col cols="12">
-              <nuxt-link to="/archive" class="site__button">ko’proq</nuxt-link>
+              <nuxt-link to="/archive" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
             </b-col>
         </b-row>
       </b-container>
@@ -245,7 +245,7 @@
             <div class="main-about__text" v-html="about.content">
               
             </div>
-            <nuxt-link to="/about" class="site__button">ko’proq</nuxt-link>
+            <nuxt-link to="/about" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>       
       </b-container>
