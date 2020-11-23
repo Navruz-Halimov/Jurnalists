@@ -23,6 +23,8 @@ export default {
   plugins: [
     { src: '~/plugins/swiper.js', mode: 'client' },
     { src: '~/plugins/backToTop.js', ssr: false },
+    { src: '~/plugins/inputMask.js', ssr: false },
+    { src: "~/plugins/toast.js", ssr: false },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

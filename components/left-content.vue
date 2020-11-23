@@ -1,10 +1,10 @@
 <template>
   <div class="left__content">
     <div class="left__top">
-      <Posts /> 
+      <!-- <Posts />  -->
       <div class="left__item" v-for="post in posts" :key="post.id">
-        <div class="left__date">08.11.2020</div>
-        <nuxt-link :to="'posts/'+post.id" class="left__content">Lorem ipsum dolor sit amet, consectetur adipisicing eli</nuxt-link>
+        <div class="left__date">{{post.date}}</div>
+        <nuxt-link :to="'posts/'+post.id" class="left__content" v-html="post.about_work"></nuxt-link>
       </div>
     </div>
     <div class="left__bottom">
@@ -21,17 +21,18 @@
         </b-form-group>
         <b-form-group>
           <b-form-input 
-            type="text" 
+            type="tel" 
             required 
-            placeholder="Phone"
+            placeholder="+998 91 603 67 65"
             v-model="form.phone"
           >
           </b-form-input>
         </b-form-group>
         <b-form-textarea 
+          required
           placeholder="Comment" 
           rows="8"
-          v-model="form.content"
+          v-model="form.comment"
         >
         </b-form-textarea>
         <b-button type="submit" variant="primary">Send</b-button>
@@ -49,18 +50,44 @@ export default {
       form: {
         name: '',
         phone: '',
-        content: ''
+        comment: ''
       },
       posts: ''
     }
   },
   methods: {
+    // async onSubmit() {
+    //   await this.$axios.post('contact/', this.form)
+    //     .then((res) => {
+    //       console.log('onSubmit', res)
+    //     })
+    //     .catch((error) => {
+    //       console.log('onSubmit', error)
+    //     })
+    // },
     async onSubmit() {
-      await this.$axios.post('', this.form)
-        .then((res) => {
-          
+      await this.$axios.post('contact/', this.form)
+        .then(async () => {
+          this.form = {
+            name: '',
+            phone: '',
+            comment: ''
+          }
+          try {
+            this.$toast.success({
+              title: `Malumot junatilda`,
+              message: `Tez orada siz bilan bog\'lanishadi`,
+            })
+          } catch (err) {
+            console.log(err)
+            this.$toast.error({
+              title: `Malumot xato junatildi`,
+              message: `Tekshirib qaytadan junating`,
+            })
+          }
         })
-    },
+    },    
+
     async getPosts() {
       await this.$axios.get('elonlar/')
         .then((res) => {
@@ -71,6 +98,9 @@ export default {
           console.log('getPosts', res)
         })
     }
+  },
+  mounted() {
+    this.getPosts()
   }
 }
 </script>
