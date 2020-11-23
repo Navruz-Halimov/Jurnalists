@@ -18,7 +18,7 @@
             </div>
             <div class="main-posts__info">
               <div class="main-posts__date">{{post.date}}</div>
-              <nuxt-link :to="'posts/'+post.id" class="main-posts__title">{{post.title}}</nuxt-link>
+              <nuxt-link :to="localePath('/posts/'+post.id)" class="main-posts__title">{{post.title}}</nuxt-link>
             </div>
           </b-col>
         </b-row>

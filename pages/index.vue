@@ -74,8 +74,8 @@
               v-for="project in getProject.slice(0,4)"
               :key="project.id"
             >
-              <nuxt-link :to="'projects/'+project.id" class="main-project__img">
-                <img :src="project.image" alt="">
+              <nuxt-link :to="localePath('/projects/'+project.id)" class="main-project__img">
+                <img :src="baseUrl + '/'+project.image" alt="">
                 <div class="main-project__info">
                   <div class="main-project__title">{{project.title}}</div>
                   <div class="main-project__text" v-html="project.content"></div>
@@ -106,11 +106,11 @@
             v-for="compitition in getCompitition"
             :key="compitition.id"
           >
-            <nuxt-link :to="'compitition/'+compitition.id" class="main-compitition__img">
+            <nuxt-link :to="localePath('/compitition/'+compitition.id)" class="main-compitition__img">
               <img :src="compitition.image" alt="">
             </nuxt-link>
             <div class="main-compitition__info">
-              <nuxt-link :to="'compitition/'+compitition.id" class="main-compitition__title">{{compitition.title}}</nuxt-link>
+              <nuxt-link :to="localePath('/compitition/'+compitition.id)" class="main-compitition__title">{{compitition.title}}</nuxt-link>
               <div class="main-compitition__date">{{compitition.date}}</div>
             </div>
           </b-col>
@@ -184,7 +184,7 @@
         </b-row>
         <b-row class="main-arxiv__list">
           <b-col lg="4" class="main-arxiv__item" v-for="archive in getArchive" :key="archive.id">
-            <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__img">
+            <nuxt-link :to="localePath('/archive/'+archive.id)" class="main-arxiv__img">
               <img :src="archive.image" alt="image">
             </nuxt-link>
             <div class="main-arxiv__info">
@@ -217,7 +217,7 @@
             <div class="main-about__text" v-html="about.content">
               
             </div>
-            <nuxt-link to="/about" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>       
       </b-container>
@@ -270,6 +270,7 @@ export default {
           prevEl: '.swiper-button-prev',
         }
       },
+      baseUrl: 'http://188.225.72.69',
       gallery__slider: {
         slidesPerView: 2,
         spaceBetween: 0,

@@ -4,7 +4,7 @@
       <!-- <Posts />  -->
       <div class="left__item" v-for="post in posts" :key="post.id">
         <div class="left__date">{{post.date}}</div>
-        <nuxt-link :to="'posts/'+post.id" class="left__content" v-html="post.title"></nuxt-link>
+        <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-html="post.title"></nuxt-link>
       </div>
     </div>
     <div class="left__bottom">

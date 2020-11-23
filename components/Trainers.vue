@@ -15,7 +15,7 @@
             v-for="(trainer, index) in getTrainer"
             :key="index.id"
           >
-            <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__link">
+            <nuxt-link :to="localePath('/trainers/'+trainer.id)" class="main-trainer__link">
               <div class="main-trainer__img">
                 <img :src="trainer.image" alt="">
                 <div class="main-trainer__text" v-html="trainer.about_work"></div>
