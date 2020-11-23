@@ -21,7 +21,6 @@ export default {
   
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '~/plugins/swiper.js', mode: 'client' },
     { src: '~/plugins/backToTop.js', ssr: false },
     { src: '~/plugins/inputMask.js', ssr: false },
     { src: "~/plugins/toast.js", ssr: false },

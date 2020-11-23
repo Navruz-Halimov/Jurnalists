@@ -2,34 +2,6 @@
   <main class="main__page">
     <div class="main__slider">  
       <!-- v-if="slides[0] == '' -->
-      <!-- <swiper class="main__swiper" :options="header__slider">
-        <swiper-slide>
-          <img src="../assets/images/slider.png" alt="slider">
-          <b-container>
-            <b-row>
-              <div class="swiper-caption">
-                <div class="swiper-caption__title">Lorem ipsum dolor</div>
-                <div class="swiper-caption__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                <nuxt-link to="" class="site__button">ko’proq</nuxt-link>
-              </div>
-            </b-row>
-          </b-container>
-        </swiper-slide>
-        <swiper-slide>
-          <img src="../assets/images/slider.png" alt="slider">
-          <b-container>
-            <b-row>
-              <div class="swiper-caption">
-                <div class="swiper-caption__title">Lorem ipsum dolor2</div>
-                <div class="swiper-caption__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                <nuxt-link to="" class="site__button">ko’proq</nuxt-link>
-              </div>
-            </b-row>
-          </b-container>
-        </swiper-slide>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
-      </swiper> -->
       <!-- <b-carousel
         id="carousel-1"
         
@@ -109,7 +81,7 @@
                   <div class="main-project__text" v-html="project.content"></div>
                 </div>
               </nuxt-link>
-            </b-col>
+            </b-col>            
           </b-row>
           <b-row>
             <b-col cols="12">
@@ -154,7 +126,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">Galereya</div>
+            <div class="main__title">{{$t('index.gallery')}}</div>
           </b-col>
         </b-row>
         <b-row class="main-gallery__wrap">
@@ -197,7 +169,7 @@
                 <div class="main-gallery__title">Title4</div>
               </div>
             </VueSlickCarousel>
-            <nuxt-link to="/gallery" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
+            <nuxt-link :to="localePath('/gallery')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
       </b-container>

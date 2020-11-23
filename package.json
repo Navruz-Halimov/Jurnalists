@@ -23,7 +23,6 @@
     "nuxt-sass-resources-loader": "^2.0.5",
     "swiper": "^6.3.5",
     "v-mask": "^2.2.3",
-    "vue-awesome-swiper": "^4.1.1",
     "vue-backtotop": "^1.6.1",
     "vue-burger-menu": "^2.0.5",
     "vue-inputmask": "^0.2.1",

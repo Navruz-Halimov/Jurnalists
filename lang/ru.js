@@ -16,6 +16,7 @@ export default {
     trainer: 'Тренеры',
     projects: 'Проекты',
     compitition: 'Конкурсы',
+    gallery: 'Галерея',
   },
   projectsPage: {
     title: 'Проекты'

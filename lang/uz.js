@@ -16,6 +16,7 @@ export default {
     trainer: 'Тренерлар',
     projects: 'Лойиҳалар',
     compitition: 'Танловлар',
+    gallery: 'Галерея',
   },
   projectsPage: {
     title: 'Лойиҳалар'

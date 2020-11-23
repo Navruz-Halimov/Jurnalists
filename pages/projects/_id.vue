@@ -28,7 +28,7 @@
           <b-row>
             <b-col cols="12" class="page-item__content">
               <div class="page-item__img">
-                <img :src="projectsItem.image" alt="">
+                <!-- <img :src="projectsItem.image" alt=""> -->
               </div>
               <div class="page-item__text" v-html="projectsItem.content">
               </div>
