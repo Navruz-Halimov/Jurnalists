@@ -79,7 +79,7 @@
                 <div class="leaders__name">{{leader.name}}</div>
                 <div class="leaders__position">{{leader.position}}</div>  
               </div>
-            </b-col>
+            </b-col>                                   
           </b-row>
         </b-col>
       </b-row>
@@ -88,7 +88,8 @@
           <div class="trainers__title">Trenerlar</div>
           <b-row class="trainers__list">
             <b-col 
-              md="3" 
+              lg="3"
+              md="4" 
               sm="6" 
               class="trainers__item"
               v-for="(trainer, index) in getTrainer"
@@ -101,7 +102,7 @@
                 </div>
                 <div class="main-trainer__name">{{trainer.name}}</div>
               </nuxt-link>
-            </b-col>       
+            </b-col>                                                                                    
           </b-row>
         </b-col>
       </b-row>

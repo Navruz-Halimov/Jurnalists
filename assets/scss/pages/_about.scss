@@ -24,11 +24,13 @@
       display: block;
       padding-bottom: 15px;
       img {
-        max-width: 270px;
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
       }
     }
     &__info {
-      padding-left: 40px;
+      padding-left: 0px;
     }
     &__name {
       font-weight: bold;
@@ -58,6 +60,13 @@
     }
     &__item {
       margin-bottom: 35px;
+      .main-trainer__img {
+        img {
+          width: 100%;
+          height: 260px;
+          object-fit: cover;
+        }
+      }
     }
     &__img {
       position: relative;
@@ -135,7 +144,7 @@
       margin-bottom: 40px;
       &__img {
         img {
-          width: 100%;
+          height: 220px;
         }
       }
       &__info {
@@ -173,6 +182,13 @@
         }
       }
     }
+    .leaders {
+      &__img {
+        img {
+          height: 180px;
+        }
+      }
+    }
   }
 }
 
@@ -195,6 +211,12 @@
       }
       &__name {
         padding-bottom: 0;
+      }
+      &__img {
+        img {
+          height: 220px;
+          max-width: 250px;
+        }
       }
     }
     .trainers {

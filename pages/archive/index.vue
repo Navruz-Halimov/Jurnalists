@@ -33,7 +33,7 @@
               </nuxt-link>
               <nuxt-link :to="'archive/'+archive.id" class="archive-page__subtitle">{{archive.title}}</nuxt-link>
               <div class="archive-page__body" v-html="archive.text"></div>
-            </b-col>
+            </b-col>                                                                       
           </b-row>
         </b-col>
       </b-row>

@@ -4,10 +4,7 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <!-- <div class="link">
-              <a href="#">Asosiy</a> / <span>Qo`llanmalar</span>
-            </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs" />
           </b-col>
         </b-row>
       </b-container>
@@ -48,7 +45,11 @@
 export default {
   data() {
     return {
-      guides: []
+      guides: [],
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Qo`llanmalar', url: '/guides', disabled: true},
+      ]
     }
   },
   methods: {

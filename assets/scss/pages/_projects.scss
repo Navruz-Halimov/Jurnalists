@@ -12,6 +12,7 @@
       margin-top: 20px;
       border: 5px solid #1E4383;
       overflow: hidden;
+      transition: all .4s ease;
       &:before{
         content: '';
         position: absolute;
@@ -31,8 +32,9 @@
         opacity: 0;
       }
       img{
-        width: 100%;
-        height: 100%;
+        width: 270px;
+        height: 300px;
+        object-fit: cover;
       }
       h4{
         position: absolute;
@@ -75,10 +77,19 @@
 @media (max-width: 992px) {
   .projects {
     margin-bottom: 40px;
-
-    &__content {
-      margin-bottom: 25px;
+    &__title {
+      text-align: center;
     }
+    .projects__content {
+      margin-bottom: 25px;
+    
+      .projects__card {
+        img {
+          width: 100%;
+        }
+      }
+    }
+
   }
 }
 @media (min-width: 0) and (max-width: 576px){
@@ -87,6 +98,10 @@
       h2{
         font-size: 22px;
         text-align: center;
+      }
+      .projects__card {
+        max-width: 320px;
+        margin: 20px auto 0;
       }
     }
 

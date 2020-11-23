@@ -7,7 +7,7 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Trenerlar</span>
             </div> -->
-            <Breadcrumb/>
+            <Breadcrumb :crumbs="crumbs" />
           </b-col>
         </b-row>
       </b-container>
@@ -84,7 +84,11 @@ export default {
   data() {
     return {
       gallerys: [],
-      videos: []
+      videos: [],
+      crumbs: [
+        { id: 1, title: 'Asosiy', url: '/', disabled: false },
+        { id: 2, title: 'Galereya', url: '/gallery', disabled: true},
+      ]
     }
   },
   methods: {

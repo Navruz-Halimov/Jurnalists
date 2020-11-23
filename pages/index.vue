@@ -219,7 +219,7 @@
               <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title">{{archive.title}}</nuxt-link>
               <div class="main-arxiv__text" v-html="archive.text"></div>
             </div>
-          </b-col>
+          </b-col>              
         </b-row>
         <b-row>
             <b-col cols="12">
@@ -247,7 +247,7 @@
             </div>
             <nuxt-link to="/about" class="site__button">ko’proq</nuxt-link>
           </b-col>
-        </b-row>
+        </b-row>       
       </b-container>
     </div>
     <div class="main-map">

@@ -248,6 +248,7 @@
     img {
       width: 150px;
       height: 150px;
+      object-fit: cover;
     }
   }
 
@@ -304,12 +305,15 @@
   &__item {
     padding: 0;
     flex: 0 0 23%;
+    margin-bottom: 25px;
   }
 
   &__img {
     position: relative;
     img {
-      width: 100%;
+      width: 270px;
+      height: 300px;
+      object-fit: cover;
     }
     &:after {
       content: "";
@@ -466,6 +470,16 @@
     text-align: center;
     padding-bottom: 25px;
     display: block;
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: all .4s;
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
   }
 
   &__title {
@@ -591,6 +605,12 @@
   &__img {
     text-align: center;
     padding-bottom: 30px;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
   }
 
   &__item {
@@ -797,6 +817,11 @@
     &__date {
       padding-left: 0;
     }
+    &__img {
+      img {
+        width: auto;
+      }
+    }
   }
 
   .main-gallery {
@@ -825,6 +850,9 @@
 
     &__img {
       padding-bottom: 10px;
+      img {
+        width: auto;
+      }
     }
 
     &__info {
@@ -843,6 +871,7 @@
       padding-bottom: 15px;
       img {
         width: auto;
+        max-width: 320px;
       }
     }
 
@@ -1196,6 +1225,13 @@
     &__img {
       img {
         width: 100%;
+      }
+    }
+  }
+  .main-gallery {
+    &__img {
+      img {
+        height: 180px;
       }
     }
   }
