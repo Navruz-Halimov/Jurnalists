@@ -20,7 +20,7 @@
         <b-col lg="9">
           <b-row>
             <div class="col-12">
-              <h1 class="compitition-page__title">Tanlovlar</h1>
+              <h1 class="compitition-page__title">{{$t('compititionPage.title')}}</h1>
             </div>
           </b-row>
           <b-row class="compitition-page__list">

@@ -64,7 +64,7 @@
       </b-row> -->
       <b-row class="leaders">
         <b-col cols="12">
-          <div class="leaders__title">Raxbarlar</div>
+          <div class="leaders__title">{{$t('aboutPage.leader')}}</div>
           <b-row class="leaders__list">
             <b-col 
               sm="4" 
@@ -85,7 +85,7 @@
       </b-row>
       <b-row class="trainers">
         <b-col cols="12">
-          <div class="trainers__title">Trenerlar</div>
+          <div class="trainers__title">{{$t('aboutPage.trainer')}}</div>
           <b-row class="trainers__list">
             <b-col 
               lg="3"
@@ -108,7 +108,7 @@
       </b-row>
       <b-row class="about-me">
         <b-col cols="12">
-          <div class="about-me__title">Biz haqimizda</div>
+          <div class="about-me__title">{{$t('aboutPage.about')}}</div>
           <b-row v-for="about in abouts" :key="about.id">
             <b-col md="4">
               <div class="about-me__img">

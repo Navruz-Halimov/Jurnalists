@@ -43,7 +43,7 @@ export default {
     // '@nuxtjs/axios'
     [
       '@nuxtjs/axios',
-      { baseURL: "http://188.225.72.69/api/" },
+      { baseURL: "http://jqtm.uz/api/" },
       
       
     ],

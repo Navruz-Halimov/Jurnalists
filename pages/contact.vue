@@ -20,7 +20,7 @@
         <b-col lg="9">
           <b-row>
             <div class="col-12">
-              <h1 class="contact-page__title">Kontaktlar</h1>
+              <h1 class="contact-page__title">{{$t('contactPage.title')}}</h1>
             </div>
           </b-row>
           <b-row class="contact-page__info">
@@ -28,14 +28,14 @@
               <div class="contact-page__icon">
                 <img src="../assets/images/address.svg" alt="">
               </div>
-              <div class="contact-page__info-title">Adress</div>
+              <div class="contact-page__info-title">{{$t('contactPage.address')}}</div>
               <div class="contact-page__body">700000, Uzbekistan, Tashkent sh. Sergili rayon, Lev Tolstoy ko’chasi, 64 uy</div>
             </b-col>
             <b-col md="4"  class="contact-page__item">
               <div class="contact-page__icon">
                 <img src="../assets/images/phone.svg" alt="">
               </div>
-              <div class="contact-page__info-title">Telefon</div>
+              <div class="contact-page__info-title">{{$t('contactPage.phone')}}</div>
               <div class="contact-page__body">
                 <a href="tel:+998916036765">+998 91 603 67 65</a>
                 <a href="tel:+998916036765">+998 91 603 67 65</a>
@@ -45,7 +45,7 @@
               <div class="contact-page__icon">
                 <img src="../assets/images/email.svg" alt="">
               </div>
-              <div class="contact-page__info-title">E-mail</div>
+              <div class="contact-page__info-title">{{$t('contactPage.email')}}</div>
               <div class="contact-page__body">
                 <a href="mailto:test@unsuportmail.ru">test@unsuportmail.ru</a>
               </div>

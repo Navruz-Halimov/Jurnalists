@@ -17,7 +17,7 @@
         <b-col lg="9">
           <b-row>
             <div class="col-12">
-              <h1 class="guides-page__title">Qo`llanmalar</h1>
+              <h1 class="guides-page__title">{{$t('guidesPage.title')}}</h1>
             </div>
           </b-row>
           <b-row class="guides-page__list">

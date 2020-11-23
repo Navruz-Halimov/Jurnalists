@@ -58,11 +58,13 @@ export default {
       items: [
         // { title: "Home", href: "/" }, 
         // { title: "", active: true }
-      ]
+      ],
+      // baseURL: 'http://jqtm.uz/'
     }
   },
   mounted() {
     this.$store.dispatch('getProject')
+    console.log('getPoje', this.getProject)
   },
   computed: {
     ... mapGetters({

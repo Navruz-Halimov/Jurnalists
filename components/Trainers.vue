@@ -22,7 +22,7 @@
               </div>
             </nuxt-link>
             <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__name">{{trainer.name}}</nuxt-link>
-            
+            <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__name">{{trainer.name_kl}}</nuxt-link>            
           </b-col>
         </b-row>
         <b-row>

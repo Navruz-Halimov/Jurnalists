@@ -415,6 +415,10 @@
     img {
       width: 100%;
       position: relative;
+      height: 300px;
+      object-fit: cover;
+      transition: all .4s ease;
+
     }
 
     &:after {
@@ -433,6 +437,10 @@
         opacity: 1;
         // transform: translateY(0%);
       }
+      img {
+        transform: scale(1.1);
+      }
+    
       .main-project__info {
         transform: translateY(0%);
       }

@@ -15,7 +15,7 @@
     <b-container>
       <b-row>
         <b-col lg="12">
-          <h2 class="gallery__title">Galereya</h2>
+          <h2 class="gallery__title">{{$t('galleryPage.title')}}</h2>
         </b-col>
         <b-col lg="3">
           <div class="gallery__videos">

@@ -5,13 +5,15 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   state: {
-    mediaURL: 'http://188.225.72.69',
+    mediaURL: 'http://jqtm.uz',
     archives: [],
     compititions: [],
     projects: [],
     trainers: [],
     posts: [],
-    releases: []
+    releases: [],
+    lang: '',
+    varLang: ''
   },
   getters: {
     getArchive(state) {
@@ -51,6 +53,12 @@ const store = () => new Vuex.Store({
     },
     setReleases(state, release) {
       state.releases = release
+    },
+    setLang(state,payload) {
+      state.lang = payload;
+    },
+    setVarLang(state,payload) {
+        state.varLang = payload;
     }
 
   },
@@ -75,10 +83,11 @@ const store = () => new Vuex.Store({
           console.log('setCompitition', error)
         })
     },
+    // `'tanlovlar/?lang=' + ${this.$i18n.locale}`
     async getProject({commit}) {
       await this.$axios.get('loyihalar/')
         .then((res) => {
-          commit('setProject', res.data.results);
+          commit('setProject', res.data);
           console.log('setProject', res)
         })
         .catch((error) => {

@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row class="release">
-      <div class="release__title">Матбуот Релиз</div>
+      <div class="release__title">{{$t('trainingPage.releas')}}</div>
       <b-row class="release__list">
         <b-col 
           md="4" 

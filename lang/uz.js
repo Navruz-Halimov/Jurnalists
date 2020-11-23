@@ -22,7 +22,36 @@ export default {
   projectsPage: {
     title: 'Лойиҳалар'
   },
+  compititionPage: {
+    title: 'Танловлар'
+  },
+  guidesPage: {
+    title: 'Қулланмалар'
+  },
+  galleryPage: {
+    title: 'Галерея'
+  },
+  trainingPage: {
+    vebinar: 'Вебинарлар',
+    releas: 'Матбуот Релиз'
+  },
+  aboutPage: {
+    leader: 'Рахбарлар',
+    trainer: 'Тренерлар',
+    about: 'Биз ҳақимизда'
+  },
   btn_more: {
     title: 'Кўпроқ'
+  },
+  footer: {
+    email: 'Электрон почта:',
+    address: 'Адрес:',
+    phone: 'Телефонлар:'
+  },
+  contactPage: {
+    title: 'Контактлар',
+    address: 'Адрес',
+    phone: 'Телефон',
+    email: 'E-mail'
   }
 }

@@ -14,7 +14,7 @@
     </b-container>
     <b-container>
       <b-row class="webinars">
-        <h1 class="webinars__title">Vebinarlar</h1>
+        <h1 class="webinars__title">{{$t('trainingPage.vebinar')}}</h1>
         <b-row class="webinars__list">
           <b-col 
             md="6" 

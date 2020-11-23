@@ -71,11 +71,11 @@
               md="6" 
               cols="12" 
               class="main-project__item"
-              v-for="project in getProject.slice(0,4)"
+              v-for="project in getProject"
               :key="project.id"
             >
               <nuxt-link :to="localePath('/projects/'+project.id)" class="main-project__img">
-                <img :src="baseUrl + '/'+project.image" alt="">
+                <img :src="project.image" alt="">
                 <div class="main-project__info">
                   <div class="main-project__title">{{project.title}}</div>
                   <div class="main-project__text" v-html="project.content"></div>

@@ -14,31 +14,31 @@
             <b-col lg="9" class="footer__navWrap">
               <ul class="footer__nav">
                 <li>
-                  <nuxt-link exact active-class="active" to="/">Asosiy</nuxt-link>
+                  <nuxt-link exact active-class="active" :to="localePath('/')">{{$t('header.main')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/projects">Loyihalar</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/projects')">{{$t('header.projects')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/compitition">Tanlovlar</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/compitition')">{{$t('header.compitition')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/guides">Qo’llanmalar</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/guides')">{{$t('header.guides')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/gallery">Galeriya</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/gallery')">{{$t('header.gallery')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/trainers">Treninglar</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/training')">{{$t('header.training')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/archive">Arxiv</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/archive')">{{$t('header.archive')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/contact">Aloqa</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/contact')">{{$t('header.contact')}}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link active-class="active" to="/about">Biz haqimizda</nuxt-link>
+                  <nuxt-link active-class="active" :to="localePath('/about')">{{$t('header.about')}}</nuxt-link>
                 </li>
               </ul>
             </b-col>
@@ -50,7 +50,7 @@
           <b-row>
             <b-col lg="3" md="6">
               <div class="footer__email">
-                <span>Elektron pochta:</span>
+                <span>{{$t('footer.email')}}</span>
                 <a href="mailto:uzjournal">uzjournal@mail.uz</a>
                 <ul class="footer__social">
                   <li>
@@ -78,13 +78,13 @@
             </b-col>
             <b-col lg="4" md="6">
               <div class="footer__address">
-                <span>Address:</span>
+                <span>{{$t('footer.address')}}</span>
                 <div>700000, Uzbekistan, Tashkent sh. Sergili rayon, Lev Tolstoy ko’chasi, 64 uy</div>
               </div>
             </b-col>
             <b-col lg="3" md="6">
               <div class="footer__number">
-                <span>Telefonlar:</span>
+                <span>{{$t('footer.phone')}}</span>
                 <a href="tel:+7 880 000-00-00">+7 880 000-00-00</a>
                 <a href="tel:+7 880 000-00-00">+7 880 000-00-00</a>
               </div>
@@ -98,15 +98,16 @@
       <b-row class="footer__bottom">
         <b-container>
           <b-row>
-            <b-col lg="3">
+            <b-col lg="4">
               <div class="footer__copyright">
                 © 2020 Company, Inc.
+                <span>Сайт яратувчиси: <a href="https://greatsoft.uz/uz">GreatSoft</a></span>
               </div>
             </b-col>
             <b-col lg="5">
               <div class="footer__confiden">
-                <a href="#">Условия использования</a>
-                <a href="#">Конфиденциальность</a>
+                <!-- <a href="#">Условия использования</a> -->
+                <!-- <a href="#">Конфиденциальность</a> -->
               </div>
             </b-col>
           </b-row>
