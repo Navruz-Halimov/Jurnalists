@@ -58,7 +58,7 @@ const store = () => new Vuex.Store({
       state.lang = payload;
     },
     setVarLang(state,payload) {
-        state.varLang = payload;
+      state.varLang = payload;
     }
 
   },
