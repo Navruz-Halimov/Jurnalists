@@ -47,9 +47,9 @@
           <div class="slider__content">
             <b-container>
               <div class="slider__title" v-if="$i18n.locale == 'uz'">{{slide.title}}</div>
-              <div class="slider__title" v-else>{{slide.title}}</div>
+              <div class="slider__title" v-else>{{slide.title_kl}}</div>
               <div class="slider__text" v-if="$i18n.locale == 'uz'" v-html="slide.text"></div>
-              <div class="slider__text" v-else v-html="slide.text"></div>
+              <div class="slider__text" v-else v-html="slide.text_kl"></div>
               <!-- <div class="site__button">Купрок</div> -->
             </b-container>
           </div>
@@ -80,9 +80,9 @@
                 <img :src="project.image" alt="">
                 <div class="main-project__info"> 
                   <div class="main-project__title" v-if="$i18n.locale == 'uz'">{{project.title}}</div>
-                  <div class="main-project__title" v-else>{{project.title}}</div>
+                  <div class="main-project__title" v-else>{{project.title_kl}}</div>
                   <div class="main-project__text" v-if="$i18n.locale == 'uz'" v-html="project.content"></div>
-                  <div class="main-project__text" v-else v-html="project.content"></div>
+                  <div class="main-project__text" v-else v-html="project.content_kl"></div>
                 </div>
               </nuxt-link>
             </b-col>            

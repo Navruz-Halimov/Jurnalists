@@ -33,8 +33,10 @@
                 <nuxt-link :to="'projects/'+project.id" class="main-project__img">
                   <img :src="project.image" alt="image">
                   <div class="main-project__info">
-                    <div class="main-project__title">{{project.title}}</div>
-                    <div class="main-project__text" v-html="project.content"></div>
+                    <div class="main-project__title" v-if="$i18n.locale == 'uz'">{{project.title}}</div>
+                    <div class="main-project__title" v-else>{{project.title_kl}}</div>
+                    <div class="main-project__text" v-if="$i18n.locale == 'uz'" v-html="project.content"></div>
+                    <div class="main-project__text" v-else v-html="project.content_kl"></div>
                   </div>
                 </nuxt-link>
               </b-col>
