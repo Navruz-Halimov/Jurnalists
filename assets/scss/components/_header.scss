@@ -9,6 +9,13 @@
     }
   }
 
+  &__logo {
+    img {
+      width: 100%;
+      max-width: 90px;
+    }
+  }
+
   &__form {
     
     input {
@@ -62,7 +69,17 @@
     align-items: center;
 
     .active {
-      background: rgba(255, 255, 255, 0.4);
+      // background: rgba(255, 255, 255, 0.4);
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 16px;
+        height: 2px;
+        width: 70%;
+        left: 7px;
+        background-color: #ffc700;
+      }
     }
 
     a {
@@ -74,6 +91,9 @@
       height: 100%;
       padding: 10px 10px;
       line-height: 37px;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
@@ -90,6 +110,7 @@
       padding-bottom: 5px;
       position: relative;
       border-bottom: 2px solid transparent;
+      font-weight: 600;
 
       &:hover {
         text-decoration: none;

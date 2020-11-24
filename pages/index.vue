@@ -1,37 +1,6 @@
 <template>
   <main class="main__page">
     <div class="main__slider">  
-      <!-- v-if="slides[0] == '' -->
-      <!-- <b-carousel
-        id="carousel-1"
-        
-        :interval="4000"
-        controls
-        background="#ababab"
-        img-width="1024"
-        img-height="480"
-        style="text-shadow: 1px 1px 2px #333;"
-        class="main__carousel"
-      >
-        <b-carousel-slide img-src="../assets/images/slider.png">
-          <div class="carousel__title">Lorem ipsum dolor</div>
-          <div class="carousel__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-          <div class="site__button">купрок</div>
-        </b-carousel-slide>
-
-        <b-carousel-slide img-src="../assets/images/slider.png">
-          <div class="carousel__title">Lorem ipsum dolor</div>
-          <div class="carousel__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-          <div class="site__button">купрок</div>
-        </b-carousel-slide>
-
-        <b-carousel-slide img-src="../assets/images/slider.png">
-          <div class="carousel__title">Lorem ipsum dolor</div>
-          <div class="carousel__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-          <div class="site__button">купрок</div>
-        </b-carousel-slide>
-
-      </b-carousel> -->
       <b-alert show variant="danger" v-if="errored">Server not working</b-alert>
       <hooper 
         :settings="hooperSettings"
@@ -126,10 +95,9 @@
                 class="main-compitition__title"
                 v-else
               >
-                {{compitition.title}}
+                {{compitition.title_kl}}
               </nuxt-link>
-              <div class="main-compitition__date" v-if="$i18n.locale == 'uz'">{{compitition.date}}</div>
-              <div class="main-compitition__date" v-else>{{compitition.date}}</div>
+              <div class="main-compitition__date">{{compitition.date}}</div>
             </div>
           </b-col>
         </b-row>
@@ -150,7 +118,7 @@
         <b-row class="main-gallery__wrap">
           <b-col lg="5" class="main-gallery__movie">
             <div class="movie__list" v-for="video in videos.slice(0, 1)" :key="video.id">
-              <video width="auto" height="400" controls="controls" :poster="video.video">
+              <video width="auto" height="350" controls="controls" :poster="video.image">
                 <source :src="video.video" type='video/ogg; codecs="theora, vorbis"'>
                 <source :src="video.video" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                 <source :src="video.video" type='video/webm; codecs="vp8, vorbis"'>
@@ -158,42 +126,16 @@
             </div>
           </b-col>
           <b-col lg="6" offset-lg="1" class="main-gallery__slider">
-            <VueSlickCarousel 
-              :arrows="true" 
-              :slidesToShow=2
-              :focusOnSelect="true"
-              :speed=500
-              centerPadding='15px'
-              :autoplay=true
-              :autoplaySpeed=3000
-              class="main-gallery__slick"
-            >
-              <div v-for="gallery in maingallery" :key="gallery.id">
+            <hooper :settings="mainSlider">
+              <slide class="main-gallery__item" v-for="gallery in maingallery" :key="gallery.id"> 
                 <div class="main-gallery__img">
-                  <img :src="gallery.image" alt="">
-                </div>                           
+                  <img :src="gallery.image"  alt="image">
+                </div>
                 <div class="main-gallery__title" v-if="$i18n.locale == 'uz'">{{gallery.title}}</div>
-                <div class="main-gallery__title" v-else>{{gallery.title}}</div>
-              </div>
-              <div>
-                <div class="main-gallery__img">
-                  <img src="../assets/images/gallery2.png" alt="">
-                </div>
-                <div class="main-gallery__title">Title2</div>
-              </div>
-              <div>
-                <div class="main-gallery__img">
-                  <img src="../assets/images/gallery1.png" alt="">
-                </div>
-                <div class="main-gallery__title">Title3</div>
-              </div>
-              <div>
-                <div class="main-gallery__img">
-                  <img src="../assets/images/gallery2.png" alt="">
-                </div>
-                <div class="main-gallery__title">Title4</div>
-              </div>
-            </VueSlickCarousel>
+                <div class="main-gallery__title" v-else>{{gallery.title_kl}}</div>
+              </slide>
+              <hooper-navigation slot="hooper-addons"></hooper-navigation>
+            </hooper>
             <nuxt-link :to="localePath('/gallery')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
@@ -214,9 +156,9 @@
             </nuxt-link>
             <div class="main-arxiv__info">
               <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title" v-if="$i18n.locale == 'uz'">{{archive.title}}</nuxt-link>
-              <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title" v-else>{{archive.title}}</nuxt-link>
+              <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title" v-else>{{archive.title_kl}}</nuxt-link>
               <div class="main-arxiv__text" v-if="$i18n.locale == 'uz'" v-html="archive.text"></div>
-              <div class="main-arxiv__text" v-else v-html="archive.text"></div>
+              <div class="main-arxiv__text" v-else v-html="archive.text_kl"></div>
             </div>
           </b-col>              
         </b-row>
@@ -242,7 +184,7 @@
           </b-col>
           <b-col lg="7" class="main-about__info">
             <div class="main-about__text" v-html="about.content" v-if="$i18n.locale == 'uz'"></div>
-            <div class="main-about__text" v-html="about.content" v-else></div>
+            <div class="main-about__text" v-html="about.content_kl" v-else></div>
             <nuxt-link :to="localePath('/about')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>       
@@ -284,30 +226,14 @@ import Posts from '../components/Posts'
 export default {
   data() {
     return {
-      header__slider: {
-        centeredSlides: true,
-        spaceBetween: 10,
-        loop: true,
-        // autoplay: true,
-        effect: 'fade',
-        //  grabCursor: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }
-      },
-      baseUrl: 'http://188.225.72.69',
-      gallery__slider: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        navigation: {
-          nextEl: '.swiper-card__next',
-          prevEl: '.swiper-card__prev'
-        },
-      },
       hooperSettings: {
         infiniteScroll: true,
         wheelControl: false
+      },
+      mainSlider: {
+        infiniteScroll: true,
+        wheelControl: false,
+        itemsToShow: 2
       },
       abouts: [],
       slides: [],
