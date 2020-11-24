@@ -1,4 +1,4 @@
-FROM node:12.08
+FROM node:12.8
 
 COPY . /src
 WORKDIR /src
