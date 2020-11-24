@@ -13,9 +13,11 @@
           <div class="release__img">
             <img :src="release.image" alt="">
           </div> 
-          <div class="release__address">{{release.address}}</div>
+          <div class="release__address" v-if="$i18n.locale == 'uz'">{{release.address}}</div>
+          <div class="release__address" v-else>{{release.address_kl}}</div>
           <div class="release__info">
-            <nuxt-link :to="'release/'+release.id" class="release__subtitle" v-html="release.title_of_trening"></nuxt-link>
+            <nuxt-link :to="'release/'+release.id" class="release__subtitle" v-if="$i18n.locale == 'uz'" v-html="release.title_of_trening"></nuxt-link>
+            <nuxt-link :to="'release/'+release.id" class="release__subtitle" v-else v-html="release.title_of_trening_kl"></nuxt-link>
             <div class="release__data">{{release.time}}</div>
           </div>
         </b-col>      

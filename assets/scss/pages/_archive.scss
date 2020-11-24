@@ -6,13 +6,19 @@
   }
 
   &__img {
-    padding-bottom: 15px;
+    margin-bottom: 15px;
     display: block;
+    overflow: hidden;
+    border-radius: 10px;
     img {
       width: 100%;
       border-radius: 10px;
       height: 200px;
       object-fit: cover;
+      transition: all .4s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -111,7 +117,7 @@
       margin-bottom: 25px;
     }
     &__img {
-      padding-bottom: 10px;
+      margin-bottom: 10px;
     }
     &__subtitle {
       padding-bottom: 5px;
