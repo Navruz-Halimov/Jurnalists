@@ -21,14 +21,15 @@
           <div class="gallery__videos">
             <div class="video" v-for="video in videos" :key="video.id">
               <!-- <img src="../assets/images/9.png" alt=""> -->
-              <video width="270" height="200" controls="controls" :poster="video.video">
+              <video width="270" height="200" controls="controls" :poster="video.image">
                 <source :src="video.video" type='video/ogg; codecs="theora, vorbis"'>
                 <source :src="video.video" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                 <source :src="video.video" type='video/webm; codecs="vp8, vorbis"'>
                 Элемент video не поддерживается вашим браузером. 
                 <!-- <a :href="video.video">Скачайте видео</a>. -->
               </video>
-              <p>{{video.title}}</p>
+              <p v-if="$i18n.locale == 'uz'">{{video.title}}</p>
+              <p v-else>{{video.title_kl}}</p>
               <!-- <span>
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0)">
@@ -69,7 +70,8 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
                   </div> -->
                 </div>
-                <h4>{{gallery.title}}</h4>
+                <h4 v-if="$i18n.locale == 'uz'">{{gallery.title}}</h4>
+                <h4 v-else>{{gallery.title}}</h4>
               </b-col>
             </b-row>
           </div>
@@ -96,16 +98,15 @@ export default {
       await this.$axios.get('galeriya/pictures/')
         .then((res) => {
           this.gallerys = res.data;
-          console.log('getGallery', res)
+          // console.log('getGallery', res)
         })
-        .catch((error) => {
-          console.log('getGallery', error)
-        })
+        .catch(() => {})
     },
     async getVideo() {
       await this.$axios.get('galeriya/videos/')
         .then((res) => {
-          this.videos = res.data
+          this.videos = res.data;
+          console.log('getGallery', res)
         })
         .catch((error) => {
           console.log('getVideo', error)
