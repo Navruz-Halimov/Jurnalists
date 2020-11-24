@@ -31,8 +31,10 @@
                   alt=""
                 >
               </nuxt-link>
-              <nuxt-link :to="'archive/'+archive.id" class="archive-page__subtitle">{{archive.title}}</nuxt-link>
-              <div class="archive-page__body" v-html="archive.text"></div>
+              <nuxt-link :to="'archive/'+archive.id" v-if="$i18n.locale == 'uz'" class="archive-page__subtitle">{{archive.title}}</nuxt-link>
+              <nuxt-link :to="'archive/'+archive.id" v-else class="archive-page__subtitle">{{archive.title_kl}}</nuxt-link>
+              <div class="archive-page__body" v-if="$i18n.locale == 'uz'" v-html="archive.text"></div>
+              <div class="archive-page__body" v-else  v-html="archive.text_kl"></div>
             </b-col>                                                                       
           </b-row>
         </b-col>

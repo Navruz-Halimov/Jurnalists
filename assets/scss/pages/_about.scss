@@ -126,15 +126,26 @@
   
   .about-me {
     margin-bottom: 80px;
+
+    &__list {
+      display: inline-block;
+    }
     &__title {
       font-weight: 700;
       font-size: 40px;
       padding-bottom: 40px;
     }
 
+    &__text {
+      word-break: break-word;
+    }
+
     &__img {
+      float: left;
+      margin: 0 15px 5px 0;
       img {
         width: 100%;
+        max-width: 320px;
       }
     }
   }
@@ -182,6 +193,7 @@
       &__img {
         margin-bottom: 15px;
         text-align: center;
+        width: 100%;
         img {
           max-width: 300px;
           text-align: center;
@@ -196,6 +208,10 @@
       }
     }
   }
+}
+
+@media (max-width: 640px) {
+
 }
 
 @media (max-width: 576px) {
@@ -244,6 +260,9 @@
         font-size: 25px;
         padding-bottom: 25px;
         text-align: center;
+      }
+      &__text {
+        padding: 0 15px;
       }
     }
   }

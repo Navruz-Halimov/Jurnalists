@@ -113,17 +113,12 @@
       <b-row class="about-me">
         <b-col cols="12">
           <div class="about-me__title">{{$t('aboutPage.about')}}</div>
-          <b-row v-for="about in abouts" :key="about.id">
-            <b-col md="4">
-              <div class="about-me__img">
-                <img :src="about.image" alt="">
-              </div>
-            </b-col>
-            <b-col md="8">
-              <div class="about-me__text" v-html="about.content">            
-                    
+          <b-row v-for="about in abouts" :key="about.id" class="about-me__list">
+            <div class="about-me__img">
+              <img :src="about.image" alt="">
             </div>
-            </b-col>
+            <div class="about-me__text" v-html="about.content" v-if="$i18n.locale == 'uz'"></div>
+            <div class="about-me__text" v-html="about.content" v-else></div>
           </b-row>
         </b-col>
       </b-row>

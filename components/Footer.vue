@@ -79,7 +79,7 @@
             <b-col lg="4" md="6">
               <div class="footer__address">
                 <span>{{$t('footer.address')}}</span>
-                <div>100011, г.Ташкент, ул.Навои, д.30</div>
+                <div>{{$t('contactPage.addressTitle')}}</div>
               </div>
             </b-col>
             <b-col lg="3" md="6">

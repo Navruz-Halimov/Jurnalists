@@ -26,6 +26,7 @@
 
   &__body {
     color: #808080;
+    @include textWrapper(4)
   }
 
   &__item {

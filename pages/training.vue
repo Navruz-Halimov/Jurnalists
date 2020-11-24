@@ -26,39 +26,10 @@
               <img :src="webinar.image" alt="">
             </div>
             <div class="webinars__info">
-              <div class="webinars__subtitle">{{webinar.title}}</div>
+              <div class="webinars__subtitle" v-if="$i18n.locale == 'uz'">{{webinar.title}}</div>
+              <div class="webinars__subtitle" v-else>{{webinar.title_kl}}</div>
               <nuxt-link to="" class="webinars__link" v-if="webinar.vebinar_type == 'online'">{{webinar.url}}</nuxt-link>
               <div class="webinars__address" v-if="webinar.vebinar_type == 'offline'">{{webinar.address}}</div>
-            </div>
-          </b-col>
-          <b-col md="6" class="webinars__item">
-            <div class="webinars__img">
-              <img src="../assets/images/vebinar.png" alt="">
-            </div>
-            <div class="webinars__info">
-              <div class="webinars__subtitle">Video (title)</div>
-              <nuxt-link to="" class="webinars__link">https://link.style.ru</nuxt-link>
-              <div class="webinars__address">Мирабадский район, Ташкент</div>
-            </div>
-          </b-col>
-          <b-col md="6" class="webinars__item">
-            <div class="webinars__img">
-              <img src="../assets/images/vebinar.png" alt="">
-            </div>
-            <div class="webinars__info">
-              <div class="webinars__subtitle">Video (title)</div>
-              <nuxt-link to="" class="webinars__link">https://link.style.ru</nuxt-link>
-              <div class="webinars__address">Мирабадский район, Ташкент</div>
-            </div>
-          </b-col>
-          <b-col md="6" class="webinars__item">
-            <div class="webinars__img">
-              <img src="../assets/images/vebinar.png" alt="">
-            </div>
-            <div class="webinars__info">
-              <div class="webinars__subtitle">Video (title)</div>
-              <nuxt-link to="" class="webinars__link">https://link.style.ru</nuxt-link>
-              <div class="webinars__address">Мирабадский район, Ташкент</div>
             </div>
           </b-col>
         </b-row>

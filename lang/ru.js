@@ -56,7 +56,8 @@ export default {
     title: 'Контакты',
     address: 'Адрес',
     phone: 'Телефон',
-    email: 'E-mail'
+    email: 'E-mail',
+    addressTitle: '100011, г.Ташкент, ул.Навои, д.30'
   },
   leftForm: {
     name: 'Имя и Фамилия',

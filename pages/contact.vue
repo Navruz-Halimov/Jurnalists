@@ -29,7 +29,7 @@
                 <img src="../assets/images/address.svg" alt="">
               </div>
               <div class="contact-page__info-title">{{$t('contactPage.address')}}</div>
-              <div class="contact-page__body">700000, Uzbekistan, Tashkent sh. Sergili rayon, Lev Tolstoy ko’chasi, 64 uy</div>
+              <div class="contact-page__body">{{$t('contactPage.addressTitle')}}</div>
             </b-col>
             <b-col md="4"  class="contact-page__item">
               <div class="contact-page__icon">
@@ -37,8 +37,7 @@
               </div>
               <div class="contact-page__info-title">{{$t('contactPage.phone')}}</div>
               <div class="contact-page__body">
-                <a href="tel:+998916036765">+998 91 603 67 65</a>
-                <a href="tel:+998916036765">+998 91 603 67 65</a>
+                <a href="tel:+998712441524">(+998 71) 244-15-24</a>
               </div>
             </b-col>
             <b-col md="4"  class="contact-page__item">
@@ -47,14 +46,14 @@
               </div>
               <div class="contact-page__info-title">{{$t('contactPage.email')}}</div>
               <div class="contact-page__body">
-                <a href="mailto:test@unsuportmail.ru">test@unsuportmail.ru</a>
+                <a href="mailto:uzjournal@mail.uz">uzjournal@mail.uz</a>
               </div>
             </b-col>
           </b-row>
           <b-row class="contact-page__map">
             <b-col cols="12">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d383839.0816026483!2d69.00569993118535!3d41.27093513250947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdd038c8c86def6e!2sGreatSoft%20Company!5e0!3m2!1sru!2s!4v1605677189746!5m2!1sru!2s" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1455.5448434595792!2d69.24915735085372!3d41.322108039614236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b72efbb0c17%3A0xa52a74c6aab1b415!2zMzAg0L_RgNC-0YHQv9C10LrRgiDQndCw0LLQvtC4LCDQotCw0YjQutC10L3Rgiwg0KPQt9Cx0LXQutC40YHRgtCw0L0!5e0!3m2!1sru!2s!4v1606201414102!5m2!1sru!2s" 
                 width="auto" 
                 height="400" 
                 frameborder="0" 
