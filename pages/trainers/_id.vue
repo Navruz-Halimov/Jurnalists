@@ -20,16 +20,17 @@
         <b-col lg="9">
           <b-row>
             <div class="col-12">
-              <h1 class="archive-page__title">{{trainersItem.name}}</h1>
+              <h1 class="archive-page__title" v-if="$i18n.locale == 'uz'">{{trainersItem.name}}</h1>
+              <h1 class="archive-page__title" v-else>{{trainersItem.name_kl}}</h1>
             </div>
           </b-row>
           <b-row>
             <b-col cols="12" class="page-item__content">
               <div class="page-item__img">
-                <img :src="trainersItem.image" alt="">
+                <!-- <img :src="trainersItem.image" alt=""> -->
               </div>
-              <div class="page-item__text" v-html="trainersItem.about_work">
-              </div>
+              <div class="page-item__text" v-if="$i18n.locale == 'uz'" v-html="trainersItem.about_work"></div>
+              <div class="page-item__text" v-else v-html="trainersItem.about_work_kl"></div>
             </b-col>            
           </b-row>
         </b-col>

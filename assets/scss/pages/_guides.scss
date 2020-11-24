@@ -1,4 +1,5 @@
 .guides-page {
+  margin-bottom: 80px;
   &__title {
     font-weight: 700;
     margin-bottom: 50px;
@@ -48,6 +49,7 @@
 
 @media (max-width: 992px) {
   .guides-page {
+    margin-bottom: 40px;
     &__item {
       max-width: 220px;
     }

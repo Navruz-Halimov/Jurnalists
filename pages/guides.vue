@@ -31,7 +31,8 @@
               <div class="guides-page__img">
                 <img :src="guide.picture" alt="">
               </div>
-              <div class="guides-page__subtitle">{{guide.title}}</div>
+              <div class="guides-page__subtitle" v-if="$i18n.locale == 'uz'">{{guide.title}}</div>
+              <div class="guides-page__subtitle" v-else>{{guide.title_kl}}</div>
               <a :href="guide.pdf" target="_blank" download="true" class="guides-page__download">{{$t('guidesPage.dowland')}}</a>
             </b-col>           
           </b-row>          

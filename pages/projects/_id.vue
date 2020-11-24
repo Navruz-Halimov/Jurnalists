@@ -22,7 +22,8 @@
         <b-col lg="9">
           <b-row>
             <div class="col-12">
-              <h1 class="archive-page__title">{{projectsItem.title}}</h1>
+              <h1 class="archive-page__title" v-if="$i18n.locale == 'uz'">{{projectsItem.title}}</h1>
+              <h1 class="archive-page__title" v-else>{{projectsItem.title_kl}}</h1>
             </div>
           </b-row>
           <b-row>
@@ -30,8 +31,8 @@
               <div class="page-item__img">
                 <!-- <img :src="projectsItem.image" alt=""> -->
               </div>
-              <div class="page-item__text" v-html="projectsItem.content">
-              </div>
+              <div class="page-item__text" v-html="projectsItem.content" v-if="$i18n.locale == 'uz'"></div>
+              <div class="page-item__text" v-html="projectsItem.content_kl" v-else></div>
             </b-col>            
           </b-row>
         </b-col>

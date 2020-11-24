@@ -27,7 +27,7 @@
           <b-row>
             <b-col cols="12" class="page-item__content">
               <div class="page-item__img">
-                <img :src="archiveItem.image" alt="">
+                <!-- <img :src="archiveItem.image" alt=""> -->
               </div>
               <div class="page-item__text" v-if="$i18n.locale == 'uz'" v-html="archiveItem.text"></div>
               <div class="page-item__text" v-esle v-html="archiveItem.text_kl"></div>
