@@ -1,4 +1,7 @@
 export default {
+  site: {
+    name: 'Журналистларни қайта таерлаш маркази'
+  },
   header: {  
     main: 'Асосий',
     projects: 'Лойиҳалар',
@@ -26,7 +29,8 @@ export default {
     title: 'Танловлар'
   },
   guidesPage: {
-    title: 'Қулланмалар'
+    title: 'Қулланмалар',
+    dowland: 'Юклаб олиш'
   },
   galleryPage: {
     title: 'Галерея'
@@ -53,5 +57,10 @@ export default {
     address: 'Адрес',
     phone: 'Телефон',
     email: 'E-mail'
+  },
+  leftForm: {
+    name: 'Исм ва фамилия',
+    comment: 'Изоҳ',
+    btn: 'Жунатмоқ'
   }
 }

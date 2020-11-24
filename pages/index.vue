@@ -46,8 +46,10 @@
           </div>
           <div class="slider__content">
             <b-container>
-              <div class="slider__title">{{slide.title}}</div>
-              <div class="slider__text" v-html="slide.text"></div>
+              <div class="slider__title" v-if="$i18n.locale == 'uz'">{{slide.title}}</div>
+              <div class="slider__title" v-else>{{slide.title}}</div>
+              <div class="slider__text" v-if="$i18n.locale == 'uz'" v-html="slide.text"></div>
+              <div class="slider__text" v-else v-html="slide.text"></div>
               <!-- <div class="site__button">Купрок</div> -->
             </b-container>
           </div>
@@ -76,9 +78,11 @@
             >
               <nuxt-link :to="localePath('/projects/'+project.id)" class="main-project__img">
                 <img :src="project.image" alt="">
-                <div class="main-project__info">
-                  <div class="main-project__title">{{project.title}}</div>
-                  <div class="main-project__text" v-html="project.content"></div>
+                <div class="main-project__info"> 
+                  <div class="main-project__title" v-if="$i18n.locale == 'uz'">{{project.title}}</div>
+                  <div class="main-project__title" v-else>{{project.title}}</div>
+                  <div class="main-project__text" v-if="$i18n.locale == 'uz'" v-html="project.content"></div>
+                  <div class="main-project__text" v-else v-html="project.content"></div>
                 </div>
               </nuxt-link>
             </b-col>            
@@ -110,8 +114,22 @@
               <img :src="compitition.image" alt="">
             </nuxt-link>
             <div class="main-compitition__info">
-              <nuxt-link :to="localePath('/compitition/'+compitition.id)" class="main-compitition__title">{{compitition.title}}</nuxt-link>
-              <div class="main-compitition__date">{{compitition.date}}</div>
+              <nuxt-link 
+                :to="localePath('/compitition/'+compitition.id)" 
+                class="main-compitition__title"
+                v-if="$i18n.locale == 'uz'"
+              >
+                {{compitition.title}}
+              </nuxt-link>
+              <nuxt-link 
+                :to="localePath('/compitition/'+compitition.id)" 
+                class="main-compitition__title"
+                v-else
+              >
+                {{compitition.title}}
+              </nuxt-link>
+              <div class="main-compitition__date" v-if="$i18n.locale == 'uz'">{{compitition.date}}</div>
+              <div class="main-compitition__date" v-else>{{compitition.date}}</div>
             </div>
           </b-col>
         </b-row>
@@ -131,7 +149,13 @@
         </b-row>
         <b-row class="main-gallery__wrap">
           <b-col lg="5" class="main-gallery__movie">
-            <iframe width="500" height="390" src="https://www.youtube.com/embed/t4vJJpiz5UQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="movie__list" v-for="video in videos.slice(0, 1)" :key="video.id">
+              <video width="auto" height="400" controls="controls" :poster="video.video">
+                <source :src="video.video" type='video/ogg; codecs="theora, vorbis"'>
+                <source :src="video.video" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source :src="video.video" type='video/webm; codecs="vp8, vorbis"'>
+              </video>
+            </div>
           </b-col>
           <b-col lg="6" offset-lg="1" class="main-gallery__slider">
             <VueSlickCarousel 
@@ -147,8 +171,9 @@
               <div v-for="gallery in maingallery" :key="gallery.id">
                 <div class="main-gallery__img">
                   <img :src="gallery.image" alt="">
-                </div>
-                <div class="main-gallery__title">{{gallery.title}}</div>
+                </div>                           
+                <div class="main-gallery__title" v-if="$i18n.locale == 'uz'">{{gallery.title}}</div>
+                <div class="main-gallery__title" v-else>{{gallery.title}}</div>
               </div>
               <div>
                 <div class="main-gallery__img">
@@ -188,8 +213,10 @@
               <img :src="archive.image" alt="image">
             </nuxt-link>
             <div class="main-arxiv__info">
-              <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title">{{archive.title}}</nuxt-link>
-              <div class="main-arxiv__text" v-html="archive.text"></div>
+              <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title" v-if="$i18n.locale == 'uz'">{{archive.title}}</nuxt-link>
+              <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title" v-else>{{archive.title}}</nuxt-link>
+              <div class="main-arxiv__text" v-if="$i18n.locale == 'uz'" v-html="archive.text"></div>
+              <div class="main-arxiv__text" v-else v-html="archive.text"></div>
             </div>
           </b-col>              
         </b-row>
@@ -214,9 +241,8 @@
             </div>
           </b-col>
           <b-col lg="7" class="main-about__info">
-            <div class="main-about__text" v-html="about.content">
-              
-            </div>
+            <div class="main-about__text" v-html="about.content" v-if="$i18n.locale == 'uz'"></div>
+            <div class="main-about__text" v-html="about.content" v-else></div>
             <nuxt-link :to="localePath('/about')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>       
@@ -226,7 +252,7 @@
       <b-container>
         <b-row>
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95936.3231296298!2d69.2019581794739!3d41.28688469734103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdd038c8c86def6e!2sGreatSoft%20Company!5e0!3m2!1sru!2s!4v1605532651698!5m2!1sru!2s" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1455.5448434595792!2d69.24915735085372!3d41.322108039614236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b72efbb0c17%3A0xa52a74c6aab1b415!2zMzAg0L_RgNC-0YHQv9C10LrRgiDQndCw0LLQvtC4LCDQotCw0YjQutC10L3Rgiwg0KPQt9Cx0LXQutC40YHRgtCw0L0!5e0!3m2!1sru!2s!4v1606201414102!5m2!1sru!2s" 
             width="100%" 
             height="350" 
             frameborder="0" 
@@ -286,7 +312,8 @@ export default {
       abouts: [],
       slides: [],
       maingallery: [],
-      errored: false      
+      errored: false,
+      videos: []      
     }
   },
   components: { 
@@ -328,12 +355,22 @@ export default {
         .catch((error) => {
           console.log(error);
         })
-    }
+    },
+    async getVideo() {
+      await this.$axios.get('galeriya/videos/')
+        .then((res) => {
+          this.videos = res.data
+        })
+        .catch((error) => {
+          console.log('getVideo', error)
+        })
+    }    
   },
   mounted() {
     this.getAbout(),
     this.getSlider(),
     this.getMainGallery(),
+    this.getVideo(),
     this.$store.dispatch('getArchive'),
     this.$store.dispatch('getCompitition'),
     this.$store.dispatch('getProject')

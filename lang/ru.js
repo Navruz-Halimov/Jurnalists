@@ -1,4 +1,7 @@
 export default {
+  site: {
+    name: 'Центр переподготовки журналистов Узбекистана'
+  },
   header: {  
     main: 'Главная',
     projects: 'Проекты',
@@ -26,7 +29,8 @@ export default {
     title: 'Конкурсы'
   },  
   guidesPage: {
-    title: 'Гиды'
+    title: 'Гиды',
+    dowland: 'Скачать'
   },  
   galleryPage: {
     title: 'Галерея'
@@ -53,5 +57,10 @@ export default {
     address: 'Адрес',
     phone: 'Телефон',
     email: 'E-mail'
-  }
+  },
+  leftForm: {
+    name: 'Имя и Фамилия',
+    comment: 'Комментария',
+    btn: 'Отправить'
+  }  
 }

@@ -7,7 +7,7 @@
             <b-col lg="3">
               <div class="footer__logo">
                 <nuxt-link to="/">
-                  <img src="../assets/images/logo.png" alt="logo">
+                  <img src="../assets/images/footer_logo.png" alt="logo">
                 </nuxt-link>
               </div>
             </b-col>
@@ -51,7 +51,7 @@
             <b-col lg="3" md="6">
               <div class="footer__email">
                 <span>{{$t('footer.email')}}</span>
-                <a href="mailto:uzjournal">uzjournal@mail.uz</a>
+                <a href="mailto:uzjournal@mail.uz">uzjournal@mail.uz</a>
                 <ul class="footer__social">
                   <li>
                     <a href="#">
@@ -79,14 +79,13 @@
             <b-col lg="4" md="6">
               <div class="footer__address">
                 <span>{{$t('footer.address')}}</span>
-                <div>700000, Uzbekistan, Tashkent sh. Sergili rayon, Lev Tolstoy ko’chasi, 64 uy</div>
+                <div>100011, г.Ташкент, ул.Навои, д.30</div>
               </div>
             </b-col>
             <b-col lg="3" md="6">
               <div class="footer__number">
                 <span>{{$t('footer.phone')}}</span>
-                <a href="tel:+7 880 000-00-00">+7 880 000-00-00</a>
-                <a href="tel:+7 880 000-00-00">+7 880 000-00-00</a>
+                <a href="tel:+998712441524">(+998 71) 244-15-24</a>
               </div>
             </b-col>
             <b-col lg="2" md="6">

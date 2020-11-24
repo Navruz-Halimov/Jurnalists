@@ -76,8 +76,10 @@
                 <img :src="leader.image" alt="">
               </div>
               <div class="leaders__info">
-                <div class="leaders__name">{{leader.name}}</div>
-                <div class="leaders__position">{{leader.position}}</div>  
+                <div class="leaders__name" v-if="$i18n.locale == 'uz'">{{leader.name}}</div>
+                <div class="leaders__name" v-else>{{leader.name_kl}}</div>
+                <div class="leaders__position" v-if="$i18n.locale == 'uz'">{{leader.position}}</div> 
+                <div class="leaders__position" v-else>{{leader.position_kl}}</div>  
               </div>
             </b-col>                                   
           </b-row>
@@ -98,9 +100,11 @@
               <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__link">
                 <div class="main-trainer__img">
                   <img :src="trainer.image" alt="">
-                  <div class="main-trainer__text" v-html="trainer.about_work"></div>
+                  <div class="main-trainer__text" v-if="$i18n.locale == 'uz'" v-html="trainer.about_work"></div>
+                  <div class="main-trainer__text" v-else v-html="trainer.about_work_kl"></div>
                 </div>
-                <div class="main-trainer__name">{{trainer.name}}</div>
+                <div class="main-trainer__name" v-if="$i18n.locale == 'uz'">{{trainer.name}}</div>
+                <div class="main-trainer__name" v-else>{{trainer.name_kl}}</div>
               </nuxt-link>
             </b-col>                                                                                    
           </b-row>
@@ -116,8 +120,9 @@
               </div>
             </b-col>
             <b-col md="8">
-              <div class="about-me__text" v-html="about.content">                
-              </div>
+              <div class="about-me__text" v-html="about.content">            
+                    
+            </div>
             </b-col>
           </b-row>
         </b-col>

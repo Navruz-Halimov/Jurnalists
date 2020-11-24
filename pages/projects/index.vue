@@ -64,7 +64,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch('getProject')
-    console.log('getPoje', this.getProject)
+    // console.log('getPoje', this.getProject)
   },
   computed: {
     ... mapGetters({

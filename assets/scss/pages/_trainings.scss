@@ -95,6 +95,18 @@
           font-size: 14px;
         }
       }
+      input[type="number"] {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          z-index: 999;
+          background-color: red;
+          height: 15px;
+          width: 15px;
+          top: 0;
+        }
+      }
       textarea{
         resize: none;
         height: 90px;

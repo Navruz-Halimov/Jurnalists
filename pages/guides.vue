@@ -32,7 +32,7 @@
                 <img :src="guide.picture" alt="">
               </div>
               <div class="guides-page__subtitle">{{guide.title}}</div>
-              <a :href="guide.pdf" target="_blank" download="true" class="guides-page__download">Download</a>
+              <a :href="guide.pdf" target="_blank" download="true" class="guides-page__download">{{$t('guidesPage.dowland')}}</a>
             </b-col>           
           </b-row>          
         </b-col>

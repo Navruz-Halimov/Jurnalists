@@ -3,8 +3,10 @@
     <div class="left__top">
       <!-- <Posts />  -->
       <div class="left__item" v-for="post in posts" :key="post.id">
-        <div class="left__date">{{post.date}}</div>
-        <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-html="post.title"></nuxt-link>
+        <div class="left__date" v-if="$i18n.locale == 'uz'">{{post.date}}</div>
+        <div class="left__date" v-else>{{post.date}}</div>
+        <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-if="$i18n.locale == 'uz'" v-html="post.title"></nuxt-link>
+        <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-else v-html="post.title"></nuxt-link>
       </div>
     </div>
     <div class="left__bottom">
@@ -14,28 +16,28 @@
           <b-form-input 
             type="text" 
             required 
-            placeholder="Name"
+            :placeholder="$t('leftForm.name')"
             v-model="form.name"
           >
           </b-form-input>
         </b-form-group>
         <b-form-group>
           <b-form-input 
-            type="tel" 
+            type="number" 
             required 
-            placeholder="+998 91 603 67 65"
+            placeholder="+998 99 999 99 99"
             v-model="form.phone"
           >
           </b-form-input>
         </b-form-group>
         <b-form-textarea 
           required
-          placeholder="Comment" 
+          :placeholder="$t('leftForm.comment')" 
           rows="8"
           v-model="form.comment"
         >
         </b-form-textarea>
-        <b-button type="submit" variant="primary">Send</b-button>
+        <b-button type="submit" variant="primary">{{$t('leftForm.btn')}}</b-button>
       </b-form>
     </div>
   </div>

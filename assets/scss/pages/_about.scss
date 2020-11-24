@@ -22,11 +22,17 @@
     &__img {
       text-align: center;
       display: block;
-      padding-bottom: 15px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      border-radius: 5px;
       img {
         width: 100%;
         height: 320px;
         object-fit: cover;
+        transition: all .4s ease;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
     &__info {

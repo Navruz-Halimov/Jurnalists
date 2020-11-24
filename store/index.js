@@ -12,8 +12,7 @@ const store = () => new Vuex.Store({
     trainers: [],
     posts: [],
     releases: [],
-    lang: '',
-    varLang: ''
+    searchs: ''
   },
   getters: {
     getArchive(state) {
@@ -33,6 +32,9 @@ const store = () => new Vuex.Store({
     },
     getRelease(state) {
       return state.releases
+    },
+    getInput(state) {
+      return state.searchs
     }
   },
   mutations: {
@@ -54,11 +56,8 @@ const store = () => new Vuex.Store({
     setReleases(state, release) {
       state.releases = release
     },
-    setLang(state,payload) {
-      state.lang = payload;
-    },
-    setVarLang(state,payload) {
-      state.varLang = payload;
+    setInput(state, search) {
+      state.searchs = search
     }
 
   },
@@ -67,63 +66,53 @@ const store = () => new Vuex.Store({
       await this.$axios.get('arxiv/')
         .then((res) => {
           commit('setArchive', res.data)
-          console.log('setArchive', res)
         })
-        .catch((error) => {
-          console.log('setArchive', error)
-        })
+        .catch(() => {})
     },
     async getCompitition({commit}) {
       await this.$axios.get('tanlovlar/')
         .then((res) => {
           commit('setCompitition', res.data);
-          console.log('setCompitition', res)
         })
-        .catch((error) => {
-          console.log('setCompitition', error)
-        })
+        .catch(() => {})
     },
     // `'tanlovlar/?lang=' + ${this.$i18n.locale}`
     async getProject({commit}) {
       await this.$axios.get('loyihalar/')
         .then((res) => {
           commit('setProject', res.data);
-          console.log('setProject', res)
         })
-        .catch((error) => {
-          console.log('setProject', error)
-        })
+        .catch(() => {})
     },
     async getTrainer({commit}) {
       await this.$axios.get('trenerlar/trenerlar/')
         .then((res) => {
           commit('setTrainer', res.data);
-          console.log('setTrainer', res)
         })
-        .catch((error) => {
-          console.log('setTrainer', error)
-        })
+        .catch(() => {})
     },
     async getPosts({commit}) {
       await this.$axios.get('elonlar/')
         .then((res) => {
           commit('setPosts', res.data);
-          console.log('setPosts', res)
         })
-        .catch((error) => {
-          console.log('setPosts', error)
-        })
+        .catch(() => {})
     },
     async getReleases({commit}) {
       await this.$axios.get('treninglar/matbuot/')
         .then((res) => {
           commit('setReleases', res.data)
-          console.log('setReleases', res)
+          // console.log('setReleases', res)
         })
-        .catch((error) => {
-          console.log('setReleases', error)
+        .catch(() => {})
+    },
+    async getInput({commit}, data) {
+      await this.$axios.get(`search/?search=${data}&&lang=${this.$i18n.locale}`)
+        .then((res) => {
+          commit('setInput', res.data)
+          console.log('SEARCH', res)
         })
-    }   
+    },       
   }
 });
 

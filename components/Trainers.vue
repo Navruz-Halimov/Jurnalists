@@ -18,11 +18,12 @@
             <nuxt-link :to="localePath('/trainers/'+trainer.id)" class="main-trainer__link">
               <div class="main-trainer__img">
                 <img :src="trainer.image" alt="">
-                <div class="main-trainer__text" v-html="trainer.about_work"></div>
+                <div class="main-trainer__text" v-html="trainer.about_work" v-if="$i18n.locale == 'uz'"></div>
+                <div class="main-trainer__text" v-html="trainer.about_work" v-else></div>
               </div>
             </nuxt-link>
-            <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__name">{{trainer.name}}</nuxt-link>
-            <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__name">{{trainer.name_kl}}</nuxt-link>            
+            <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__name" v-if="$i18n.locale == 'uz'">{{trainer.name}}</nuxt-link>
+            <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__name" v-else>{{trainer.name_kl}}</nuxt-link>            
           </b-col>
         </b-row>
         <b-row>

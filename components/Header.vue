@@ -4,15 +4,16 @@
       <b-row class="header__top">
         <b-container>
           <div class="col-6 p-0">
-            <b-form class="header__form" @submit.prevent="getInput">
+            <b-form class="header__form">
               <b-form-group>
                 <b-form-input
                   type="text"
                   :placeholder="$t('header.search')"
                   v-model="search"
+                  @change="$store.dispatch('getInput', search)"
                 >
                 </b-form-input>
-                <b-button @click="getInput()" type="submit"></b-button>
+                <b-button type="submit"></b-button>
               </b-form-group>
             </b-form>
           </div>
@@ -91,12 +92,7 @@ export default {
     MobileMenu
   },
   methods: {
-    async getInput() {
-      await this.$axios.get('search/?search=', this.search)
-        .then((res) => {
-          console.log('getInput', res)
-        })
-    },
+    
     selectLang(text) {
       if (text === 'UZ') {
         this.isActive = text;

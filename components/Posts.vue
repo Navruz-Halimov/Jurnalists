@@ -17,8 +17,10 @@
               <img :src="post.image" alt="post">
             </div>
             <div class="main-posts__info">
-              <div class="main-posts__date">{{post.date}}</div>
-              <nuxt-link :to="localePath('/posts/'+post.id)" class="main-posts__title">{{post.title}}</nuxt-link>
+              <div class="main-posts__date" v-if="$i18n.locale == 'uz'">{{post.date}}</div>
+              <div class="main-posts__date" v-else>{{post.date}}</div>
+              <nuxt-link :to="localePath('/posts/'+post.id)" class="main-posts__title" v-if="$i18n.locale == 'uz'">{{post.title}}</nuxt-link>
+              <nuxt-link :to="localePath('/posts/'+post.id)" class="main-posts__title" v-else>{{post.title}}</nuxt-link>
             </div>
           </b-col>
         </b-row>
