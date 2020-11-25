@@ -15,7 +15,8 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    { src: '@/assets/scss/main.scss', lang: 'scss' }
+    { src: '@/assets/scss/main.scss', lang: 'scss' },
+    { src: "aos/dist/aos.css"}
   ],
 
   
@@ -24,6 +25,7 @@ export default {
     { src: '~/plugins/backToTop.js', ssr: false },
     { src: '~/plugins/inputMask.js', ssr: false },
     { src: "~/plugins/toast.js", ssr: false },
+    { src: "~/plugins/aos.js", ssr: false },
   ],
 
   loading: {
@@ -83,5 +85,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    vendor: ["aos"]
   }
 }

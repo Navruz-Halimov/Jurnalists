@@ -33,7 +33,7 @@
         <b-container>
           <b-row>
             <b-col cols="12">
-              <div class="main__title">{{$t('index.projects')}}</div>
+              <div class="main__title" data-aos="fade-up-right" data-aos-duration="800">{{$t('index.projects')}}</div>
             </b-col>
           </b-row>
           <b-row class="main-project__list">
@@ -44,6 +44,8 @@
               class="main-project__item"
               v-for="project in getProject"
               :key="project.id"
+              data-aos="fade-up-right"
+              data-aos-duration="800"
             >
               <nuxt-link :to="localePath('/projects/'+project.id)" class="main-project__img">
                 <img :src="project.image" alt="">
@@ -58,7 +60,7 @@
           </b-row>
           <b-row>
             <b-col cols="12">
-              <nuxt-link :to="localePath('/projects')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
+              <nuxt-link :to="localePath('/projects')" class="site__button" data-aos="fade-up-right" data-aos-duration="500">{{$t('btn_more.title')}}</nuxt-link>
             </b-col>
           </b-row>
         </b-container>
@@ -68,7 +70,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">{{$t('index.compitition')}}</div>
+            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.compitition')}}</div>
           </b-col>
         </b-row>
         <b-row class="main-compitition__list">
@@ -78,6 +80,8 @@
             class="main-compitition__item"
             v-for="compitition in getCompitition"
             :key="compitition.id"
+            data-aos="fade-up"
+            data-aos-duration="800"
           >
             <nuxt-link :to="localePath('/compitition/'+compitition.id)" class="main-compitition__img">
               <img :src="compitition.image" alt="">
@@ -103,7 +107,7 @@
         </b-row>
         <b-row>
           <b-col cols="12">
-            <nuxt-link :to="localePath('/compitition')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
+            <nuxt-link :to="localePath('/compitition')" class="site__button" data-aos="fade-up" data-aos-duration="800">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -112,12 +116,18 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">{{$t('index.gallery')}}</div>
+            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.gallery')}}</div>
           </b-col>
         </b-row>
         <b-row class="main-gallery__wrap">
           <b-col lg="5" class="main-gallery__movie">
-            <div class="movie__list" v-for="video in videos.slice(0, 1)" :key="video.id">
+            <div 
+              class="movie__list" 
+              v-for="video in videos.slice(0, 1)" 
+              :key="video.id"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
               <!-- <video width="auto" height="350" controls="controls" :poster="video.image">
                 <source :src="video.video" type='video/ogg; codecs="theora, vorbis"'>
                 <source :src="video.video" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
@@ -153,12 +163,19 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">{{$t('index.archive')}}</div>
+            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.archive')}}</div>
             <b-alert show variant="danger" v-if="errored">Server not working</b-alert>
           </b-col>
         </b-row>
         <b-row class="main-arxiv__list">
-          <b-col lg="4" class="main-arxiv__item" v-for="archive in getArchive" :key="archive.id">
+          <b-col 
+            lg="4" 
+            class="main-arxiv__item" 
+            v-for="archive in getArchive" 
+            :key="archive.id"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
             <nuxt-link :to="localePath('/archive/'+archive.id)" class="main-arxiv__img">
               <img :src="archive.image" alt="image">
             </nuxt-link>
@@ -172,7 +189,7 @@
         </b-row>
         <b-row>
             <b-col cols="12">
-              <nuxt-link :to="localePath('/archive')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
+              <nuxt-link :to="localePath('/archive')" class="site__button" data-aos="fade-up" data-aos-duration="500">{{$t('btn_more.title')}}</nuxt-link>
             </b-col>
         </b-row>
       </b-container>
@@ -184,7 +201,13 @@
             <div class="main__title">Biz haqimizda</div>
           </b-col>
         </b-row>
-        <b-row class="main-about__wrap" v-for="about in abouts" :key="about.id">
+        <b-row 
+          class="main-about__wrap" 
+          v-for="about in abouts" 
+          :key="about.id"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           <b-col lg="5">
             <div class="main-about__img">
               <img :src="about.image" alt="">
@@ -193,7 +216,7 @@
           <b-col lg="7" class="main-about__info">
             <div class="main-about__text" v-html="about.content" v-if="$i18n.locale == 'uz'"></div>
             <div class="main-about__text" v-html="about.content_kl" v-else></div>
-            <nuxt-link :to="localePath('/about')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')" class="site__button" data-aos="fade-up" data-aos-duration="800">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>       
       </b-container>

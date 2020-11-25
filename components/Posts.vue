@@ -3,7 +3,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">{{$t('index.advert')}}</div>
+            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.advert')}}</div>
           </b-col>
         </b-row>
         <b-row>
@@ -12,6 +12,8 @@
             class="main-posts__item"
             v-for="(post, index) in getPosts"
             :key="index.id"
+            data-aos="fade-up"
+            data-aos-duration="800"
           >
             <div class="main-posts__img">
               <img :src="post.image" alt="post">
