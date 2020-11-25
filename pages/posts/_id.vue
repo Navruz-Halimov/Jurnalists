@@ -4,7 +4,8 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <Breadcrumb :crumbs="crumbs" />
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -43,9 +44,11 @@ export default {
     return {
       postsItem: [],
       crumbs: [
-        { id: 1, title: 'Asosiy', url: '/', disabled: false },
-        // { id: 2, title: 'E’lonlar', url: '/', disabled: false},
-      ]
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+      ],
     }
   },
   methods: {
@@ -65,6 +68,9 @@ export default {
     .then(() => {
       this.crumbs.push(
         { id: 2, title: this.postsItem.title, url: '/posts', disabled: true},
+      );
+      this.crumbsRu.push(
+        { id: 2, title: this.postsItem.title_kl, url: '/posts', disabled: true},
       );
     })
   }

@@ -7,7 +7,8 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Arxiv</span>
             </div> -->
-            <Breadcrumb :crumbs="crumbs"/>
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -44,9 +45,13 @@ export default {
     return {
       archiveItem: [],
       crumbs: [
-        { id: 1, title: 'Asosiy', url: '/', disabled: false },
-        { id: 2, title: 'Arxiv', url: '/archive', disabled: false},
-      ]
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Архив', url: '/uz/archive', disabled: false},
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'Архив', url: '/ru/archive', disabled: false},
+      ],
     }
   },
   methods: {
@@ -66,6 +71,9 @@ export default {
     .then(() => {
       this.crumbs.push(
         { id: 3, title: this.archiveItem.title, url: '/archice', disabled: true},
+      );
+      this.crumbsRu.push(
+        { id: 3, title: this.archiveItem.title_kl, url: '/archice', disabled: true},
       );
     })
   }

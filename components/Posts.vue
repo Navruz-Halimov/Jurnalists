@@ -28,8 +28,6 @@
 </template>
 
 <script>
-var now = new Date();
-console.log('dhtvz',now);
 import {mapGetters} from 'vuex'
 export default {
   computed: {

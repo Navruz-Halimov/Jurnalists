@@ -7,7 +7,8 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Trenerlar</span>
             </div> -->
-            <Breadcrumb :crumbs="crumbs" />
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -80,7 +81,7 @@
                   </div> -->
                 </div>
                 <h4 v-if="$i18n.locale == 'uz'">{{gallery.title}}</h4>
-                <h4 v-else>{{gallery.title}}</h4>
+                <h4 v-else>{{gallery.title_kl}}</h4>
               </b-col>
             </b-row>
           </div>
@@ -97,9 +98,13 @@ export default {
       gallerys: [],
       videos: [],
       crumbs: [
-        { id: 1, title: 'Asosiy', url: '/', disabled: false },
-        { id: 2, title: 'Galereya', url: '/gallery', disabled: true},
-      ]
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Галерея', url: '/gallery', disabled: true},
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'Галерея', url: '/gallery', disabled: true},
+      ],
     }
   },
   methods: {

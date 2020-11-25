@@ -4,7 +4,8 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <Breadcrumb :crumbs="crumbs" />
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -48,9 +49,13 @@ export default {
     return {
       guides: [],
       crumbs: [
-        { id: 1, title: 'Asosiy', url: '/', disabled: false },
-        { id: 2, title: 'Qo`llanmalar', url: '/guides', disabled: true},
-      ]
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Қулланмалар', url: '/guides', disabled: true},
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'Справочники', url: '/guides', disabled: true},
+      ],
     }
   },
   methods: {

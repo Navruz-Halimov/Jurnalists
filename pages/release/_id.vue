@@ -4,7 +4,8 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <Breadcrumb :crumbs="crumbs"/>
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -41,7 +42,15 @@
 export default {
   data() {
     return {
-      releaseItem: []
+      releaseItem: [],
+      crumbs: [
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 1, title: 'Тренинглар', url: '/uz/training', disabled: false },
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 1, title: 'Тренинги', url: '/ru/training', disabled: false },
+      ],
     }
   },
   methods: {
@@ -58,6 +67,14 @@ export default {
   },
   mounted() {
     this.getReleaseItem()
+    .then(() => {
+      this.crumbs.push(
+        { id: 3, title: this.releaseItem.title_of_trening, url: '/release', disabled: true }
+      );
+      this.crumbsRu.push(
+        { id: 3, title: this.releaseItem.title_of_trening_kl, url: '/release', disabled: true},
+      );
+    })
   }
 }
 </script>

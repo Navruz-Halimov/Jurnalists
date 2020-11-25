@@ -4,11 +4,8 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <!-- <i-breadcrumb>
-              <nuxt-link to="/">Asosiy</nuxt-link> /
-              <i-breadcrumb-item>Loyihalar</i-breadcrumb-item>
-            </i-breadcrumb> -->
-            <Breadcrumb :crumbs="crumbs" />
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -54,19 +51,22 @@ export default {
   data () {
     return {
       crumbs: [
-        { id: 1, title: 'Asosiy', url: '/', disabled: false },
-        { id: 2, title: 'Loyihalar', url: '/projects', disabled: true},
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Лойихалар', url: '/projects', disabled: true},
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'Проекты', url: '/projects', disabled: true},
       ],
       items: [
         // { title: "Home", href: "/" }, 
         // { title: "", active: true }
       ],
-      // baseURL: 'http://jqtm.uz/'
+      
     }
   },
   mounted() {
     this.$store.dispatch('getProject')
-    // console.log('getPoje', this.getProject)
   },
   computed: {
     ... mapGetters({

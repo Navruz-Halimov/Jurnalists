@@ -7,7 +7,8 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Arxiv</span>
             </div> -->
-            <Breadcrumb/>
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -44,7 +45,15 @@
 export default {
   data() {
     return {
-      trainersItem: []
+      trainersItem: [],
+      crumbs: [
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Биз ҳақимизда', url: '/uz/about', disabled: false},
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'О нас', url: '/ru/about', disabled: false},
+      ],
     }
   },
   methods: {
@@ -59,8 +68,16 @@ export default {
         })
     }
   },
-  mounted() {
-    this.getTrainersItem();
+  created() {
+    this.getTrainersItem()
+    .then(() => {
+      this.crumbs.push(
+        { id: 3, title: this.trainersItem.name, url: '/about', disabled: true},
+      );
+      this.crumbsRu.push(
+        { id: 3, title: this.trainersItem.name_kl, url: '/about', disabled: true},
+      );
+    })
   }
 }
 </script>

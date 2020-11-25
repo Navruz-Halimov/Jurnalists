@@ -7,7 +7,8 @@
             <!-- <div class="link">
               <a href="#">Asosiy</a> / <span>Arxiv</span>
             </div> -->
-            <Breadcrumb :crumbs="crumbs" />
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -134,9 +135,13 @@ export default {
       abouts: [],
       leaders: [],
       crumbs: [
-        { id: 1, title: 'Asosiy', url: '/', disabled: false },
-        { id: 2, title: 'Biz haqimizda', url: '/about', disabled: true},
-      ]
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Биз ҳақимизда', url: '/about', disabled: true},
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'О нас', url: '/about', disabled: true},
+      ],
     }
   },
   methods: {

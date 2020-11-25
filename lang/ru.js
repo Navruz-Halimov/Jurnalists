@@ -6,7 +6,7 @@ export default {
     main: 'Главная',
     projects: 'Проекты',
     compitition: 'Конкурсы',
-    guides: 'Гиды',
+    guides: 'Справочники',
     gallery: 'Галерея',
     training: 'Тренинги',
     archive: 'Архив',

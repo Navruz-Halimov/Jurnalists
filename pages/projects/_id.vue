@@ -9,7 +9,8 @@
               <nuxt-link to="/projects">Loyihalar</nuxt-link> /
               <i-breadcrumb-item v-bind="item" v-for="item in items" :key="item.title">{{item.title}}</i-breadcrumb-item>
             </i-breadcrumb> -->
-            <Breadcrumb :crumbs="crumbs"/>
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
         </b-row>
       </b-container>
@@ -91,9 +92,13 @@ export default {
     return {
       projectsItem: [],
       crumbs: [
-        { id: 1, title: 'Asosiy', url: '/', disabled: false },
-        { id: 2, title: 'Loyihalar', url: '/projects', disabled: false},
-      ]
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Лойихалар', url: '/uz/projects', disabled: false},
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'Проекты', url: '/ru/projects', disabled: false},
+      ],
     }
   },
   methods: {
@@ -113,6 +118,9 @@ export default {
     .then(() => {
       this.crumbs.push(
         { id: 3, title: this.projectsItem.title, url: '/projects', disabled: true},
+      );
+      this.crumbsRu.push(
+        { id: 3, title: this.projectsItem.title_kl, url: '/projects', disabled: true},
       );
     })
   }
