@@ -266,10 +266,8 @@ export default {
       await this.$axios.get('menu/')
         .then((res) => {
           this.slides = res.data;
-          // console.log('getSlider', res);
         })
         .catch((error) => {
-          // console.log('getSlider', error);
           this.errored = true;
         })
     },
@@ -278,18 +276,14 @@ export default {
         .then((res) => {
           this.maingallery = res.data
         })
-        .catch((error) => {
-          console.log(error);
-        })
+        .catch((error) => {})
     },
     async getVideo() {
       await this.$axios.get('galeriya/videos/')
         .then((res) => {
           this.videos = res.data
         })
-        .catch((error) => {
-          console.log('getVideo', error)
-        })
+        .catch((error) => {})
     }    
   },
   mounted() {

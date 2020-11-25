@@ -60,11 +60,8 @@ export default {
       await this.$axios.get('treninglar/treneringlar/')
         .then((res) => {
           this.webinars = res.data;
-          console.log('getWebinar', res)
         })
-        .catch((error) => {
-          console.log('getWebinar', error)
-        })
+        .catch(() => {})
     }
   },
   mounted() {

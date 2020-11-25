@@ -1,6 +1,7 @@
 <template>
   <div class="main-search">
     <b-container>
+      <h1>Search</h1>
       <div class="search__list" v-for="(search, index) in getInput" :key="index.id">
         <div class="search__title">{{search.title}}</div>
         <div class="div">{{search.content}}</div>
