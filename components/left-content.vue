@@ -70,6 +70,7 @@ export default {
     async onSubmit() {
       await this.$axios.post('contact/', this.form)
         .then(async () => {
+          console.log('numebr', this.form);
           this.form = {
             name: '',
             phone: '',
@@ -94,10 +95,10 @@ export default {
       await this.$axios.get('elonlar/')
         .then((res) => {
           this.posts = res.data;
-          console.log('getPosts', res)
+          // console.log('getPosts', res)
         })
         .catch((res) => {
-          console.log('getPosts', res)
+          // console.log('getPosts', res)
         })
     }
   },

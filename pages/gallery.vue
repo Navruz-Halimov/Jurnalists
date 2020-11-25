@@ -21,13 +21,22 @@
           <div class="gallery__videos">
             <div class="video" v-for="video in videos" :key="video.id">
               <!-- <img src="../assets/images/9.png" alt=""> -->
-              <video width="270" height="200" controls="controls" :poster="video.image">
+              <!-- <video width="270" height="200" controls="controls" :poster="video.image">
                 <source :src="video.video" type='video/ogg; codecs="theora, vorbis"'>
                 <source :src="video.video" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                 <source :src="video.video" type='video/webm; codecs="vp8, vorbis"'>
-                Элемент video не поддерживается вашим браузером. 
-                <!-- <a :href="video.video">Скачайте видео</a>. -->
-              </video>
+              </video> -->
+              <iframe 
+                width="560" 
+                height="315" 
+                src="video.video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+              ></iframe>
+              <!-- https://www.youtube.com/watch?v=hrpsKfFGJ7I&list=RDhrpsKfFGJ7I&start_radio=1&ab_channel=StarPro
+              https://youtu.be/hrpsKfFGJ7I
+              src="https://www.youtube.com/embed/hrpsKfFGJ7I"  -->
               <p v-if="$i18n.locale == 'uz'">{{video.title}}</p>
               <p v-else>{{video.title_kl}}</p>
               <!-- <span>

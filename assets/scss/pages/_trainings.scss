@@ -95,17 +95,11 @@
           font-size: 14px;
         }
       }
-      input[type="number"] {
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
         position: relative;
-        &:after {
-          content: "";
-          position: absolute;
-          z-index: 999;
-          background-color: red;
-          height: 15px;
-          width: 15px;
-          top: 0;
-        }
+        appearance: none;
+        
       }
       textarea{
         resize: none;
@@ -122,6 +116,7 @@
     }
   }
 }
+
 
 // Responsive
 @media (min-width: 0) and (max-width: 576px){
