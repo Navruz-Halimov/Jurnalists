@@ -26,6 +26,7 @@
             required 
             placeholder="+998 99 999 99 99"
             v-model="form.phone"
+            min="9"
           >
           </b-form-input>
         </b-form-group>

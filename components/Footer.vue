@@ -55,22 +55,22 @@
                 <ul class="footer__social">
                   <li>
                     <a href="#">
-                      <img src="../assets/images/social/instagramm.svg" alt="instagramm">
+                      <img src="../assets/images/social/instagram.svg" alt="instagramm">
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="../assets/images/social/twitter.svg" alt="twitter">
+                      <img src="../assets/images/social/telegram.svg" alt="telegram">
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="../assets/images/social/vk.svg" alt="vk">
+                      <img src="../assets/images/social/vk2.svg" alt="vk">
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="../assets/images/social/facebook.svg" alt="facebook">
+                      <img src="../assets/images/social/facebook2.svg" alt="facebook">
                     </a>
                   </li>
                 </ul>
