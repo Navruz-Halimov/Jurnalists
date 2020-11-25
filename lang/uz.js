@@ -63,5 +63,9 @@ export default {
     name: 'Исм ва фамилия',
     comment: 'Изоҳ',
     btn: 'Жунатмоқ'
+  },
+  error: {
+    subtitle: 'opps!',
+    text: 'Kechirasiz! Siz izlayotgan sahifa topilmadi'
   }
 }

@@ -118,11 +118,19 @@
         <b-row class="main-gallery__wrap">
           <b-col lg="5" class="main-gallery__movie">
             <div class="movie__list" v-for="video in videos.slice(0, 1)" :key="video.id">
-              <video width="auto" height="350" controls="controls" :poster="video.image">
+              <!-- <video width="auto" height="350" controls="controls" :poster="video.image">
                 <source :src="video.video" type='video/ogg; codecs="theora, vorbis"'>
                 <source :src="video.video" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                 <source :src="video.video" type='video/webm; codecs="vp8, vorbis"'>
-              </video>
+              </video> -->
+              <iframe 
+                width="475" 
+                height="380" 
+                :src="video.video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+              ></iframe>
             </div>
           </b-col>
           <b-col lg="6" offset-lg="1" class="main-gallery__slider">
@@ -276,7 +284,7 @@ export default {
         .then((res) => {
           this.maingallery = res.data
         })
-        .catch((error) => {})
+        .catch(() => {})
     },
     async getVideo() {
       await this.$axios.get('galeriya/videos/')

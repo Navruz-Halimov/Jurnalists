@@ -2,8 +2,8 @@
   <div class="error-page">
     <b-container>
       <h1 class="error__title">404</h1>
-      <div class="error__subtitle">opps!</div>
-      <div class="error__text">SORRY! The page You’re Looking For Was Not Found</div>
+      <div class="error__subtitle">{{$t('error.subtitle')}}</div>
+      <div class="error__text">{{$t('error.text')}}</div>
     </b-container>
   </div>
 </template>
