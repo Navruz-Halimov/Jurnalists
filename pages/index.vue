@@ -116,7 +116,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.gallery')}}</div>
+            <div class="main__title" data-aos="fade-up" data-aos-duration="500">{{$t('index.gallery')}}</div>
           </b-col>
         </b-row>
         <b-row class="main-gallery__wrap">
