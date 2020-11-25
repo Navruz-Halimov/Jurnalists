@@ -97,7 +97,7 @@
               >
                 {{compitition.title_kl}}
               </nuxt-link>
-              <div class="main-compitition__date">{{compitition.date}}</div>
+              <div class="main-compitition__date">{{compitition.date.replace('T', ' ').replace('Z', ' ')}}</div>
             </div>
           </b-col>
         </b-row>

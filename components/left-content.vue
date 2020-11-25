@@ -3,10 +3,9 @@
     <div class="left__top">
       <!-- <Posts />  -->
       <div class="left__item" v-for="post in posts" :key="post.id">
-        <div class="left__date" v-if="$i18n.locale == 'uz'">{{post.date}}</div>
-        <div class="left__date" v-else>{{post.date}}</div>
+        <div class="left__date">{{post.date.replace('T', ' ').replace('Z', ' ').slice(0, 19)}}</div>
         <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-if="$i18n.locale == 'uz'" v-html="post.title"></nuxt-link>
-        <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-else v-html="post.title"></nuxt-link>
+        <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-else v-html="post.title_kl"></nuxt-link>
       </div>
     </div>
     <div class="left__bottom">

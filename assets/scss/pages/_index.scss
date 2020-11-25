@@ -738,6 +738,7 @@
 
     &__item {
       margin-bottom: 25px;
+      flex: 0 0 45%;
     }
 
     .site__button {
@@ -1047,12 +1048,14 @@
     .hooper-next {
       top: auto;
       bottom: 0;
+      display: none;
     }
     .hooper-prev {
       top: auto;
       bottom: 0;
       right: 8%;
       left: auto; 
+      display: none;
     }
   }  
 }

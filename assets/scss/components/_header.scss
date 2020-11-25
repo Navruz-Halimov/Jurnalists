@@ -148,6 +148,7 @@
       display: block;
       margin: 0 0 0 auto;
       background-color: inherit;
+      border: 2px solid #0094FF;
 
       img {
         width: 25px;
@@ -163,10 +164,19 @@
 }
 
 #sidebar-right {
+  background-color: #0094FF !important;
   .b-icon.bi {
     width: 45px;
     height: 45px;
     font-size: 30px;
+  }
+
+  .close {
+    opacity: 1;
+    outline: none;
+    svg {
+      fill: #fff
+    }
   }
 
   .mobile__nav {
@@ -178,7 +188,7 @@
     a {
       display: block;
       margin-bottom: 5px;
-      color: #000;
+      color: #fff;
     }
   }
 }
