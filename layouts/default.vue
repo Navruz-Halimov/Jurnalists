@@ -46,7 +46,7 @@ export default {
 }
 .spinner__main {
   width: 100%;
-  height: 800px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
