@@ -50,7 +50,8 @@ export default {
   footer: {
     email: 'Электрон почта:',
     address: 'Адрес:',
-    phone: 'Телефонлар:'
+    phone: 'Телефонлар:',
+    siteAdmin: 'Сайт яратувчиси - '
   },
   contactPage: {
     title: 'Контактлар',

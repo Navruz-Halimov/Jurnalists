@@ -100,7 +100,7 @@
             <b-col lg="4">
               <div class="footer__copyright">
                 © 2020 Company, Inc.
-                <span>Сайт яратувчиси: <a href="https://greatsoft.uz/uz">GreatSoft</a></span>
+                <span> {{$t('footer.siteAdmin')}} <a href="https://greatsoft.uz/uz">GreatSoft</a></span>
               </div>
             </b-col>
             <b-col lg="5">
