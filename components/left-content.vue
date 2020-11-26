@@ -3,7 +3,7 @@
     <div class="left__top">
       <!-- <Posts />  -->
       <div class="left__item" v-for="post in posts.slice(0, 8)" :key="post.id">
-        <div class="left__date">{{post.date.replace('T', ' ').replace('Z', ' ').slice(0, 19)}}</div>
+        <div class="left__date">{{post.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10)}}</div>
         <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-if="$i18n.locale == 'uz'" v-html="post.title"></nuxt-link>
         <nuxt-link :to="localePath('/posts/'+post.id)" class="left__content" v-else v-html="post.title_kl"></nuxt-link>
       </div>

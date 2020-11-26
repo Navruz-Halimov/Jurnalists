@@ -60,7 +60,7 @@
           </b-row>
           <b-row>
             <b-col cols="12">
-              <nuxt-link :to="localePath('/projects')" class="site__button" data-aos="fade-up" data-aos-duration="500">{{$t('btn_more.title')}}</nuxt-link>
+              <nuxt-link :to="localePath('/projects')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
             </b-col>
           </b-row>
         </b-container>
@@ -101,13 +101,13 @@
               >
                 {{compitition.title_kl}}
               </nuxt-link>
-              <div class="main-compitition__date">{{compitition.date.replace('T', ' ').replace('Z', ' ')}}</div>
+              <div class="main-compitition__date">{{compitition.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10)}}</div>
             </div>
           </b-col>
         </b-row>
         <b-row>
           <b-col cols="12">
-            <nuxt-link :to="localePath('/compitition')" class="site__button" data-aos="fade-up" data-aos-duration="800">{{$t('btn_more.title')}}</nuxt-link>
+            <nuxt-link :to="localePath('/compitition')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
       </b-container>
@@ -189,7 +189,7 @@
         </b-row>
         <b-row>
             <b-col cols="12">
-              <nuxt-link :to="localePath('/archive')" class="site__button" data-aos="fade-up" data-aos-duration="500">{{$t('btn_more.title')}}</nuxt-link>
+              <nuxt-link :to="localePath('/archive')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
             </b-col>
         </b-row>
       </b-container>

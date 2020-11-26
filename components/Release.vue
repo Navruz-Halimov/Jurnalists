@@ -20,7 +20,7 @@
           <div class="release__info">
             <nuxt-link :to="'release/'+release.id" class="release__subtitle" v-if="$i18n.locale == 'uz'" v-html="release.title_of_trening"></nuxt-link>
             <nuxt-link :to="'release/'+release.id" class="release__subtitle" v-else v-html="release.title_of_trening_kl"></nuxt-link>
-            <div class="release__data">{{release.time}}</div>
+            <div class="release__data">{{release.time.replace('T', ' / ').replace('Z', ' ').slice(0, 10)}}</div>
           </div>
         </b-col>      
       </b-row>

@@ -30,7 +30,7 @@
         </b-row>
         <b-row>
           <b-col cols="12">
-            <nuxt-link :to="localePath('/about')" class="site__button" data-aos="fade-up" data-aos-duration="500">{{$t('btn_more.title')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')" class="site__button">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
       </b-container>

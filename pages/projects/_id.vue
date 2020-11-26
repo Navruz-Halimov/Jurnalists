@@ -16,7 +16,7 @@
       </b-container>
     </b-container>
     <b-container>
-      <b-row>
+      <b-row class="mobile__view">
         <b-col class="p-0" lg="3">
           <left-content />
         </b-col>
