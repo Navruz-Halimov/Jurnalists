@@ -242,6 +242,7 @@
   &__img {
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
     img {
       width: 270px;
       height: 300px;
@@ -273,7 +274,7 @@
     z-index: 2;
     opacity: 0;
     transition: all 0.4s ease;
-    @include textWrapper(4);
+    @include textWrapper(3);
   }
 
   &__link {
@@ -388,7 +389,7 @@
     color: #fff;
     z-index: 2;
     padding: 0 15px;
-    transform: translateY(62%);
+    transform: translateY(52%);
     transition: all 0.4s ease;
     max-width: 240px;
   }
@@ -396,7 +397,7 @@
   &__title {
     font-weight: bold;
     font-size: 20px;
-    @include textWrapper(2);
+    @include textWrapper(3);
     line-height: 25px;
     margin-bottom: 10px;
   }
@@ -407,7 +408,7 @@
     opacity: 0;
     transition: all 0.4s ease;
     // transform: translateY(50%);
-    @include textWrapper(4);
+    @include textWrapper(3);
   }
 
   .site__button {
@@ -588,7 +589,7 @@
     font-size: 16px;
     color: #808080;
     padding: 0 15px;
-    @include textWrapper(4);
+    @include textWrapper(3);
   }
 
   .site__button {

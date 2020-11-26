@@ -138,14 +138,15 @@
 
     &__text {
       word-break: break-word;
+      text-indent: 1.5em;
     }
 
     &__img {
       float: left;
-      margin: 0 15px 5px 0;
+      margin: 0 50px 25px 0;
       img {
         width: 100%;
-        max-width: 320px;
+        max-width: 420px;
       }
     }
   }
@@ -199,6 +200,9 @@
           text-align: center;
         }
       }
+      &__title {
+        text-align: center;
+      }
     }
     .leaders {
       &__img {
@@ -238,6 +242,7 @@
         img {
           height: 220px;
           max-width: 250px;
+          border-radius: 5px;
         }
       }
     }

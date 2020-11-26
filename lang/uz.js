@@ -63,10 +63,16 @@ export default {
   leftForm: {
     name: 'Исм ва фамилия',
     comment: 'Изоҳ',
-    btn: 'Жунатмоқ'
+    btn: 'Юбориш'
   },
   error: {
     subtitle: 'opps!',
-    text: 'Кечирасиз! Сиз  Kechirasiz! Siz izlayotgan sahifa topilmadi'
+    text: 'Кечирасиз! Сиз излайотган сахифа топилмади'
+  },
+  toast: {
+    title: 'Малумот юборилди',
+    content: 'Тез орада сиз билан боғланишади',
+    ertitle: 'Малумот хато юборилди',
+    ercontent: 'Илтимос, текшириб кайтадан юборинг'
   }
 }

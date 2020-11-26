@@ -189,6 +189,12 @@
       display: block;
       margin-bottom: 5px;
       color: #fff;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .active {
+      border-bottom: 2px solid #fff;
     }
   }
 }

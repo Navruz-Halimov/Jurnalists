@@ -78,14 +78,15 @@ export default {
           }
           try {
             this.$toast.success({
-              title: `Malumot junatilda`,
-              message: `Tez orada siz bilan bog\'lanishadi`,
+              title: `${this.$t('toast.title')}`,
+              message: `${this.$t('toast.content')}`,
+              
             })
           } catch (err) {
             console.log(err)
             this.$toast.error({
-              title: `Malumot xato junatildi`,
-              message: `Tekshirib qaytadan junating`,
+              title: `${this.$t('toast.ertitle')}`,
+              message: `${this.$t('toast.ercontent')}`,
             })
           }
         })

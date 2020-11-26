@@ -24,7 +24,7 @@
                 md="6" 
                 cols="12" 
                 class="main-project__item"
-                v-for="project in getProject.slice(0,4)"
+                v-for="project in getProject"
                 :key="project.id"
                 data-aos="fade-up"
                 data-aos-duration="800"
