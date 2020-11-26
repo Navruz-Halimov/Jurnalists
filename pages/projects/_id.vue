@@ -17,7 +17,7 @@
     </b-container>
     <b-container>
       <b-row class="mobile__view">
-        <b-col class="p-0" lg="3">
+        <b-col class="p-0 left__form" lg="3">
           <left-content />
         </b-col>
         <b-col lg="9">

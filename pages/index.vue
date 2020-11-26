@@ -1,7 +1,6 @@
 <template>
   <main class="main__page">
     <div class="main__slider">  
-      <b-alert show variant="danger" v-if="errored">Server not working</b-alert>
       <hooper 
         :settings="hooperSettings"
         class="hooper__slider"
@@ -165,7 +164,6 @@
         <b-row>
           <b-col cols="12">
             <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.archive')}}</div>
-            <b-alert show variant="danger" v-if="errored">Server not working</b-alert>
           </b-col>
         </b-row>
         <b-row class="main-arxiv__list">
