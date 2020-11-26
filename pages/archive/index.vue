@@ -25,7 +25,14 @@
             </div>
           </b-row>
           <b-row class="archive-page__list">
-            <b-col md="6" class="archive-page__item" v-for="(archive, index) in getArchive" :key="index.id">
+            <b-col 
+              md="6" 
+              class="archive-page__item" 
+              v-for="(archive, index) in getArchive" 
+              :key="index.id"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
               <nuxt-link :to="'archive/'+archive.id" class="archive-page__img">
                 <img 
                   :src="archive.image" 

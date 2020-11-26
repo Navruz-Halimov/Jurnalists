@@ -22,6 +22,8 @@
             class="webinars__item"
             v-for="webinar in webinars"
             :key="webinar.id"
+            data-aos="fade-up"
+            data-aos-duration="800"
           >
             <div class="webinars__img">
               <img :src="webinar.image" alt="">

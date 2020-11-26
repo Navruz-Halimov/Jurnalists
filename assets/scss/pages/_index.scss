@@ -715,6 +715,9 @@
     &__title {
       font-size: 18px;
       line-height: inherit;
+      &:after {
+        left: 15px;
+      }
     }
   }
 
@@ -793,9 +796,12 @@
     &__title {
       text-align: center;
     }
-    .slick-prev,
-    .slick-next {
-      bottom: -25%;
+    &__slider {
+      .hooper {
+        &-next {
+          left: 12%;
+        }
+      }
     }
   }
 
@@ -1069,17 +1075,6 @@
     font-size: 14px;
   }
 
-  .main-gallery {
-    .slick-prev,
-    .slick-next {
-      display: none !important;
-    }
-
-    .site__button {
-      margin: auto;
-    }
-  }
-
   .main__slider .swiper-button-prev,
   .main__slider .swiper-button-next {
     width: 25px;
@@ -1110,6 +1105,12 @@
         width: 100%;
         height: 300px;
       }
+    }
+    .hooper-navigation {
+      display: none;
+    }
+    .site__button {
+      margin: 30px auto 0;
     }
   }
 }

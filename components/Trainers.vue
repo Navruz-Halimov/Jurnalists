@@ -3,7 +3,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title" data-aos="fade-up-left" data-aos-duration="800">{{$t('index.trainer')}}</div>
+            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.trainer')}}</div>
           </b-col>
         </b-row>
         <b-row class="main-trainer__list">
@@ -14,7 +14,7 @@
             class="main-trainer__item"
             v-for="(trainer, index) in getTrainer"
             :key="index.id"
-            data-aos="fade-up-left"
+            data-aos="fade-up"
             data-aos-duration="800"
           >
             <nuxt-link :to="localePath('/trainers/'+trainer.id)" class="main-trainer__link">
@@ -30,7 +30,7 @@
         </b-row>
         <b-row>
           <b-col cols="12">
-            <nuxt-link :to="localePath('/about')" class="site__button" data-aos="fade-up-left" data-aos-duration="500">{{$t('btn_more.title')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')" class="site__button" data-aos="fade-up" data-aos-duration="500">{{$t('btn_more.title')}}</nuxt-link>
           </b-col>
         </b-row>
       </b-container>

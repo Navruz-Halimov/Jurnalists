@@ -56,11 +56,9 @@ export default {
       await this.$axios.get(`elonlar/${this.$route.params.id}/`)
         .then((res) => {
           this.postsItem = res.data;
-          console.log('postsItem', res)
+          // console.log('postsItem', res)
         })
-        .catch((error) => {
-          console.log('postsItem', error)
-        })
+        .catch(() => {})
     }
   },
   created() {

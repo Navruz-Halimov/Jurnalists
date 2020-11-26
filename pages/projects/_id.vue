@@ -106,11 +106,9 @@ export default {
       await this.$axios.get(`loyihalar/${this.$route.params.id}/`)
         .then((res) => {
           this.projectsItem = res.data;
-          console.log('getProjectsItem', res)
+          // console.log('getProjectsItem', res)
         })
-        .catch((error) => {
-          console.log('getProjectsItem', res)
-        })
+        .catch((error) => {})
     }
   },
   created() {

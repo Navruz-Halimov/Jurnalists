@@ -31,6 +31,8 @@
               class="compitition-page__item"
               v-for="(compitition, index) in getCompitition"
               :key="index.id" 
+              data-aos="fade-up"
+              data-aos-duration="800"
             >
               <nuxt-link :to="'compitition/' + compitition.id" class="compitition-page__img">
                 <img :src="compitition.image" alt="image">

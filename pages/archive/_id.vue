@@ -59,11 +59,9 @@ export default {
       await this.$axios.get(`arxiv/${this.$route.params.id}/`)
         .then((res) => {
           this.archiveItem = res.data;
-          console.log('archiveItem', res)
+          // console.log('archiveItem', res)
         })
-        .catch((error) => {
-          console.log('getArchiveItem', error)
-        })
+        .catch((error) => {})
     }
   },
   created() {

@@ -9,6 +9,8 @@
           class="release__item"
           v-for="release in getRelease"
           :key="release.id"
+          data-aos="fade-up"
+          data-aos-duration="800"
         >
           <div class="release__img">
             <img :src="release.image" alt="">

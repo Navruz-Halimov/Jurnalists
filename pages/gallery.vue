@@ -20,7 +20,13 @@
         </b-col>
         <b-col lg="3">
           <div class="gallery__videos">
-            <div class="video" v-for="video in videos" :key="video.id">
+            <div 
+              class="video" 
+              v-for="video in videos" 
+              :key="video.id"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
               <!-- <img src="../assets/images/9.png" alt=""> -->
               <!-- <video width="270" height="200" controls="controls" :poster="video.image">
                 <source :src="video.video" type='video/ogg; codecs="theora, vorbis"'>
@@ -68,6 +74,8 @@
                 class="mb-4"
                 v-for="gallery in gallerys"
                 :key="gallery.id"
+                data-aos="fade-up"
+                data-aos-duration="800"
               >
                 <div class="gallery__image">
                   <img :src="gallery.image" alt="">
@@ -120,11 +128,9 @@ export default {
       await this.$axios.get('galeriya/videos/')
         .then((res) => {
           this.videos = res.data;
-          console.log('getGallery', res)
+          // console.log('getGallery', res)
         })
-        .catch((error) => {
-          console.log('getVideo', error)
-        })
+        .catch(() => {})
     }
   },
   mounted() {

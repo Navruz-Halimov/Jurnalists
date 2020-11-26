@@ -26,6 +26,8 @@
                 class="main-project__item"
                 v-for="project in getProject.slice(0,4)"
                 :key="project.id"
+                data-aos="fade-up"
+                data-aos-duration="800"
               >
                 <nuxt-link :to="'projects/'+project.id" class="main-project__img">
                   <img :src="project.image" alt="image">

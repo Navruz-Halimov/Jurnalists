@@ -8,7 +8,7 @@
         </b-row>
         <b-row>
           <b-col 
-            md="6" 
+            lg="6" 
             class="main-posts__item"
             v-for="(post, index) in getPosts"
             :key="index.id"

@@ -28,6 +28,8 @@
               class="guides-page__item"
               v-for="guide in guides"
               :key="guide.id"
+              data-aos="fade-up"
+              data-aos-duration="800"
             >
               <div class="guides-page__img">
                 <img :src="guide.picture" alt="">
@@ -63,11 +65,9 @@ export default {
       await this.$axios.get('qollanmalar/')
         .then((res) => {
           this.guides = res.data;
-          console.log('getGuides', res)
+          // console.log('getGuides', res)
         })
-        .catch((error) => {
-          conslo.log('getGuides', error)
-        })
+        .catch(() => {})
     }
   },
   mounted() {

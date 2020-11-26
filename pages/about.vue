@@ -72,6 +72,8 @@
               class="leaders__item"
               v-for="leader in leaders"
               :key="leader.id"
+              data-aos="fade-up"
+              data-aos-duration="800"
             >
               <div class="leaders__img">
                 <img :src="leader.image" alt="">
@@ -97,6 +99,8 @@
               class="trainers__item"
               v-for="(trainer, index) in getTrainer"
               :key="index.id"
+              data-aos="fade-up"
+              data-aos-duration="800"
             >
               <nuxt-link :to="'trainers/'+trainer.id" class="main-trainer__link">
                 <div class="main-trainer__img">
@@ -160,11 +164,9 @@ export default {
       await this.$axios.get('haqimizda/user/')
         .then((res) => {
           this.leaders = res.data;
-          console.log('getLeaders', res)
+          // console.log('getLeaders', res)
         })
-        .catch((error) => {
-          console.log('getLeaders', error)
-        })
+        .catch(() => {})
     }    
   },
   computed: {
