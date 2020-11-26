@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   state: {
-    mediaURL: 'http://jqtm.uz',
+    mediaURL: 'https://jqtm.uz',
     archives: [],
     compititions: [],
     projects: [],

@@ -50,7 +50,7 @@ export default {
     // '@nuxtjs/axios'
     [
       '@nuxtjs/axios',
-      { baseURL: "http://jqtm.uz/api/" },
+      { baseURL: "https://jqtm.uz/api/" },
       
       
     ],

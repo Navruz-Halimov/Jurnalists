@@ -6,7 +6,7 @@ export default {
     main: 'Асосий',
     projects: 'Лойиҳалар',
     compitition: 'Танловлар',
-    guides: 'Қулланмалар',
+    guides: 'Қўлланмалар',
     gallery: 'Галерея',
     training: 'Тренинглар',
     archive: 'Архив',
@@ -15,7 +15,7 @@ export default {
     search: 'Қидирув...',
   },
   index: {
-    advert: 'Элонлар',
+    advert: 'Эълонлар',
     trainer: 'Тренерлар',
     projects: 'Лойиҳалар',
     compitition: 'Танловлар',
@@ -67,6 +67,6 @@ export default {
   },
   error: {
     subtitle: 'opps!',
-    text: 'Kechirasiz! Siz izlayotgan sahifa topilmadi'
+    text: 'Кечирасиз! Сиз  Kechirasiz! Siz izlayotgan sahifa topilmadi'
   }
 }

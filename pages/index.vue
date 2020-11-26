@@ -76,6 +76,7 @@
         <b-row class="main-compitition__list">
           <b-col 
             lg="4" 
+            md="6"
             cols="12" 
             class="main-compitition__item"
             v-for="compitition in getCompitition"
