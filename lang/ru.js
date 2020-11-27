@@ -40,7 +40,7 @@ export default {
     releas: 'Пресс-релиз'
   },
   aboutPage: {
-    leader: 'Лидеры',
+    leader: 'Начальства',
     trainer: 'Тренеры',
     about: 'О нас'
   },  

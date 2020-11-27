@@ -40,7 +40,7 @@ export default {
     releas: 'Матбуот Релиз'
   },
   aboutPage: {
-    leader: 'Рахбарлар',
+    leader: 'Раҳбарият',
     trainer: 'Тренерлар',
     about: 'Биз ҳақимизда'
   },
