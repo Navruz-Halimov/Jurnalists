@@ -2,6 +2,7 @@
   "name": "jurnalists",
   "version": "1.0.0",
   "private": true,
+  "author": "Mirxomitov Mirjalol",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

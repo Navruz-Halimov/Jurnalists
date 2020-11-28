@@ -1,5 +1,6 @@
 <template>
   <main class="main__page">
+    <h1 style="display:none">{{$t('site.name')}}</h1>
     <div class="main__slider">  
       <hooper 
         :settings="hooperSettings"
@@ -9,6 +10,8 @@
           <div class="slider__img">
             <img 
               :src="slide.image" 
+
+              
               alt="img"
             >
           </div>
@@ -32,7 +35,7 @@
         <b-container>
           <b-row>
             <b-col cols="12">
-              <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.projects')}}</div>
+              <h2 class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.projects')}}</h2>
             </b-col>
           </b-row>
           <b-row class="main-project__list">
@@ -69,7 +72,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.compitition')}}</div>
+            <h2 class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.compitition')}}</h2>
           </b-col>
         </b-row>
         <b-row class="main-compitition__list">
@@ -116,7 +119,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title" data-aos="fade-up" data-aos-duration="500">{{$t('index.gallery')}}</div>
+            <h2 class="main__title" data-aos="fade-up" data-aos-duration="500">{{$t('index.gallery')}}</h2>
           </b-col>
         </b-row>
         <b-row class="main-gallery__wrap">
@@ -163,7 +166,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.archive')}}</div>
+            <h2 class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.archive')}}</h2>
           </b-col>
         </b-row>
         <b-row class="main-arxiv__list">
@@ -197,7 +200,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title">Biz haqimizda</div>
+            <h2 class="main__title">{{$t('index.about')}}</h2>
           </b-col>
         </b-row>
         <b-row 

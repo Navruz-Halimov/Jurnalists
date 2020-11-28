@@ -3,7 +3,7 @@
       <b-container>
         <b-row>
           <b-col cols="12">
-            <div class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.advert')}}</div>
+            <h2 class="main__title" data-aos="fade-up" data-aos-duration="800">{{$t('index.advert')}}</h2>
           </b-col>
         </b-row>
         <b-row>

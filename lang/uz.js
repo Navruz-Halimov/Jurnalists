@@ -21,6 +21,7 @@ export default {
     compitition: 'Танловлар',
     gallery: 'Галерея',
     archive: 'Архив',
+    about: 'Биз ҳақимизда',
   },
   projectsPage: {
     title: 'Лойиҳалар'

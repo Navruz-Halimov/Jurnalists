@@ -21,6 +21,7 @@ export default {
     compitition: 'Конкурсы',
     gallery: 'Галерея',
     archive: 'Архив',
+    about: 'О нас'
   },
   projectsPage: {
     title: 'Проекты'
