@@ -4,13 +4,12 @@
       <b-row class="header__top">
         <b-container>
           <div class="col-6 p-0">
-            <b-form class="header__form">
+            <b-form class="header__form" @submit.prevent="searchInput">
               <b-form-group>
                 <b-form-input
                   type="text"
                   :placeholder="$t('header.search')"
                   v-model="search"
-                  @change="$store.dispatch('getInput', search)"
                 >
                 </b-form-input>
                 <b-button type="submit"></b-button>
@@ -92,7 +91,10 @@ export default {
     MobileMenu
   },
   methods: {
-    
+    searchInput(){
+      this.$router.push(this.localePath('search'));
+      this.$store.dispatch('getInput', this.search);
+    },
     selectLang(text) {
       if (text === 'UZ') {
         this.isActive = text;
