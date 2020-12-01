@@ -43,7 +43,7 @@
               lg="3" 
               md="6" 
               cols="12" 
-              class="main-project__item"
+              class="main-project__item mb-3"
               v-for="project in getProject"
               :key="project.id"
               data-aos="fade-up"
