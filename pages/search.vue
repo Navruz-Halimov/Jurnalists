@@ -4,7 +4,6 @@
       <h1>{{$t('search.title')}}</h1>
       <div class="search__list" v-for="(search, index) in getInput" :key="index.id">
         <nuxt-link :to="localePath(`/posts/${search.id}`)" class="search__title">{{search.title}}</nuxt-link>
-        
       </div>
     </b-container>
   </div>
