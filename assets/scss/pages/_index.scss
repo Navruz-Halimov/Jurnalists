@@ -275,6 +275,9 @@
     opacity: 0;
     transition: all 0.4s ease;
     @include textWrapper(3);
+    p:nth-child(1) {
+      display: none;
+    }
   }
 
   &__link {
@@ -283,6 +286,10 @@
       .main-trainer__text {
         // display: block;
         opacity: 1;
+        p:nth-child(1) {
+          display: none;
+          opacity: 0;
+        }
       }
       .main-trainer__img:after {
         // content: "";
