@@ -51,7 +51,8 @@
             <b-col lg="3" md="6">
               <div class="footer__email">
                 <span>{{$t('footer.email')}}</span>
-                <a href="mailto:uzjournal@mail.uz">uzjournal@mail.uz</a>
+                <a href="mailto:journal@bcc.com.uz">journal@bcc.com.uz</a>
+                <a href="mailto:mediauz@bcc.com.uz">mediauz@bcc.com.uz</a>
                 <ul class="footer__social">
                   <li>
                     <a href="#">
@@ -59,7 +60,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="https://t.me/jurnalistikauzbek" target="_blank">
                       <img src="../assets/images/social/telegram.svg" alt="telegram">
                     </a>
                   </li>
@@ -86,6 +87,7 @@
               <div class="footer__number">
                 <span>{{$t('footer.phone')}}</span>
                 <a href="tel:+998712441524">(+998 71) 244-15-24</a>
+                <a href="tel:+998712441596">(+998 71) 244-15-96</a>
               </div>
             </b-col>
             <b-col lg="2" md="6">

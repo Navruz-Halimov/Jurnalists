@@ -60,7 +60,7 @@ export default {
     address: 'Адрес',
     phone: 'Телефон',
     email: 'E-mail',
-    addressTitle: '100011, Тошкент ш., Навои куч., 30-уй'
+    addressTitle: '100011, Ўзбекистон Республикаси Тошкент ш., Навои куч., 30-уй'
   },
   leftForm: {
     name: 'Исм ва фамилия',

@@ -139,6 +139,10 @@
     &__text {
       word-break: break-word;
       text-indent: 1.5em;
+      
+      ul, li {
+        list-style: inherit !important;
+      }
     }
 
     &__img {
