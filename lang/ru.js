@@ -52,7 +52,8 @@ export default {
     email: 'Электронная почта:',
     address: 'Адрес:',
     phone: 'Телефоны:',
-    siteAdmin: 'Сайт разработан - '
+    siteAdmin: 'Сайт разработан - ',
+    site_name: 'Центр переподготовки журналистов'
   },
   contactPage: {
     title: 'Контакты',

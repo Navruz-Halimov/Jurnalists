@@ -52,7 +52,8 @@ export default {
     email: 'Электрон почта:',
     address: 'Адрес:',
     phone: 'Телефонлар:',
-    siteAdmin: 'Сайт яратувчиси - '
+    siteAdmin: 'Сайт яратувчиси - ',
+    site_name: 'Журналистларни қайта тайёрлаш маркази'
   },
   contactPage: {
     title: 'Контактлар',

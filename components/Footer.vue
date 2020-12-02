@@ -97,9 +97,9 @@
       <b-row class="footer__bottom">
         <b-container>
           <b-row>
-            <b-col lg="4">
+            <b-col lg="7">
               <div class="footer__copyright">
-                © 2020 Company, Inc.
+                © 2020 {{$t('footer.site_name')}} <br>
                 <span> {{$t('footer.siteAdmin')}} <a href="https://greatsoft.uz/uz">GreatSoft</a></span>
               </div>
             </b-col>
