@@ -30,7 +30,7 @@ export default {
     title: 'Конкурсы'
   },  
   guidesPage: {
-    title: 'Гиды',
+    title: 'Учебные пособия',
     dowland: 'Скачать'
   },  
   galleryPage: {
