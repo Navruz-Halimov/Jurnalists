@@ -62,8 +62,6 @@ export default {
     [
       '@nuxtjs/axios',
       { baseURL: "https://jqtm.uz/api/" },
-      
-      
     ],
     [
       "nuxt-i18n",
