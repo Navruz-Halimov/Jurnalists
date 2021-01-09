@@ -37,7 +37,7 @@
           </b-col>
         </b-row>
       </b-row>
-      <Trening />
+      <!-- <Trening /> -->
       <Release/>
     </b-container>
   </div>

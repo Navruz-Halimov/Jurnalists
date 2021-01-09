@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row class="release">
-      <div class="release__title">{{$t('trainingPage.releas')}}</div>
+      <div class="release__title">{{$t('trainingPage.trening')}}</div>
       <b-row class="release__list">
         <b-col 
           md="4" 
@@ -15,8 +15,8 @@
           <div class="release__img">
             <img :src="release.image" alt="">
           </div> 
-          <div class="release__address" v-if="$i18n.locale == 'uz'">{{release.address}}</div>
-          <div class="release__address" v-else>{{release.address_kl}}</div>
+          <!-- <div class="release__address" v-if="$i18n.locale == 'uz'">{{release.address}}</div>
+          <div class="release__address" v-else>{{release.address_kl}}</div> -->
           <div class="release__info">
             <nuxt-link :to="'release/'+release.id" class="release__subtitle" v-if="$i18n.locale == 'uz'" v-html="release.title_of_trening"></nuxt-link>
             <nuxt-link :to="'release/'+release.id" class="release__subtitle" v-else v-html="release.title_of_trening_kl"></nuxt-link>
