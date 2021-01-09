@@ -118,6 +118,30 @@
   }
 }
 
+.trening {
+  flex-direction: column;
+  margin-bottom: 80px;
+
+  &__title {
+    font-weight: bold;
+    font-size: 35px;
+    color: #000;
+    margin: 0 auto 50px;
+    width: 100%;
+    text-align: center;
+  }
+  &__subtitle {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+  }
+  &__date {
+    font-weight: bold;
+    font-size: 16px;
+    color: #0094FF;
+  }
+}
+
 
 // Responsive
 @media (min-width: 0) and (max-width: 576px){

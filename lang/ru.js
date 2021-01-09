@@ -38,7 +38,8 @@ export default {
   },  
   trainingPage: {
     vebinar: 'Вебинары',
-    releas: 'Пресс-релиз'
+    releas: 'Пресс-релиз',
+    trening: 'Тренинги'
   },
   aboutPage: {
     leader: 'Руководство',

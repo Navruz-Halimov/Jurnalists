@@ -37,13 +37,16 @@
           </b-col>
         </b-row>
       </b-row>
+      <Trening />
       <Release/>
     </b-container>
   </div>
 </template>
 
 <script>
+import Trening from '~/components/Trening.vue';
 export default {
+  components: { Trening },
   data() {
     return {
       webinars: [],

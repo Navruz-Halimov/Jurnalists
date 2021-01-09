@@ -38,7 +38,8 @@ export default {
   },
   trainingPage: {
     vebinar: 'Вебинарлар',
-    releas: 'Матбуот Релиз'
+    releas: 'Матбуот релизи',
+    trening: 'Тренинглар'
   },
   aboutPage: {
     leader: 'Раҳбарият',
