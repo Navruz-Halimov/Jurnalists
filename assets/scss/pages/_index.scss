@@ -597,6 +597,9 @@
     color: #808080;
     padding: 0 15px;
     @include textWrapper(3);
+    p:nth-child(1) {
+      display: none;
+    }
   }
 
   .site__button {

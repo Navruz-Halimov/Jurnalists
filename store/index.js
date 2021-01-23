@@ -11,6 +11,7 @@ const store = () => new Vuex.Store({
     projects: [],
     trainers: [],
     posts: [],
+    news: [],
     releases: [],
     searchs: ''
   },
@@ -29,6 +30,9 @@ const store = () => new Vuex.Store({
     },
     getPosts(state) {
       return state.posts;
+    },
+    getNews(state) {
+      return state.news;
     },
     getRelease(state) {
       return state.releases
@@ -52,6 +56,9 @@ const store = () => new Vuex.Store({
     },
     setPosts(state, post) {
       state.posts = post
+    },
+    setNews(state, newPost) {
+      state.news = newPost
     },
     setReleases(state, release) {
       state.releases = release
@@ -95,6 +102,14 @@ const store = () => new Vuex.Store({
       await this.$axios.get('elonlar/')
         .then((res) => {
           commit('setPosts', res.data);
+        })
+        .catch(() => {})
+    },
+    async getNews({commit}) {
+      await this.$axios.get('yangiliklar/')
+        .then((res) => {
+          commit('setNews', res.data);
+          console.log('news ', news)
         })
         .catch(() => {})
     },

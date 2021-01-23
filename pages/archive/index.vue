@@ -66,13 +66,13 @@ export default {
       ],
     }
   },
-  mounted() {
-    this.$store.dispatch('getArchive');
-  },
   computed: {
     ... mapGetters({
       getArchive: 'getArchive'
     })
+  },
+  mounted() {
+    this.$store.dispatch('getArchive');
   }
 }
 </script>

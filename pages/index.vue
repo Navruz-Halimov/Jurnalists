@@ -29,6 +29,7 @@
       </hooper>
     </div>  
     <Posts />
+    <News />
     <Trainer />
     <div class="main-project">
       <b-container fluid>
@@ -182,8 +183,8 @@
               <img :src="archive.image" alt="image">
             </nuxt-link>
             <div class="main-arxiv__info">
-              <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title" v-if="$i18n.locale == 'uz'">{{archive.title}}</nuxt-link>
-              <nuxt-link :to="'archive/'+archive.id" class="main-arxiv__title" v-else>{{archive.title_kl}}</nuxt-link>
+              <nuxt-link :to="localePath('/archive/'+archive.id)" class="main-arxiv__title" v-if="$i18n.locale == 'uz'">{{archive.title}}</nuxt-link>
+              <nuxt-link :to="localePath('/archive/'+archive.id)" class="main-arxiv__title" v-else>{{archive.title_kl}}</nuxt-link>
               <div class="main-arxiv__text" v-if="$i18n.locale == 'uz'" v-html="archive.text"></div>
               <div class="main-arxiv__text" v-else v-html="archive.text_kl"></div>
             </div>
@@ -255,7 +256,9 @@ import 'hooper/dist/hooper.css';
 import {mapGetters} from 'vuex';
 
 import Trainer from '../components/Trainers'
-import Posts from '../components/Posts'   
+import Posts from '../components/Posts'
+import News from '../components/News'
+
 export default {
   data() {
     return {
@@ -281,7 +284,8 @@ export default {
     Slide, 
     HooperNavigation,
     Trainer,
-    Posts
+    Posts,
+    News
   },
   methods: {
     async getAbout() {
