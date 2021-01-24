@@ -1,15 +1,29 @@
 <template>
     <div class="main-posts">
+      <b-container class="links p-0 mb-5" fluid="fluid">
+      <b-container>
+        <b-row>
+          <b-col class="p-0" lg="12">
+            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
+            <Breadcrumb v-else :crumbsRu="crumbsRu" />
+          </b-col>
+        </b-row>
+      </b-container>
+    </b-container>
       <b-container>
         <b-row>
           <b-col cols="12">
             <h2 class="main__title" data-aos="fade-up" data-aos-duration="800">
-              <!-- {{$t('index.advert')}} -->
               Yangiliklar
             </h2>
           </b-col>
         </b-row>
-        <b-row>
+        <b-row class="mobile__view">
+        <b-col class="pl-0 left__form" lg="3">
+            <left-content />
+        </b-col>
+        <b-col>
+          <b-row>
           <b-col 
             lg="6" 
             class="main-posts__item"
@@ -28,6 +42,8 @@
             </div>
           </b-col>
         </b-row>
+        </b-col>
+        </b-row>
       </b-container>
     </div>
 </template>
@@ -35,6 +51,18 @@
 <script>
 import {mapGetters} from 'vuex'
 export default {
+  data() {
+    return {
+      crumbs: [
+        { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Янгиликлар', url: '/news', disabled: true},
+      ],
+      crumbsRu: [
+        { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'Новости', url: '/archive', disabled: true},
+      ],
+    }
+  },
   computed: {
     ... mapGetters({
       getNews: 'getNews'

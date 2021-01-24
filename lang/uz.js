@@ -5,6 +5,7 @@ export default {
   header: {  
     main: 'Асосий',
     projects: 'Лойиҳалар',
+    news: 'Янгиликлар',
     compitition: 'Танловлар',
     guides: 'Қўлланмалар',
     gallery: 'Галерея',
@@ -70,7 +71,7 @@ export default {
   },
   error: {
     subtitle: 'opps!',
-    text: 'Кечирасиз! Сиз излайотган сахифа топилмади'
+    text: 'Кечирасиз! Сиз излаётган сахифа топилмади'
   },
   toast: {
     title: 'Малумот юборилди',

@@ -4,9 +4,6 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <!-- <div class="link">
-              <a href="#">Asosiy</a> / <span>Arxiv</span>
-            </div> -->
             <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
             <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>

@@ -5,6 +5,7 @@ export default {
   header: {  
     main: 'Главная',
     projects: 'Проекты',
+    news: 'Новости',
     compitition: 'Конкурсы',
     guides: 'Справочники',
     gallery: 'Галерея',
