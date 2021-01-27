@@ -20,6 +20,9 @@
                   <nuxt-link active-class="active" :to="localePath('/projects')">{{$t('header.projects')}}</nuxt-link>
                 </li>
                 <li>
+                  <nuxt-link active-class="active" :to="localePath('/news')">{{$t('header.news')}}</nuxt-link>
+                </li>
+                <li>
                   <nuxt-link active-class="active" :to="localePath('/compitition')">{{$t('header.compitition')}}</nuxt-link>
                 </li>
                 <li>
