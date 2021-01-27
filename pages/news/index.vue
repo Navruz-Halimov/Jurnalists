@@ -7,7 +7,7 @@
 import News from '../../components/News';
 export default {
   components: {
-    News
+    News 
   }
 }
 </script>
