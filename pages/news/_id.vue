@@ -45,9 +45,11 @@ export default {
       newsItem: [],
       crumbs: [
         { id: 1, title: 'Асосий', url: '/', disabled: false },
+        { id: 2, title: 'Янгиликлар', url: '/uz/news', disabled: false},
       ],
       crumbsRu: [
         { id: 1, title: 'Главный', url: '/', disabled: false },
+        { id: 2, title: 'Новости', url: '/uz/news', disabled: false},
       ],
     }
   },
@@ -65,10 +67,10 @@ export default {
     this.getNewsItem()
     .then(() => {
       this.crumbs.push(
-        { id: 2, title: this.newsItem.title, url: '/news', disabled: true},
+        { id: 3, title: this.newsItem.title, url: '/news', disabled: true},
       );
       this.crumbsRu.push(
-        { id: 2, title: this.newsItem.title_kl, url: '/news', disabled: true},
+        { id: 3, title: this.newsItem.title_kl, url: '/news', disabled: true},
       );
     })
   }

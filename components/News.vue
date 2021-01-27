@@ -1,15 +1,5 @@
 <template>
     <div class="main-posts">
-      <b-container class="links p-0 mb-5" fluid="fluid">
-      <b-container>
-        <b-row>
-          <b-col class="p-0" lg="12">
-            <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
-            <Breadcrumb v-else :crumbsRu="crumbsRu" />
-          </b-col>
-        </b-row>
-      </b-container>
-    </b-container>
       <b-container>
         <b-row>
           <b-col cols="12">
@@ -19,9 +9,6 @@
           </b-col>
         </b-row>
         <b-row class="mobile__view">
-        <b-col class="pl-0 left__form" lg="3">
-            <left-content />
-        </b-col>
         <b-col>
           <b-row>
           <b-col 
