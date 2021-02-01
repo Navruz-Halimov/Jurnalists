@@ -40,6 +40,30 @@
                 </nuxt-link>
               </b-col>
             </b-row>
+
+            <h1 class="projects__title mt-5">DVV International</h1>
+            <b-row>
+              <b-col 
+                lg="4" 
+                md="6" 
+                cols="12" 
+                class="main-project__item"
+                v-for="project in getDvv"
+                :key="project.id"
+                data-aos="fade-up"
+                data-aos-duration="800"
+              >
+                <nuxt-link :to="'projects/'+project.id + '.'" class="main-project__img">
+                  <img :src="project.image" alt="image">
+                  <div class="main-project__info">
+                    <div class="main-project__title" v-if="$i18n.locale == 'uz'">{{project.title}}</div>
+                    <div class="main-project__title" v-else>{{project.title_kl}}</div>
+                    <div class="main-project__text" v-if="$i18n.locale == 'uz'" v-html="project.content"></div>
+                    <div class="main-project__text" v-else v-html="project.content_kl"></div>
+                  </div>
+                </nuxt-link>
+              </b-col>
+            </b-row>
           </div>
         </b-col>
       </b-row>
@@ -69,10 +93,12 @@ export default {
   },
   mounted() {
     this.$store.dispatch('getProject')
+    this.$store.dispatch('getDvv')
   },
   computed: {
     ... mapGetters({
-      getProject: 'getProject'
+      getProject: 'getProject',
+      getDvv: 'getDvv'
     })
   }
 }
