@@ -713,6 +713,9 @@
 }
 
 @media (max-width: 992px) {
+  .main__title{
+    text-align: center;
+  }
   .main-posts {
     margin-bottom: 40px;
     &__info {

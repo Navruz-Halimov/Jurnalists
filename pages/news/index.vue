@@ -11,18 +11,14 @@
       </b-container>
     </b-container>
       <b-container>
-        <b-row>
-          <b-col cols="12">
-            <h2 class="main__title" data-aos="fade-up" data-aos-duration="800">
-              Yangiliklar
-            </h2>
-          </b-col>
-        </b-row>
         <b-row class="mobile__view">
         <b-col class="pl-0 left__form" lg="3">
             <left-content />
         </b-col>
         <b-col>
+            <h2 class="main__title" data-aos="fade-up" data-aos-duration="800">
+              {{$t('header.news')}}
+            </h2>
           <b-row>
           <b-col 
             lg="6" 
