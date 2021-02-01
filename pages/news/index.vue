@@ -32,7 +32,7 @@
               <img :src="newPost.image" alt="post">
             </div>
             <div class="main-posts__info">
-              <div class="main-posts__date">{{newPost.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10)}}</div>
+              <div class="main-posts__date">{{newPost.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10).split("-").reverse().join(".")}}</div>
               <nuxt-link :to="localePath('/news/'+newPost.id)" class="main-posts__title" v-if="$i18n.locale == 'uz'">{{newPost.title}}</nuxt-link>
               <nuxt-link :to="localePath('/news/'+newPost.id)" class="main-posts__title" v-else>{{newPost.title_kl}}</nuxt-link>
             </div>
