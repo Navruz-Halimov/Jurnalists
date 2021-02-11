@@ -54,8 +54,7 @@
             <b-col lg="3" md="6">
               <div class="footer__email">
                 <span>{{$t('footer.email')}}</span>
-                <a href="mailto:journal@bcc.com.uz">journal@bcc.com.uz</a>
-                <a href="mailto:mediauz@bcc.com.uz">mediauz@bcc.com.uz</a>
+                <a href="mailto:uzjournal@mail.ru">uzjournal@mail.ru</a>
                 <ul class="footer__social">
                   <li>
                     <a href="#">
