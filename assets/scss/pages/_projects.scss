@@ -68,6 +68,15 @@
     .main-project__item {
       margin-bottom: 25px;
     }
+
+    .main-project__img {
+      p:first-child() {
+        img {
+          display: none;
+        }
+      }
+    }
+
     .main-project__img img {
       height: 300px;
       object-fit: cover;
