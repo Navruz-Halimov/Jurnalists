@@ -4,6 +4,7 @@ export default {
   },
   header: {  
     main: 'Асосий',
+    dvv: 'DVV',
     projects: 'Лойиҳалар',
     news: 'Янгиликлар',
     compitition: 'Танловлар',
@@ -23,6 +24,12 @@ export default {
     gallery: 'Галерея',
     archive: 'Архив',
     about: 'Биз ҳақимизда',
+  },
+  dvv: {
+    news: "Проект янгиликлари",
+    webinar: "Вебинар ва тренинглар",
+    oav: "ОАВда ёритилиши"
+
   },
   projectsPage: {
     title: 'Лойиҳалар'

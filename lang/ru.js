@@ -4,6 +4,7 @@ export default {
   },
   header: {  
     main: 'Главная',
+    dvv: 'DVV',
     projects: 'Проекты',
     news: 'Новости',
     compitition: 'Конкурсы',
@@ -23,6 +24,12 @@ export default {
     gallery: 'Галерея',
     archive: 'Архив',
     about: 'О нас'
+  },
+  dvv: {
+    news: "Новости проекта",
+    webinar: "Вебинары и тренинги",
+    oav: "Освещение в СМИ"
+
   },
   projectsPage: {
     title: 'Проекты'
