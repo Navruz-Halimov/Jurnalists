@@ -62,22 +62,34 @@
               </b-col>
             </b-row>
         </b-container>
-        <b-container class="text-center">
+        <b-container class="text-center dvv-section">
             <h1 class="projects__title">{{$t('dvv.oav')}}</h1>
-            <b-col  
+            <b-row>
+            <b-col 
+                class="oav_card d-flex" 
                 v-for="project in getProject"
                 :key="project.id"
+                lg='6'
               >
-                <nuxt-link :to="'projects/'+project.id" class="main-project__img">
-                  <img :src="project.image" alt="image">
-                  <div class="main-project__info">
-                    <div class="main-project__title" v-if="$i18n.locale == 'uz'">{{project.title}}</div>
-                    <div class="main-project__title" v-else>{{project.title_kl}}</div>
-                    <div class="main-project__text" v-if="$i18n.locale == 'uz'" v-html="project.content"></div>
-                    <div class="main-project__text" v-else v-html="project.content_kl"></div>
+               
+                <div> 
+                  <img :src="project.image" alt="image" class="oav_img">
+                </div>
+                <div>
+                  <div>
+                      <div v-if="$i18n.locale == 'uz'">{{project.title}}</div>
+                      <div v-else>{{project.title_kl}}</div>
+                      <!-- <div v-if="$i18n.locale == 'uz'" v-html="project.content"></div>
+                      <div v-else v-html="project.content_kl"></div> -->
                   </div>
-                </nuxt-link>
+                
+
+                    <nuxt-link :to="'projects/'+project.id">
+                      Batafsil
+                    </nuxt-link>
+                </div>
               </b-col>
+            </b-row>
         </b-container>
   </div>
 </template>
