@@ -67,7 +67,7 @@
             <b-row>
             <b-col 
                 class="oav_card d-flex" 
-                v-for="project in getProject"
+                v-for="project in getOav"
                 :key="project.id"
                 lg='6'
               >
@@ -122,12 +122,14 @@ export default {
     this.$store.dispatch('getProject')
     this.$store.dispatch('getDvvNews')
     this.$store.dispatch('getTrainings')
+    this.$store.dispatch('getOav')
   },
   computed: {
     ... mapGetters({
       getProject: 'getProject',
       getDvvNews: 'getDvvNews',
-      getTrainings: 'getTrainings'
+      getTrainings: 'getTrainings',
+      getOav: 'getOav'
     })
   }
 }

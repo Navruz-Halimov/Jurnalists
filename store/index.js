@@ -11,6 +11,7 @@ const store = () => new Vuex.Store({
     projects: [],
     dvvNews: [],
     Trainings: [],
+    oav: [],
     trainers: [],
     posts: [],
     news: [],
@@ -33,6 +34,10 @@ const store = () => new Vuex.Store({
     getTrainings(state){
       return state.Trainings
     },
+    getOav(state){
+      return state.oav
+    },
+    
     getTrainer(state) {
       return state.trainers;
     },
@@ -64,6 +69,9 @@ const store = () => new Vuex.Store({
     },
     setTrainings(state, trainings){
       state.Trainings = trainings
+    },
+    setOav(state, oav){
+      state.oav = oav
     },
     setTrainer(state, trainer) {
       state.trainers = trainer
@@ -115,8 +123,15 @@ const store = () => new Vuex.Store({
     async getTrainings({commit}) {
       await this.$axios.get('dvv/trenings/')
         .then((res) => {
-          console.log("DVV Training", res)
           commit('setTrainings', res.data);
+        })
+        .catch( err => console.log(err))
+    },
+    async getOav({commit}) {
+      await this.$axios.get('dvv/oavs/')
+        .then((res) => {
+          console.log("DVV OAV", res)
+          commit('setOav', res.data);
         })
         .catch( err => console.log(err))
     },
