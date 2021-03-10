@@ -12,7 +12,7 @@
     </b-container>
     <b-container class="dvv-section">
       <div class="projects__content text-center">
-            <h1 class="projects__title">{{$t('dvv.news')}}</h1>
+            <h1 class="projects__title" v-if="getDvvNews">{{$t('dvv.news')}}</h1>
             <b-row>
               <b-col 
                 lg="3" 
@@ -37,7 +37,7 @@
       </b-container>
       <!-- Webinar -->
         <b-container class="text-center dvv-section">
-          <h1 class="mb-5 projects__title">{{$t('dvv.webinar')}}</h1>
+          <h1 class="mb-5 projects__title" v-if="getTrainings">{{$t('dvv.webinar')}}</h1>
             <b-row>
               <b-col 
                 class="webinar_card"
@@ -63,13 +63,15 @@
             </b-row>
         </b-container>
         <b-container class="text-center dvv-section">
-            <h1 class="projects__title">{{$t('dvv.oav')}}</h1>
+            <h1 class="projects__title" v-if="getOav">{{$t('dvv.oav')}}</h1>
             <b-row>
             <b-col 
                 class="oav_card d-flex" 
                 v-for="project in getOav"
                 :key="project.id"
                 lg='6'
+                data-aos="fade-up"
+                data-aos-duration="800"
               >
                
                 <div> 
@@ -84,7 +86,7 @@
                   </div>
                 
 
-                    <nuxt-link :to="'projects/'+project.id">
+                    <nuxt-link :to="'dvv/oav/'+project.id">
                       Batafsil
                     </nuxt-link>
                 </div>
