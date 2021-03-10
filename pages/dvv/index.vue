@@ -76,9 +76,9 @@
                   <img :src="project.image" alt="image" class="oav_img">
                 </div>
                 <div>
-                  <div>
-                      <div v-if="$i18n.locale == 'uz'">{{project.title}}</div>
-                      <div v-else>{{project.title_kl}}</div>
+                  <div class="oav_txt">
+                      <p v-if="$i18n.locale == 'uz'">{{project.title}}</p>
+                      <p v-else>{{project.title_kl}}</p>
                       <!-- <div v-if="$i18n.locale == 'uz'" v-html="project.content"></div>
                       <div v-else v-html="project.content_kl"></div> -->
                   </div>
