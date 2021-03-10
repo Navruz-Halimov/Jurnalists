@@ -11,19 +11,12 @@
       </b-container>
     </b-container>
     <b-container class="dvv-section">
-      <b-row>
-        <!-- <b-col class="pl-0 left__form" lg="3">
-          <left-content />
-        </b-col> -->
-        <b-col lg="9">
-          <div class="projects__content">
+      <div class="projects__content text-center">
             <h1 class="projects__title">{{$t('dvv.news')}}</h1>
             <b-row>
               <b-col 
-                lg="4" 
-                md="6" 
-                cols="12" 
-                class="main-project__item"
+                lg="3" 
+                class="main-project__item dvv-news-card"
                 v-for="project in getProject"
                 :key="project.id"
                 data-aos="fade-up"
@@ -41,42 +34,39 @@
               </b-col>
             </b-row>
           </div>
-        </b-col>
-        </b-row>
       </b-container>
       <!-- Webinar -->
         <b-container class="text-center dvv-section">
-          <h1 class="mb-5">{{$t('dvv.webinar')}}</h1>
+          <h1 class="mb-5 projects__title">{{$t('dvv.webinar')}}</h1>
             <b-row>
               <b-col 
+                class="webinar_card"
                 v-for="project in getProject"
                 :key="project.id"
-                lg='3'
+                lg='4'
+                data-aos="fade-up"
+                data-aos-duration="800"
               >
                 <img class="dvv_img" :src="project.image" alt="image">
-                <nuxt-link :to="'projects/'+project.id">
-              
-                  <div>
+                <div class="webinar_title">
                     <div v-if="$i18n.locale == 'uz'">{{project.title}}</div>
                     <div v-else>{{project.title_kl}}</div>
-                  </div>
-                </nuxt-link>
+                </div>
+                <div class="d-flex justify-content-around"> 
+                  <h6>10.03.2021</h6>
+                  <nuxt-link :to="'projects/'+project.id">
+                    Batafsil
+                  </nuxt-link>
+                </div>
+                
               </b-col>
             </b-row>
         </b-container>
-        <b-col lg="9">
-          <div class="projects__content">
+        <b-container class="text-center">
             <h1 class="projects__title">{{$t('dvv.oav')}}</h1>
-            <b-row>
-              <b-col 
-                lg="4" 
-                md="6" 
-                cols="12" 
-                class="main-project__item"
+            <b-col  
                 v-for="project in getProject"
                 :key="project.id"
-                data-aos="fade-up"
-                data-aos-duration="800"
               >
                 <nuxt-link :to="'projects/'+project.id" class="main-project__img">
                   <img :src="project.image" alt="image">
@@ -88,9 +78,7 @@
                   </div>
                 </nuxt-link>
               </b-col>
-            </b-row>
-          </div>
-        </b-col>
+        </b-container>
   </div>
 </template>
 <script>
