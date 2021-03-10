@@ -17,12 +17,12 @@
               <b-col 
                 lg="3" 
                 class="main-project__item dvv-news-card"
-                v-for="project in getProject"
+                v-for="project in getDvvNews"
                 :key="project.id"
                 data-aos="fade-up"
                 data-aos-duration="800"
               >
-                <nuxt-link :to="'projects/'+project.id" class="main-project__img">
+                <nuxt-link :to="'dvv/news/'+project.id" class="main-project__img">
                   <img :src="project.image" alt="image">
                   <div class="main-project__info">
                     <div class="main-project__title" v-if="$i18n.locale == 'uz'">{{project.title}}</div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="d-flex justify-content-around"> 
                   <h6>10.03.2021</h6>
-                  <nuxt-link :to="'projects/'+project.id">
+                  <nuxt-link :to="'dvv/news/'+project.id">
                     Batafsil
                   </nuxt-link>
                 </div>
@@ -116,12 +116,12 @@ export default {
   },
   mounted() {
     this.$store.dispatch('getProject')
-    this.$store.dispatch('getDvv')
+    this.$store.dispatch('getDvvNews')
   },
   computed: {
     ... mapGetters({
       getProject: 'getProject',
-      getDvv: 'getDvv'
+      getDvvNews: 'getDvvNews'
     })
   }
 }

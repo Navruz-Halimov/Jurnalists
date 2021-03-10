@@ -4,11 +4,6 @@
       <b-container>
         <b-row>
           <b-col class="p-0" lg="12">
-            <!-- <i-breadcrumb>
-              <nuxt-link to="/">Asosiy</nuxt-link> /
-              <nuxt-link to="/projects">Loyihalar</nuxt-link> /
-              <i-breadcrumb-item v-bind="item" v-for="item in items" :key="item.title">{{item.title}}</i-breadcrumb-item>
-            </i-breadcrumb> -->
             <Breadcrumb v-if="$i18n.locale == 'uz'" :crumbs="crumbs" />
             <Breadcrumb v-else :crumbsRu="crumbsRu" />
           </b-col>
@@ -49,17 +44,17 @@ export default {
       projectsItem: [],
       crumbs: [
         { id: 1, title: 'Асосий', url: '/', disabled: false },
-        { id: 2, title: 'Лойихалар', url: '/uz/projects', disabled: false},
+        { id: 2, title: 'DVV', url: '/uz/dvv', disabled: false},
       ],
       crumbsRu: [
         { id: 1, title: 'Главный', url: '/', disabled: false },
-        { id: 2, title: 'Проекты', url: '/ru/projects', disabled: false},
+        { id: 2, title: 'DVV', url: '/ru/dvv', disabled: false},
       ],
     }
   },
   methods: {
     async getProjectsItem() {
-        await this.$axios.get(`loyihalar/${this.$route.params.id}/`)
+        await this.$axios.get(`dvv/news/${this.$route.params.id}/`)
         .then((res) => {
           this.projectsItem = res.data;
         })
@@ -70,10 +65,10 @@ export default {
     this.getProjectsItem()
     .then(() => {
       this.crumbs.push(
-        { id: 3, title: this.projectsItem.title, url: '/projects', disabled: true},
+        { id: 3, title: this.projectsItem.id, url: '/projects', disabled: true},
       );
       this.crumbsRu.push(
-        { id: 3, title: this.projectsItem.title_kl, url: '/projects', disabled: true},
+        { id: 3, title: this.projectsItem.id, url: '/projects', disabled: true},
       );
     })
   },

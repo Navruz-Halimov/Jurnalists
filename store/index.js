@@ -9,7 +9,7 @@ const store = () => new Vuex.Store({
     archives: [],
     compititions: [],
     projects: [],
-    dvv: [],
+    dvvNews: [],
     trainers: [],
     posts: [],
     news: [],
@@ -26,8 +26,8 @@ const store = () => new Vuex.Store({
     getProject(state) {
       return state.projects;
     },
-    getDvv(state){
-      return state.dvv
+    getDvvNews(state){
+      return state.dvvNews
     },
     getTrainer(state) {
       return state.trainers;
@@ -55,8 +55,8 @@ const store = () => new Vuex.Store({
     setProject(state, project) {
       state.projects = project
     },
-    setDvv(state, dvv){
-      state.dvv = dvv
+    setDvvNews(state, dvvNews){
+      state.dvvNews = dvvNews
     },
     setTrainer(state, trainer) {
       state.trainers = trainer
@@ -98,10 +98,11 @@ const store = () => new Vuex.Store({
         })
         .catch(() => {})
     },
-    async getDvv({commit}) {
-      await this.$axios.get('loyihalar/dvv/')
+    async getDvvNews({commit}) {
+      await this.$axios.get('dvv/news/')
         .then((res) => {
-          commit('setDvv', res.data);
+          console.log("DVV", res)
+          commit('setDvvNews', res.data);
         })
         .catch( err => console.log(err))
     },
