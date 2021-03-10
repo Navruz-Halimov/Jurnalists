@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     async getProjectsItem() {
-        await this.$axios.get(`dvv/news/${this.$route.params.id}/`)
+        await this.$axios.get(`dvv/trenings/${this.$route.params.id}/`)
         .then((res) => {
           this.projectsItem = res.data;
         })
@@ -65,10 +65,10 @@ export default {
     this.getProjectsItem()
     .then(() => {
       this.crumbs.push(
-        { id: 3, title: this.projectsItem.id, url: '/projects', disabled: true},
+        { id: 3, title: this.projectsItem.id, url: '/dvv', disabled: true},
       );
       this.crumbsRu.push(
-        { id: 3, title: this.projectsItem.id, url: '/projects', disabled: true},
+        { id: 3, title: this.projectsItem.id, url: '/dvv', disabled: true},
       );
     })
   },

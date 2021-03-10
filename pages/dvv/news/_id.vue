@@ -65,10 +65,10 @@ export default {
     this.getProjectsItem()
     .then(() => {
       this.crumbs.push(
-        { id: 3, title: this.projectsItem.id, url: '/projects', disabled: true},
+        { id: 3, title: this.projectsItem.id, url: '/dvv', disabled: true},
       );
       this.crumbsRu.push(
-        { id: 3, title: this.projectsItem.id, url: '/projects', disabled: true},
+        { id: 3, title: this.projectsItem.id, url: '/dvv', disabled: true},
       );
     })
   },

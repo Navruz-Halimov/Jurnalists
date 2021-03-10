@@ -41,7 +41,7 @@
             <b-row>
               <b-col 
                 class="webinar_card"
-                v-for="project in getProject"
+                v-for="project in getTrainings"
                 :key="project.id"
                 lg='4'
                 data-aos="fade-up"
@@ -53,8 +53,8 @@
                     <div v-else>{{project.title_kl}}</div>
                 </div>
                 <div class="d-flex justify-content-around"> 
-                  <h6>10.03.2021</h6>
-                  <nuxt-link :to="'dvv/news/'+project.id">
+                  <h6>{{ChangeFormateDate(project.date.slice(0,10))}}</h6>
+                  <nuxt-link :to="'dvv/trainings/'+project.id">
                     Batafsil
                   </nuxt-link>
                 </div>
@@ -108,20 +108,26 @@ export default {
         { id: 2, title: 'DVV', url: '/dvv', disabled: true},
       ],
       items: [
-        // { title: "Home", href: "/" }, 
-        // { title: "", active: true }
       ],
       
     }
   },
+  methods: {
+    ChangeFormateDate(oldDate)
+        {
+          return oldDate.split("-").reverse().join(".");
+        }
+  },
   mounted() {
     this.$store.dispatch('getProject')
     this.$store.dispatch('getDvvNews')
+    this.$store.dispatch('getTrainings')
   },
   computed: {
     ... mapGetters({
       getProject: 'getProject',
-      getDvvNews: 'getDvvNews'
+      getDvvNews: 'getDvvNews',
+      getTrainings: 'getTrainings'
     })
   }
 }
