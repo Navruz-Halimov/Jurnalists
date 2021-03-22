@@ -53,7 +53,7 @@
                     <div v-else>{{project.title_kl}}</div>
                 </div>
                 <div class="d-flex justify-content-around"> 
-                  <h6>{{ChangeFormateDate(project.date.slice(0,10))}}</h6>
+                  <h6>{{ChangeFormateDate(project.date && project.date.slice(0,10))}}</h6>
                   <nuxt-link :to="'dvv/trainings/'+project.id">
                     Batafsil
                   </nuxt-link>
@@ -117,7 +117,7 @@ export default {
   methods: {
     ChangeFormateDate(oldDate)
         {
-          return oldDate.split("-").reverse().join(".");
+          return oldDate && oldDate.split("-").reverse().join(".");
         }
   },
   mounted() {
