@@ -60,7 +60,7 @@
                 <a href="mailto:uzjournal@mail.ru">uzjournal@mail.ru</a>
                 <ul class="footer__social">
                   <li>
-                    <a href="#">
+                    <a href="https://www.instagram.com/p/CNLLaq5FlyL/?igshid=1ligwu8rx5n2j" target="_blank">
                       <img src="../assets/images/social/instagram.svg" alt="instagramm">
                     </a>
                   </li>
@@ -70,12 +70,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <img src="../assets/images/social/vk2.svg" alt="vk">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/groups/461998568474556/?ref=share" target="_blank">
                       <img src="../assets/images/social/facebook2.svg" alt="facebook">
                     </a>
                   </li>

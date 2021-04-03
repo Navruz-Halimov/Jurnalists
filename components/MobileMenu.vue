@@ -9,6 +9,9 @@
           <nuxt-link exact active-class="active" :to="localePath('/')">{{$t('header.main')}}</nuxt-link>
         </li>
         <li>
+                  <nuxt-link active-class="active" :to="localePath('/dvv')">{{$t('header.dvv')}}</nuxt-link>
+        </li>
+        <li>
           <nuxt-link active-class="active" :to="localePath('/projects')">{{$t('header.projects')}}</nuxt-link>
         </li>
         <li>
