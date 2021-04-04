@@ -28,7 +28,7 @@
                 <!-- <img :src="postsItem.image" alt=""> -->
               </div>
               <div class="page-item__text" v-html="postsItem.about_work" v-if="$i18n.locale == 'uz'"></div>
-              <div class="page-item__text" v-html="postsItem.about_work" v-else></div>
+              <div class="page-item__text" v-html="postsItem.about_work_kl" v-else></div>
             </b-col>            
           </b-row>
         </b-col>
@@ -56,7 +56,7 @@ export default {
       await this.$axios.get(`elonlar/${this.$route.params.id}/`)
         .then((res) => {
           this.postsItem = res.data;
-          // console.log('postsItem', res)
+          console.log('postsItem', res.data)
         })
         .catch(() => {})
     }
