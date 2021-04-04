@@ -105,7 +105,7 @@
               >
                 {{compitition.title_kl}}
               </nuxt-link>
-              <div class="main-compitition__date">{{compitition.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10).split("-").reverse().join(".")}}</div>
+              <!-- <div class="main-compitition__date">{{compitition.date && compitition.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10).split("-").reverse().join(".")}}</div> -->
             </div>
           </b-col>
         </b-row>

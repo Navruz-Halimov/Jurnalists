@@ -19,7 +19,7 @@
               <img :src="post.image" alt="post">
             </div>
             <div class="main-posts__info">
-              <div class="main-posts__date">{{post.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10).split("-").reverse().join(".")}}</div>
+              <div class="main-posts__date">{{post.date && post.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10).split("-").reverse().join(".")}}</div>
               <nuxt-link :to="localePath('/posts/'+post.id)" class="main-posts__title" v-if="$i18n.locale == 'uz'">{{post.title}}</nuxt-link>
               <nuxt-link :to="localePath('/posts/'+post.id)" class="main-posts__title" v-else>{{post.title_kl}}</nuxt-link>
             </div>

@@ -16,7 +16,7 @@
                 <img :src="item.img" alt="img">
               </div>
               <div class="trening__subtitle">{{item.title}}</div>
-              <div class="trening__date">{{item.date.replace('T', ' / ').replace('Z', ' ').split("-").reverse().join(".")}}</div>
+              <div class="trening__date">{{item.date && item.date.replace('T', ' / ').replace('Z', ' ').split("-").reverse().join(".")}}</div>
             </nuxt-link>
           </b-col>
         </b-row>

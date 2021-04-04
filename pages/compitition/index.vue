@@ -40,7 +40,7 @@
               <div class="compitition-page__info">
                 <nuxt-link :to="'compitition/' + compitition.id" class="compitition-page__subtitle" v-if="$i18n.locale == 'uz'">{{compitition.title}}</nuxt-link>
                 <nuxt-link :to="'compitition/' + compitition.id" class="compitition-page__subtitle" v-else>{{compitition.title_kl}}</nuxt-link>
-                <div class="compitition-page__date">{{compitition.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10).split("-").reverse().join(".")}}</div>
+                <!-- <div class="compitition-page__date">{{compitition.date && compitition.date.replace('T', ' / ').replace('Z', ' ').slice(0, 10).split("-").reverse().join(".")}}</div> -->
               </div>
             </b-col>
           </b-row>
