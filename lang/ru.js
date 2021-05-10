@@ -4,7 +4,7 @@ export default {
   },
   header: {  
     main: 'Главная',
-    dvv: 'DVV',
+    dvv: 'DVVI',
     projects: 'Проекты',
     news: 'Новости',
     compitition: 'Конкурсы',

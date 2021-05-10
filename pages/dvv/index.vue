@@ -103,11 +103,11 @@ export default {
     return {
       crumbs: [
         { id: 1, title: 'Асосий', url: '/', disabled: false },
-        { id: 2, title: 'DVV', url: '/dvv', disabled: true},
+        { id: 2, title: 'DVVI', url: '/dvv', disabled: true},
       ],
       crumbsRu: [
         { id: 1, title: 'Главный', url: '/', disabled: false },
-        { id: 2, title: 'DVV', url: '/dvv', disabled: true},
+        { id: 2, title: 'DVVI', url: '/dvv', disabled: true},
       ],
       items: [
       ],

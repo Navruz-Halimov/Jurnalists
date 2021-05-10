@@ -44,11 +44,11 @@ export default {
       projectsItem: [],
       crumbs: [
         { id: 1, title: 'Асосий', url: '/', disabled: false },
-        { id: 2, title: 'DVV', url: '/uz/dvv', disabled: false},
+        { id: 2, title: 'DVVI', url: '/uz/dvv', disabled: false},
       ],
       crumbsRu: [
         { id: 1, title: 'Главный', url: '/', disabled: false },
-        { id: 2, title: 'DVV', url: '/ru/dvv', disabled: false},
+        { id: 2, title: 'DVVI', url: '/ru/dvv', disabled: false},
       ],
     }
   },

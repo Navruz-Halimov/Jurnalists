@@ -4,7 +4,7 @@ export default {
   },
   header: {  
     main: 'Асосий',
-    dvv: 'DVV',
+    dvv: 'DVVI',
     projects: 'Лойиҳалар',
     news: 'Янгиликлар',
     compitition: 'Танловлар',
